@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="cKzYnChxjFPbSb19" data-version="062024"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E431V9YPRD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E431V9YPRD');
+    </script>
+
+    <!-- Default Meta Tags -->
+    <title>HahneAI - AI Automation Agency</title>
+    <meta name="description" content="Transform your business with intelligent AI automation solutions. HahneAI specializes in custom AI integration, workflow automation, and business optimization." />
+    <meta name="keywords" content="AI automation, business automation, AI integration, workflow optimization, artificial intelligence, business transformation" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HahneAI - AI Automation Agency" />
+    <meta property="og:description" content="Transform your business with intelligent AI automation solutions. HahneAI specializes in custom AI integration, workflow automation, and business optimization." />
+    <meta property="og:image" content="https://r2.leadsy.ai/assets/og-image.png" />
+    <meta property="og:url" content="https://tryhahneai.com" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="HahneAI - AI Automation Agency" />
+    <meta name="twitter:description" content="Transform your business with intelligent AI automation solutions" />
+    <meta name="twitter:image" content="https://r2.leadsy.ai/assets/og-image.png" />
+    
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://tryhahneai.com" />
+    <meta name="theme-color" content="#dc2626" />
+
+    <!-- Route-specific meta tags will be updated dynamically -->
+    <script>
+      // Update meta tags based on current route
+      function updateMetaTags(path) {
+        const routes = {
+          '/': {
+            title: 'HahneAI - AI Automation Agency',
+            description: 'Transform your business with intelligent AI automation solutions. HahneAI specializes in custom AI integration, workflow automation, and business optimization.',
+            keywords: 'AI automation, business automation, AI integration, workflow optimization, artificial intelligence, business transformation'
+          },
+          '/services': {
+            title: 'AI Automation Services | HahneAI',
+            description: 'Explore our comprehensive AI automation services including cold outreach, social media management, call handling, website optimization, and the innovative I.S.I Framework.',
+            keywords: 'AI services, cold outreach automation, social media AI, AI call management, website automation, I.S.I Framework'
+          },
+          '/creative-solutions': {
+            title: 'Creative AI Solutions & I.S.I Framework | HahneAI',
+            description: 'Discover our I.S.I Framework - a revolutionary approach to business transformation combining Ideation, System Mapping, and Implementation for unstoppable AI systems.',
+            keywords: 'I.S.I Framework, AI solutions, business transformation, system mapping, AI implementation, creative automation'
+          }
+        };
+
+        const route = routes[path] || routes['/'];
+        document.title = route.title;
+        document.querySelector('meta[name="description"]').setAttribute('content', route.description);
+        document.querySelector('meta[name="keywords"]').setAttribute('content', route.keywords);
+        document.querySelector('meta[property="og:title"]').setAttribute('content', route.title);
+        document.querySelector('meta[property="og:description"]').setAttribute('content', route.description);
+        document.querySelector('meta[name="twitter:title"]').setAttribute('content', route.title);
+        document.querySelector('meta[name="twitter:description"]').setAttribute('content', route.description);
+      }
+
+      // Update meta tags on route change
+      window.addEventListener('popstate', () => {
+        updateMetaTags(window.location.pathname);
+      });
+
+      // Initial meta tags update
+      updateMetaTags(window.location.pathname);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

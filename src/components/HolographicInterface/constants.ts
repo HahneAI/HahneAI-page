@@ -1,0 +1,30 @@
+export const FRAME_WIDTH = 40;
+export const FRAME_HEIGHT = 20;
+export const REFRESH_RATE = 500; // 2fps in milliseconds
+
+export const ALERT_MESSAGES = {
+  status: [
+    'SYSTEM EFFICIENCY: 92.4%',
+    'NEURAL NETWORK: STABLE',
+    'CORE TEMPERATURE: NOMINAL',
+    'BANDWIDTH USAGE: 78.3%',
+  ],
+  location: [
+    'GEO GRID LIVE: PARIS, WASHINGTON, NIGERIA',
+    'SATELLITE UPLINK: CONNECTED',
+    'GLOBAL NODES: 127 ACTIVE',
+    'NETWORK LATENCY: 12ms',
+  ],
+  security: [
+    'FIREWALL STATUS: OPTIMAL',
+    'ENCRYPTION: QUANTUM-SAFE',
+    'THREAT LEVEL: MINIMAL',
+    'SECURITY PROTOCOLS: ACTIVE',
+  ],
+  performance: [
+    'QUANTUM PROCESSING: ACTIVE',
+    'AI CORES: 100% OPERATIONAL',
+    'MEMORY USAGE: 42.7%',
+    'PROCESSING POWER: OPTIMAL',
+  ],
+};
