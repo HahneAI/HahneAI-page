@@ -14,6 +14,9 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage').then(module => ({
 const CreativeSolutionsPage = lazy(() => import('./pages/CreativeSolutionsPage').then(module => ({
   default: module.CreativeSolutionsPage
 })));
+const SystemRequestPage = lazy(() => import('./pages/SystemRequestPage').then(module => ({
+  default: module.SystemRequestPage
+})));
 
 // Initialize GA
 initGA();
@@ -66,6 +69,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/creative-solutions" element={<CreativeSolutionsPage />} />
+            <Route path="/system-request" element={<SystemRequestPage />} />
           </Routes>
         </Suspense>
         <Footer />
