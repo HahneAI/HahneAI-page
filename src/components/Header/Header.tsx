@@ -54,6 +54,19 @@ export function Header() {
     setIsMenuOpen(false);
   };
 
+  const handleProcessClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === '/process') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/process');
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
     <header className="fixed w-full top-0 z-50 bg-opacity-90 bg-black/20 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -84,6 +97,13 @@ export function Header() {
                 className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
               >
                 Creative Solutions
+              </button>
+              <div className="h-4 w-px mx-4 bg-gradient-to-b from-red-500 to-amber-400 opacity-50" />
+              <button
+                onClick={handleProcessClick}
+                className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
+              >
+                Our Process
               </button>
               <div className="h-4 w-px mx-4 bg-gradient-to-b from-red-500 to-amber-400 opacity-50" />
               <button 
@@ -129,6 +149,12 @@ export function Header() {
                 className="block w-full text-left px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors"
               >
                 Creative Solutions
+              </button>
+              <button
+                onClick={handleProcessClick}
+                className="block w-full text-left px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors"
+              >
+                Our Process
               </button>
               <button
                 onClick={scrollToContact}
