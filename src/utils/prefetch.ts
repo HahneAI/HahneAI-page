@@ -14,6 +14,6 @@ export async function prefetchImages(srcs: string[]) {
 }
 
 // Utility to prefetch a component
-export function prefetchComponent(getComponent: () => Promise<any>) {
+export function prefetchComponent(getComponent: () => Promise<unknown>) {
   return getComponent();
 }
