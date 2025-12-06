@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Suspense, lazy, useEffect } from 'react';
-import { Header } from './components/Header/Header';
-import { Footer } from './components/Footer/Footer';
 import { initGA, logPageView } from './utils/analytics';
 
 // Lazy load pages
@@ -18,6 +16,7 @@ const SystemRequestPage = lazy(() => import('./pages/SystemRequestPage').then(mo
   default: module.SystemRequestPage
 })));
 
+
 // Initialize GA
 initGA();
 
@@ -33,13 +32,14 @@ function PrefetchLinks() {
     const prefetchRoutes = async () => {
       if (location.pathname === '/') {
         // Prefetch services and creative solutions pages when on home
-        const [servicesModule, creativeSolutionsModule] = await Promise.all([
+        await Promise.all([
           import('./pages/ServicesPage'),
-          import('./pages/CreativeSolutionsPage')
+          import('./pages/CreativeSolutionsPage'),
+          import('./pages/SystemRequestPage')
         ]);
       } else if (location.pathname === '/services') {
         // Prefetch creative solutions when on services
-        const creativeSolutionsModule = await import('./pages/CreativeSolutionsPage');
+        await import('./pages/CreativeSolutionsPage');
       }
     };
 
@@ -62,17 +62,16 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-900 text-white">
-        <Header />
         <PrefetchLinks />
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/creative-solutions" element={<CreativeSolutionsPage />} />
+            <Route path="/process" element={<ProcessPage />} />
             <Route path="/system-request" element={<SystemRequestPage />} />
           </Routes>
         </Suspense>
-        <Footer />
       </div>
     </Router>
   );
