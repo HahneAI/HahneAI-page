@@ -27,12 +27,12 @@ export function Header() {
     }
   };
 
-  const handleServicesClick = (e: React.MouseEvent) => {
+  const handleSystemRequestClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    if (location.pathname === '/services') {
+    if (location.pathname === '/system-request') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      navigate('/services');
+      navigate('/system-request');
       setTimeout(() => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }, 100);
@@ -84,14 +84,14 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center">
             <div className="flex items-center">
-              <button 
-                onClick={handleServicesClick}
+              <button
+                onClick={handleSystemRequestClick}
                 className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
               >
-                Services
+                System Request
               </button>
               <div className="h-4 w-px mx-4 bg-gradient-to-b from-red-500 to-amber-400 opacity-50" />
-              <button 
+              <button
                 onClick={handleCreativeSolutionsClick}
                 className="text-sm text-gray-300 hover:text-white transition-colors duration-200"
               >
@@ -125,11 +125,11 @@ export function Header() {
           </div>
 
           {/* Desktop CTA */}
-          <button 
-            onClick={handleServicesClick}
+          <button
+            onClick={handleSystemRequestClick}
             className="hidden md:block bg-gradient-to-r from-red-600 to-amber-500 text-white px-6 py-2 rounded-lg hover:from-red-700 hover:to-amber-600 transition-all text-sm"
           >
-            Get Started
+            Make a System Request
           </button>
         </div>
 
@@ -138,10 +138,10 @@ export function Header() {
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <button
-                onClick={handleServicesClick}
+                onClick={handleSystemRequestClick}
                 className="block w-full text-left px-3 py-2 text-base font-medium text-gray-300 hover:text-white transition-colors"
               >
-                Services
+                System Request
               </button>
               <button
                 onClick={handleCreativeSolutionsClick}
@@ -162,10 +162,10 @@ export function Header() {
                 Contact
               </button>
               <button
-                onClick={handleServicesClick}
+                onClick={handleSystemRequestClick}
                 className="block w-full px-3 py-2 text-base font-medium bg-gradient-to-r from-red-600 to-amber-500 text-white rounded-lg hover:from-red-700 hover:to-amber-600 transition-all"
               >
-                Get Started
+                Make a System Request
               </button>
             </div>
           </div>

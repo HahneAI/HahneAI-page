@@ -30,24 +30,28 @@ export function Hero() {
           className="text-center"
         >
           <h1 className="text-3xl md:text-5xl font-light mb-6 tracking-wider font-['Space_Mono'] leading-relaxed">
-            <span className="block">DEDICATED TO CREATING</span>
+            <span className="block">DESCRIBE YOUR BUSINESS CHALLENGE</span>
             <span className="block bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
-              THE GREATEST AI IMPACT
+              WE'LL BUILD THE AI SYSTEM THAT SOLVES IT
             </span>
-            <span className="block">ON BUSINESS</span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <button 
-              onClick={handleHireClick}
+            <button
+              onClick={() => navigate('/system-request')}
               className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-8 py-4 rounded-lg text-base font-['Space_Mono'] tracking-wider hover:from-red-700 hover:to-amber-600 transition-all"
             >
-              Hire AI
+              MAKE A SYSTEM REQUEST
             </button>
-            <button 
-              onClick={handleLearnMore}
+            <button
+              onClick={() => {
+                const benefitsSection = document.querySelector('#benefits-section');
+                if (benefitsSection) {
+                  benefitsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className="border border-amber-400 text-amber-400 px-8 py-4 rounded-lg text-base font-['Space_Mono'] tracking-wider hover:bg-amber-400/10 transition-colors"
             >
-              Learn More
+              See How It Works
             </button>
           </div>
         </motion.div>
