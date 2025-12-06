@@ -1,46 +1,46 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Lightbulb, GitMerge, Cog } from 'lucide-react';
+import { BrainCircuit, Combine, GitFork } from 'lucide-react';
 import { HirePopup } from '../HirePopup/HirePopup';
 
 const processSteps = [
   {
-    id: 'ideation',
-    title: 'Ideation',
-    icon: Lightbulb,
-    description: 'Custom brainstorming sessions tailored to your needs',
+    id: 'intelligence',
+    title: 'Intelligence Gathering',
+    icon: BrainCircuit,
+    description: 'Deep-dive analysis to understand your unique landscape',
     details: [
-      'Collaborative discovery workshops',
-      'Pain point analysis',
-      'Opportunity mapping',
-      'Solution brainstorming',
-      'Feasibility assessment'
+      'Market & Competitive Analysis',
+      'Stakeholder Interviews',
+      'User Journey Mapping',
+      'Data & Process Audits',
+      'Goal & KPI Definition'
     ]
   },
   {
-    id: 'mapping',
-    title: 'System Mapping',
-    icon: GitMerge,
-    description: 'Visual representation of integrated tools and systems',
+    id: 'architecture',
+    title: 'System Architecture',
+    icon: Combine,
+    description: 'Designing a resilient, scalable, and efficient blueprint',
     details: [
-      'Workflow analysis',
-      'Integration planning',
-      'Data flow mapping',
-      'Automation opportunities',
-      'System architecture design'
+      'Strategic Solution Design',
+      'Technology Stack Selection',
+      'Scalable Framework Planning',
+      'Integration & API Strategy',
+      'Security & Compliance Modeling'
     ]
   },
   {
     id: 'implementation',
-    title: 'Implementation',
-    icon: Cog,
-    description: 'Creation of seamless workflows and AI systems',
+    title: 'Implementation & Iteration',
+    icon: GitFork,
+    description: 'Agile development, continuous feedback, and adaptive growth',
     details: [
-      'Agile development',
-      'Continuous testing',
-      'Performance optimization',
-      'User training',
-      'System monitoring'
+      'Iterative Development Sprints',
+      'Continuous Integration & Deployment (CI/CD)',
+      'Rigorous Quality Assurance',
+      'User Acceptance Testing (UAT)',
+      'Performance Monitoring & Optimization'
     ]
   }
 ];
@@ -58,10 +58,10 @@ export function ProcessFlow() {
         className="text-center mb-16"
       >
         <h2 className="text-3xl font-['Space_Mono'] mb-4 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
-          I.S.I - The Unstoppable System
+          Our Universal I.S.I Framework
         </h2>
         <p className="text-gray-400">
-          Our proven framework for transforming A-I-deas into reality
+          A proven methodology for any business challenge
         </p>
       </motion.div>
 

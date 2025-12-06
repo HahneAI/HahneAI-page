@@ -68,6 +68,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/creative-solutions" element={<CreativeSolutionsPage />} />
+            <Route path="/process" element={<ProcessPage />} />
             <Route path="/system-request" element={<SystemRequestPage />} />
           </Routes>
         </Suspense>

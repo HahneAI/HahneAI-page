@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { SystemCanvas } from './SystemCanvas';
 import { ProcessFlow } from './ProcessFlow';
 import { CaseStudies } from './CaseStudies';
@@ -17,13 +18,6 @@ export function CreativeSolutions() {
 
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
-
-  const handleProcessClick = () => {
-    const processSection = document.getElementById('process-section');
-    if (processSection) {
-      processSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div ref={containerRef} className="relative">
@@ -47,14 +41,14 @@ export function CreativeSolutions() {
               </span>
             </h1>
             <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
-              Discover how creativity powers seamless AI solutions for your business
+              Discover how our universal framework powers success across all industries.
             </p>
-            <button
-              onClick={handleProcessClick}
+            <Link
+              to="/process"
               className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-8 py-4 rounded-lg text-lg font-['Space_Mono'] tracking-wider hover:from-red-700 hover:to-amber-600 transition-all"
             >
-              See Our Process
-            </button>
+              Explore Our Process
+            </Link>
           </motion.div>
         </div>
       </motion.section>
