@@ -4,7 +4,6 @@ import { services } from './ServicesData';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { HirePopup } from '../HirePopup/HirePopup';
-import { logEvent } from '../../utils/analytics';
 
 export function Services() {
   const location = useLocation();
@@ -22,10 +21,6 @@ export function Services() {
     }
   }, [location]);
 
-  const handleIdeaCall = () => {
-    setIsHirePopupOpen(true);
-    logEvent('CTA', 'Click', 'Services - Start Free Idea Call');
-  };
 
   return (
     <section className="py-32 bg-gray-900">
