@@ -1,6 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Brain, Menu, X } from 'lucide-react';
-import { NavLink } from '../ui/NavLink';
 import { useState } from 'react';
 
 export function Header() {

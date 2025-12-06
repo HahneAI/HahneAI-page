@@ -1,4 +1,4 @@
-import { Alert, GridCell, Point, ScanLine } from './types';
+import { Alert, GridCell, ScanLine } from './types';
 import { ALERT_MESSAGES, GRID_COLS, GRID_ROWS } from './constants';
 
 export function generateGrid(): GridCell[][] {

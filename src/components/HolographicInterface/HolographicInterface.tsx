@@ -102,7 +102,7 @@ export function HolographicInterface() {
         ))}
       </pre>
       <div className="absolute top-2 right-2 space-y-2">
-        {alerts.map((alert, index) => (
+        {alerts.map((alert) => (
           <div 
             key={alert.timestamp}
             className={`
