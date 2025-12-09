@@ -86,10 +86,10 @@ export function ProblemSolver() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl font-['Space_Mono'] mb-4 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-space mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
           Creative Problem-Solving Simulator
         </h2>
-        <p className="text-gray-400">
+        <p className="text-neutral-400">
           See how we would approach your specific challenge
         </p>
       </motion.div>
@@ -105,8 +105,8 @@ export function ProblemSolver() {
                 className={`
                   w-full text-left px-4 py-3 rounded-lg transition-colors duration-300
                   ${selectedProblem === item.problem
-                    ? 'bg-gradient-to-r from-red-600 to-amber-500 text-white'
-                    : 'bg-black/40 text-gray-400 hover:text-white hover:bg-black/60'
+                    ? 'bg-gradient-to-r from-primary-600 to-secondary-500 text-white'
+                    : 'bg-black/40 text-neutral-400 hover:text-white hover:bg-black/60'
                   }
                 `}
               >
@@ -123,11 +123,11 @@ export function ProblemSolver() {
                 value={customProblem}
                 onChange={(e) => setCustomProblem(e.target.value)}
                 placeholder="Describe your challenge..."
-                className="flex-1 px-4 py-3 bg-black/40 border border-gray-700 rounded-lg focus:outline-none focus:border-amber-500 text-white"
+                className="flex-1 px-4 py-3 bg-black/40 border border-neutral-700 rounded-lg focus:outline-none focus:border-secondary-500 text-white"
               />
               <button
                 onClick={handleCustomProblemSubmit}
-                className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-6 py-3 rounded-lg hover:from-red-700 hover:to-amber-600 transition-all"
+                className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-6 py-3 rounded-lg hover:from-primary-700 hover:to-secondary-600 transition-all"
               >
                 Solve
               </button>
@@ -138,21 +138,21 @@ export function ProblemSolver() {
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: solution ? 1 : 0, x: solution ? 0 : 20 }}
-          className="bg-black/40 backdrop-blur-sm p-8 rounded-lg border border-red-900/20"
+          className="bg-black/40 backdrop-blur-sm p-8 rounded-lg border border-primary-900/20"
         >
           <div className="flex items-center space-x-4 mb-6">
-            <div className="bg-gradient-to-br from-red-500/10 to-amber-400/10 p-3 rounded-lg">
-              <Wand2 className="w-6 h-6 text-amber-400" />
+            <div className="bg-gradient-to-br from-primary-500/10 to-secondary-400/10 p-3 rounded-lg">
+              <Wand2 className="w-6 h-6 text-secondary-400" />
             </div>
             <h3 className="text-xl text-white">Proposed Solution</h3>
           </div>
-          
+
           {solution ? (
-            <div className="text-gray-400 leading-relaxed whitespace-pre-line">
+            <div className="text-neutral-400 leading-relaxed whitespace-pre-line">
               {solution}
             </div>
           ) : (
-            <p className="text-gray-500 italic">
+            <p className="text-neutral-500 italic">
               Select a common challenge or enter your own to see our proposed solution.
             </p>
           )}

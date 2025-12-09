@@ -56,10 +56,10 @@ export function CreativeToolkit() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl font-['Space_Mono'] mb-4 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-space mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
           Our Creative Toolkit
         </h2>
-        <p className="text-gray-400">
+        <p className="text-neutral-400">
           Advanced tools and technologies we use to build your solution
         </p>
       </motion.div>
@@ -71,13 +71,13 @@ export function CreativeToolkit() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-red-900/20 hover:border-amber-500/30 transition-colors group"
+            className="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-primary-900/20 hover:border-secondary-500/30 transition-colors group"
           >
-            <div className="bg-gradient-to-br from-red-500/10 to-amber-400/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:from-red-500/20 group-hover:to-amber-400/20 transition-colors">
-              <tool.icon className="w-6 h-6 text-amber-400" />
+            <div className="bg-gradient-to-br from-primary-500/10 to-secondary-400/10 p-3 rounded-lg w-12 h-12 flex items-center justify-center mb-4 group-hover:from-primary-500/20 group-hover:to-secondary-400/20 transition-colors">
+              <tool.icon className="w-6 h-6 text-secondary-400" />
             </div>
             <h3 className="text-lg font-semibold mb-2 text-white">{tool.title}</h3>
-            <p className="text-sm text-gray-400">{tool.description}</p>
+            <p className="text-sm text-neutral-400">{tool.description}</p>
           </motion.div>
         ))}
       </div>

@@ -29,16 +29,16 @@ export function Hero() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h1 className="text-3xl md:text-5xl font-light mb-6 tracking-wider font-['Space_Mono'] leading-relaxed">
+          <h1 className="text-3xl md:text-5xl font-light mb-6 tracking-wider font-space leading-relaxed">
             <span className="block">DESCRIBE YOUR BUSINESS CHALLENGE</span>
-            <span className="block bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
               WE'LL BUILD THE AI SYSTEM THAT SOLVES IT
             </span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
             <button
               onClick={() => navigate('/system-request')}
-              className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-8 py-4 rounded-lg text-base font-['Space_Mono'] tracking-wider hover:from-red-700 hover:to-amber-600 transition-all"
+              className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-8 py-4 rounded-lg text-base font-space tracking-wider hover:from-primary-700 hover:to-secondary-600 transition-all"
             >
               MAKE A SYSTEM REQUEST
             </button>
@@ -49,7 +49,7 @@ export function Hero() {
                   benefitsSection.scrollIntoView({ behavior: 'smooth' });
                 }
               }}
-              className="border border-amber-400 text-amber-400 px-8 py-4 rounded-lg text-base font-['Space_Mono'] tracking-wider hover:bg-amber-400/10 transition-colors"
+              className="border border-secondary-400 text-secondary-400 px-8 py-4 rounded-lg text-base font-space tracking-wider hover:bg-secondary-400/10 transition-colors"
             >
               See How It Works
             </button>

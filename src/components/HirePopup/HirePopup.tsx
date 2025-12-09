@@ -30,13 +30,13 @@ export function HirePopup({ isOpen, onClose, selectedServiceId }: HirePopupProps
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-gray-900 rounded-lg p-8 max-w-md w-full border border-red-900/20 my-8"
+            className="bg-surface-dark rounded-lg p-8 max-w-md w-full border border-primary-900/20 my-8"
           >
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-2xl font-light text-white">Let's Get Started</h3>
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-neutral-400 hover:text-white transition-colors"
               >
                 <X size={24} />
               </button>

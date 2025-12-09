@@ -102,19 +102,19 @@ export function HolographicBackground() {
               const isHorizontalScan = scanLines.some(
                 line => line.direction === 'horizontal' && line.position === y
               );
-              
+
               return (
                 <span
                   key={`${x}-${y}`}
                   className={`
                     transition-colors duration-200
                     ${cell.flash ? 'text-white' : ''}
-                    ${isVerticalScan || isHorizontalScan ? 'from-red-600 to-amber-500' : ''}
+                    ${isVerticalScan || isHorizontalScan ? 'from-primary-600 to-secondary-500' : ''}
                   `}
                   style={{
                     opacity: cell.opacity,
-                    background: isVerticalScan || isHorizontalScan ? 
-                      'linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to))' : 
+                    background: isVerticalScan || isHorizontalScan ?
+                      'linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to))' :
                       'none',
                   }}
                 >
@@ -127,15 +127,15 @@ export function HolographicBackground() {
       </div>
       <div className="absolute top-4 right-4 space-y-2">
         {alerts.map((alert) => (
-          <div 
+          <div
             key={alert.id}
             className={`
               text-xs px-2 py-1 rounded
-              ${alert.type === 'security' ? 'text-red-400/30' : 'text-amber-400/30'}
+              ${alert.type === 'security' ? 'text-primary-400/30' : 'text-secondary-400/30'}
               border border-white/10
               bg-black/90 backdrop-blur-[24px]
               animate-fade-in
-              md:opacity-100 md:backdrop-blur-none md:text-red-400 md:text-amber-400
+              md:opacity-100 md:backdrop-blur-none md:text-primary-400 md:text-secondary-400
               opacity-15 hover:opacity-40 transition-opacity duration-300
             `}
           >

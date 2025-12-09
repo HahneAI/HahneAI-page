@@ -38,10 +38,10 @@ export function ServiceCard({ id, title, description, imageUrl, tagline, reverse
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4 sm:p-6">
-              <h3 className="text-xl sm:text-2xl font-['Space_Mono'] text-white mb-2 drop-shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-space text-white mb-2 drop-shadow-lg">
                 {title}
               </h3>
-              <p className="hidden sm:block text-base sm:text-lg text-gray-200 drop-shadow-lg">
+              <p className="hidden sm:block text-base sm:text-lg text-neutral-200 drop-shadow-lg">
                 {tagline}
               </p>
             </div>
@@ -51,12 +51,12 @@ export function ServiceCard({ id, title, description, imageUrl, tagline, reverse
         {/* Content Section */}
         <div className="lg:w-1/2 flex flex-col justify-center">
           <div className="space-y-4 sm:space-y-6">
-            <h3 className="text-xl sm:text-2xl font-['Space_Mono'] text-white">{title}</h3>
-            <div className="text-gray-400 space-y-3 sm:space-y-4">
+            <h3 className="text-xl sm:text-2xl font-space text-white">{title}</h3>
+            <div className="text-neutral-400 space-y-3 sm:space-y-4">
               {description.split('\n').map((paragraph, index) => (
                 <p key={index} className="text-sm sm:text-base">
                   {paragraph.trim().startsWith('•') ? (
-                    <span className="text-amber-400">{paragraph.trim()}</span>
+                    <span className="text-secondary-400">{paragraph.trim()}</span>
                   ) : (
                     paragraph.trim()
                   )}
@@ -65,7 +65,7 @@ export function ServiceCard({ id, title, description, imageUrl, tagline, reverse
             </div>
             <button
               onClick={handleClick}
-              className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:from-red-700 hover:to-amber-600 transition-all text-sm sm:text-base font-['Space_Mono'] tracking-wider mt-6 sm:mt-8 mx-auto block w-full sm:w-auto"
+              className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:from-primary-700 hover:to-secondary-600 transition-all text-sm sm:text-base font-space tracking-wider mt-6 sm:mt-8 mx-auto block w-full sm:w-auto"
             >
               {id === 'isi-framework' ? 'Start your FREE Ideation Call Now' : 'Hire This AI'}
             </button>

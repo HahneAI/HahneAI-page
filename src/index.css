@@ -109,19 +109,19 @@
 
 /* Custom checkbox styles */
 input[type="checkbox"] {
-  @apply rounded border-gray-700 text-amber-500 focus:ring-amber-500 focus:ring-offset-gray-900;
+  @apply rounded border-neutral-700 text-secondary-500 focus:ring-secondary-500 focus:ring-offset-neutral-900;
 }
 
 input[type="checkbox"]:checked {
   background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
-  --tw-gradient-from: #dc2626;
+  --tw-gradient-from: #ef4444;
   --tw-gradient-to: #f59e0b;
 }
 
 /* Custom scrollbar styles */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: rgba(245, 158, 11, 0.3) transparent;
+  scrollbar-color: rgba(251, 191, 36, 0.3) transparent;
 }
 
 .custom-scrollbar::-webkit-scrollbar {
@@ -133,12 +133,12 @@ input[type="checkbox"]:checked {
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: rgba(245, 158, 11, 0.3);
+  background-color: rgba(251, 191, 36, 0.3);
   border-radius: 3px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(245, 158, 11, 0.5);
+  background-color: rgba(251, 191, 36, 0.5);
 }
 
 /* 3D perspective for carousel */

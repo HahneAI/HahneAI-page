@@ -23,7 +23,7 @@ export function Services() {
 
 
   return (
-    <section className="py-32 bg-gray-900">
+    <section className="py-32 bg-surface-dark">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -31,10 +31,10 @@ export function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-24"
         >
-          <h2 className="text-3xl md:text-4xl font-['Space_Mono'] mb-6 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-space mb-6 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
             Our Services
           </h2>
-          <p className="text-sm text-gray-400 max-w-2xl mx-auto">
+          <p className="text-sm text-neutral-400 max-w-2xl mx-auto">
             Comprehensive AI solutions designed to transform your business operations
           </p>
         </motion.div>

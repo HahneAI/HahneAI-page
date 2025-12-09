@@ -15,6 +15,9 @@ const CreativeSolutionsPage = lazy(() => import('./pages/CreativeSolutionsPage')
 const SystemRequestPage = lazy(() => import('./pages/SystemRequestPage').then(module => ({
   default: module.SystemRequestPage
 })));
+const ProcessPage = lazy(() => import('./pages/ProcessPage').then(module => ({
+  default: module.ProcessPage
+})));
 
 
 // Initialize GA
@@ -52,7 +55,7 @@ function PrefetchLinks() {
 // Loading fallback
 function LoadingFallback() {
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+    <div className="min-h-screen bg-surface-dark flex items-center justify-center">
       <div className="text-white text-xl">Loading...</div>
     </div>
   );
@@ -61,7 +64,7 @@ function LoadingFallback() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-900 text-white">
+      <div className="min-h-screen bg-surface-dark text-white">
         <PrefetchLinks />
         <Suspense fallback={<LoadingFallback />}>
           <Routes>

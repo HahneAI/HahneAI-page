@@ -15,23 +15,23 @@ export function Footer() {
   };
 
   return (
-    <footer id="contact-section" className="bg-gray-900 text-gray-300">
+    <footer id="contact-section" className="bg-surface-dark text-neutral-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-3">
             <Link to="/" className="flex items-center space-x-2">
-              <Brain className="h-6 w-6 text-amber-400" />
+              <Brain className="h-6 w-6 text-secondary-400" />
               <span className="text-xl font-bold text-white">HahneAI</span>
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-neutral-400 leading-relaxed">
               Transforming businesses through intelligent automation and AI solutions.
             </p>
             <div className="pt-2">
-              <p className="text-sm text-gray-400">Anthony Hahne</p>
-              <a 
-                href="mailto:anthonyhahne@therealworld.ag" 
-                className="text-sm text-amber-400 hover:text-amber-300 transition-colors break-all"
+              <p className="text-sm text-neutral-400">Anthony Hahne</p>
+              <a
+                href="mailto:anthonyhahne@therealworld.ag"
+                className="text-sm text-secondary-400 hover:text-secondary-300 transition-colors break-all"
               >
                 anthonyhahne@therealworld.ag
               </a>
@@ -44,9 +44,9 @@ export function Footer() {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.id}>
-                  <Link 
+                  <Link
                     to={`/services#${service.id}`}
-                    className="text-sm hover:text-amber-400 transition-colors"
+                    className="text-sm hover:text-secondary-400 transition-colors"
                   >
                     {service.title}
                   </Link>
@@ -55,7 +55,7 @@ export function Footer() {
               <li>
                 <button
                   onClick={handleISIClick}
-                  className="text-sm text-gray-300 hover:text-amber-400 transition-colors"
+                  className="text-sm text-neutral-300 hover:text-secondary-400 transition-colors"
                 >
                   ISI
                 </button>
@@ -67,19 +67,19 @@ export function Footer() {
           <div className="flex flex-col">
             <h3 className="text-lg font-semibold mb-3 text-white">Connect</h3>
             <div className="flex space-x-4">
-              <a 
-                href="https://x.com/HahneDigital" 
-                target="_blank" 
+              <a
+                href="https://x.com/HahneDigital"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-amber-400 transition-colors"
+                className="hover:text-secondary-400 transition-colors"
               >
                 <Twitter className="h-6 w-6" />
               </a>
-              <a 
-                href="https://www.instagram.com/hahnedigital/" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/hahnedigital/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-amber-400 transition-colors"
+                className="hover:text-secondary-400 transition-colors"
               >
                 <Instagram className="h-6 w-6" />
               </a>
@@ -92,8 +92,8 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-800 text-center">
-          <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} HahneAI. All rights reserved.</p>
+        <div className="mt-8 pt-6 border-t border-neutral-800 text-center">
+          <p className="text-sm text-neutral-400">&copy; {new Date().getFullYear()} HahneAI. All rights reserved.</p>
         </div>
       </div>
     </footer>

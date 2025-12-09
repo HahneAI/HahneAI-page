@@ -160,18 +160,18 @@ export function CaseStudies() {
             transition={{ duration: 0.3 }}
             className="mb-6"
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">Before Implementation</h4>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">Before Implementation</h4>
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Operations:</span>
+                <span className="text-neutral-400 text-sm">Operations:</span>
                 <span className="text-white text-sm">{study.before.operations}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Efficiency:</span>
+                <span className="text-neutral-400 text-sm">Efficiency:</span>
                 <span className="text-white text-sm">{study.before.efficiency}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Response Time:</span>
+                <span className="text-neutral-400 text-sm">Response Time:</span>
                 <span className="text-white text-sm">{study.before.response}</span>
               </div>
             </div>
@@ -185,19 +185,19 @@ export function CaseStudies() {
             transition={{ duration: 0.3 }}
             className="mb-6"
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">ISI Map</h4>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">ISI Map</h4>
             <div className="space-y-3">
               <div className="bg-black/20 p-3 rounded-lg">
-                <span className="text-amber-400 text-xs">Identify:</span>
-                <p className="text-gray-400 text-sm">{study.isiMap.identify}</p>
+                <span className="text-secondary-400 text-xs">Identify:</span>
+                <p className="text-neutral-400 text-sm">{study.isiMap.identify}</p>
               </div>
               <div className="bg-black/20 p-3 rounded-lg">
-                <span className="text-amber-400 text-xs">Solve:</span>
-                <p className="text-gray-400 text-sm">{study.isiMap.solve}</p>
+                <span className="text-secondary-400 text-xs">Solve:</span>
+                <p className="text-neutral-400 text-sm">{study.isiMap.solve}</p>
               </div>
               <div className="bg-black/20 p-3 rounded-lg">
-                <span className="text-amber-400 text-xs">Integrate:</span>
-                <p className="text-gray-400 text-sm">{study.isiMap.integrate}</p>
+                <span className="text-secondary-400 text-xs">Integrate:</span>
+                <p className="text-neutral-400 text-sm">{study.isiMap.integrate}</p>
               </div>
             </div>
           </motion.div>
@@ -210,18 +210,18 @@ export function CaseStudies() {
             transition={{ duration: 0.3 }}
             className="mb-6"
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">After Implementation</h4>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">After Implementation</h4>
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Operations:</span>
+                <span className="text-neutral-400 text-sm">Operations:</span>
                 <span className="text-white text-sm">{study.after.operations}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Efficiency:</span>
+                <span className="text-neutral-400 text-sm">Efficiency:</span>
                 <span className="text-white text-sm">{study.after.efficiency}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Response Time:</span>
+                <span className="text-neutral-400 text-sm">Response Time:</span>
                 <span className="text-white text-sm">{study.after.response}</span>
               </div>
             </div>
@@ -234,8 +234,8 @@ export function CaseStudies() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">Executive Summary</h4>
-            <p className="text-gray-400 text-sm leading-relaxed">{study.executiveSummary}</p>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">Executive Summary</h4>
+            <p className="text-neutral-400 text-sm leading-relaxed">{study.executiveSummary}</p>
           </motion.div>
         );
     }
@@ -249,10 +249,10 @@ export function CaseStudies() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl font-['Space_Mono'] mb-4 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-space mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
           Success Stories
         </h2>
-        <p className="text-gray-400">
+        <p className="text-neutral-400">
           Real transformations, real results
         </p>
       </motion.div>
@@ -331,7 +331,7 @@ export function CaseStudies() {
               }}
             >
               <motion.div 
-                className="w-full bg-black/40 backdrop-blur-sm rounded-lg border border-red-900/20 hover:border-amber-500/30 transition-all duration-300"
+                className="w-full bg-black/40 backdrop-blur-sm rounded-lg border border-primary-900/20 hover:border-secondary-500/30 transition-all duration-300"
                 layout
                 transition={{
                   layout: {
@@ -376,8 +376,8 @@ export function CaseStudies() {
                                 className={`
                                   w-full px-3 py-2 text-xs
                                   ${prevActive
-                                    ? 'text-gray-400 hover:text-white cursor-pointer'
-                                    : 'text-gray-600 cursor-not-allowed'
+                                    ? 'text-neutral-400 hover:text-white cursor-pointer'
+                                    : 'text-neutral-600 cursor-not-allowed'
                                   }
                                   ${isActive ? 'text-white' : ''}
                                   transition-colors duration-300
@@ -387,14 +387,14 @@ export function CaseStudies() {
                                 {section.label}
                               </button>
                               {index < sections.length - 1 && (
-                                <div className="absolute right-0 top-0 bottom-0 w-px bg-amber-500/10" />
+                                <div className="absolute right-0 top-0 bottom-0 w-px bg-secondary-500/10" />
                               )}
                               {isActive && (
                                 <motion.div
                                   initial={{ scaleX: 0 }}
                                   animate={{ scaleX: 1 }}
                                   transition={{ duration: 0.3, ease: "easeOut" }}
-                                  className="absolute inset-0 bg-gradient-to-r from-red-600 to-amber-500 origin-left"
+                                  className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-500 origin-left"
                                   style={{ transformOrigin: 'left' }}
                                 />
                               )}
@@ -469,9 +469,9 @@ export function CaseStudies() {
                 setActiveSections(new Set(['before']));
               }}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === activeStudy 
-                  ? 'bg-amber-400 w-6' 
-                  : 'bg-gray-600 hover:bg-gray-500'
+                index === activeStudy
+                  ? 'bg-secondary-400 w-6'
+                  : 'bg-neutral-600 hover:bg-neutral-500'
               }`}
             />
           ))}

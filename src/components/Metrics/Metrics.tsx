@@ -12,10 +12,10 @@ export function Metrics() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light mb-4 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-light mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
             Our Impact in Numbers
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-neutral-400 max-w-2xl mx-auto">
             Measurable results that demonstrate the power of AI automation
           </p>
         </motion.div>
