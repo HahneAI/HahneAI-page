@@ -1,66 +1,78 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HolographicBackground } from './HolographicBackground/HolographicBackground';
-import { HirePopup } from '../HirePopup/HirePopup';
-import { logEvent } from '../../utils/analytics';
+import { heroContent } from '../../content/navigation';
 
+/**
+ * Minimalist Hero Section
+ *
+ * Design principles:
+ * - Large, clean typography with clear hierarchy
+ * - Generous whitespace (breathing room)
+ * - Single strong CTA with subtle secondary
+ * - Muted fade-in animation only
+ * - Social proof metric for credibility
+ */
 export function Hero() {
-  const [isHirePopupOpen, setIsHirePopupOpen] = useState(false);
   const navigate = useNavigate();
-
-  const handleLearnMore = () => {
-    navigate('/services');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleHireClick = () => {
-    setIsHirePopupOpen(true);
-    logEvent('CTA', 'Click', 'Hero - Hire AI');
-  };
+  const content = heroContent.primary;
 
   return (
-    <div className="relative min-h-screen flex items-center">
-      <HolographicBackground />
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+    <section className="relative min-h-screen flex items-center bg-surface-dark">
+      {/* Subtle gradient background - warm, not tech-aggressive */}
+      <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 via-surface-dark to-surface-dark" />
+
+      {/* Content container with generous padding */}
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 pt-32 pb-24">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="space-y-12"
         >
-          <h1 className="text-3xl md:text-5xl font-light mb-6 tracking-wider font-space leading-relaxed">
-            <span className="block">DESCRIBE YOUR BUSINESS CHALLENGE</span>
-            <span className="block bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
-              WE'LL BUILD THE AI SYSTEM THAT SOLVES IT
-            </span>
+          {/* Headline - Large, commanding */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-white leading-[1.1] tracking-tight max-w-4xl">
+            {content.headline}
           </h1>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+
+          {/* Subheadline - Smaller, muted */}
+          <p className="text-lg sm:text-xl text-neutral-400 max-w-2xl leading-relaxed">
+            {content.subheadline}
+          </p>
+
+          {/* CTA Group */}
+          <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <button
               onClick={() => navigate('/system-request')}
-              className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-8 py-4 rounded-lg text-base font-space tracking-wider hover:from-primary-700 hover:to-secondary-600 transition-all"
+              className="px-8 py-4 bg-white text-neutral-900 text-base font-medium rounded-lg hover:bg-neutral-100 transition-colors duration-200"
             >
-              MAKE A SYSTEM REQUEST
+              {content.cta.primary}
             </button>
             <button
-              onClick={() => {
-                const benefitsSection = document.querySelector('#benefits-section');
-                if (benefitsSection) {
-                  benefitsSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="border border-secondary-400 text-secondary-400 px-8 py-4 rounded-lg text-base font-space tracking-wider hover:bg-secondary-400/10 transition-colors"
+              onClick={() => navigate('/services')}
+              className="px-8 py-4 text-neutral-300 text-base font-medium hover:text-white transition-colors duration-200"
             >
-              See How It Works
+              {content.cta.secondary}
             </button>
           </div>
+
+          {/* Social Proof - Subtle credibility */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="pt-16 border-t border-neutral-800"
+          >
+            <div className="flex items-baseline gap-3">
+              <span className="text-3xl sm:text-4xl font-light text-white">
+                {content.proof.metric}
+              </span>
+              <span className="text-sm text-neutral-500">
+                {content.proof.label}
+              </span>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
-
-      <HirePopup 
-        isOpen={isHirePopupOpen}
-        onClose={() => setIsHirePopupOpen(false)}
-      />
-    </div>
+    </section>
   );
 }

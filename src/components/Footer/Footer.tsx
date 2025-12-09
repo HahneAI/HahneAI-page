@@ -1,42 +1,41 @@
-import { Brain, Instagram, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { MakeBadge } from './MakeBadge';
 import { footerNavigation } from '../../content/navigation';
 
+/**
+ * Minimalist Footer
+ *
+ * Design principles:
+ * - Clean grid layout
+ * - Essential links only
+ * - Subtle typography hierarchy
+ * - Generous whitespace
+ */
 export function Footer() {
   return (
-    <footer id="contact-section" className="bg-surface-dark text-neutral-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-3">
-            <Link to="/" className="flex items-center space-x-2">
-              <Brain className="h-6 w-6 text-secondary-400" />
-              <span className="text-xl font-bold text-white">HahneAI</span>
+    <footer id="contact-section" className="bg-neutral-950 border-t border-neutral-800">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <Link to="/" className="text-lg font-medium text-white">
+              HahneAI
             </Link>
-            <p className="text-sm text-neutral-400 leading-relaxed">
-              Transforming businesses through intelligent automation and AI solutions.
+            <p className="mt-4 text-sm text-neutral-500 leading-relaxed max-w-xs">
+              Custom automation systems that work while you sleep.
             </p>
-            <div className="pt-2">
-              <p className="text-sm text-neutral-400">Anthony Hahne</p>
-              <a
-                href="mailto:anthonyhahne@therealworld.ag"
-                className="text-sm text-secondary-400 hover:text-secondary-300 transition-colors break-all"
-              >
-                anthonyhahne@therealworld.ag
-              </a>
-            </div>
           </div>
 
-          {/* Services Links */}
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-white">{footerNavigation.services.label}</h3>
-            <ul className="space-y-2">
+          {/* Solutions Links */}
+          <div>
+            <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+              {footerNavigation.services.label}
+            </h3>
+            <ul className="space-y-3">
               {footerNavigation.services.links.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm hover:text-secondary-400 transition-colors"
+                    className="text-sm text-neutral-500 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -46,14 +45,16 @@ export function Footer() {
           </div>
 
           {/* Company Links */}
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-white">{footerNavigation.company.label}</h3>
-            <ul className="space-y-2">
+          <div>
+            <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+              {footerNavigation.company.label}
+            </h3>
+            <ul className="space-y-3">
               {footerNavigation.company.links.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm hover:text-secondary-400 transition-colors"
+                    className="text-sm text-neutral-500 hover:text-white transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -62,37 +63,48 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Connect */}
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-white">Connect</h3>
-            <div className="flex space-x-4">
+          {/* Contact */}
+          <div>
+            <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+              Contact
+            </h3>
+            <div className="space-y-3">
               <a
-                href="https://x.com/HahneDigital"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-secondary-400 transition-colors"
+                href="mailto:anthonyhahne@therealworld.ag"
+                className="block text-sm text-neutral-500 hover:text-white transition-colors"
               >
-                <Twitter className="h-6 w-6" />
+                anthonyhahne@therealworld.ag
               </a>
-              <a
-                href="https://www.instagram.com/hahnedigital/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-secondary-400 transition-colors"
-              >
-                <Instagram className="h-6 w-6" />
-              </a>
+              <div className="flex gap-4 pt-2">
+                <a
+                  href="https://x.com/HahneDigital"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-neutral-500 hover:text-white transition-colors"
+                >
+                  Twitter
+                </a>
+                <a
+                  href="https://www.instagram.com/hahnedigital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-neutral-500 hover:text-white transition-colors"
+                >
+                  Instagram
+                </a>
+              </div>
             </div>
-          </div>
-
-          {/* Make Badge */}
-          <div className="flex justify-center md:justify-end">
-            <MakeBadge />
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-neutral-800 text-center">
-          <p className="text-sm text-neutral-400">&copy; {new Date().getFullYear()} HahneAI. All rights reserved.</p>
+        {/* Bottom bar */}
+        <div className="mt-16 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-neutral-600">
+            &copy; {new Date().getFullYear()} HahneAI. All rights reserved.
+          </p>
+          <p className="text-xs text-neutral-600">
+            Built with purpose.
+          </p>
         </div>
       </div>
     </footer>
