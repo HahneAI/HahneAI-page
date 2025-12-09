@@ -1,78 +1,58 @@
-import { Bot, Globe, Headphones, MessageSquare, Users } from 'lucide-react';
+/**
+ * Services data - re-exports from centralized content
+ * This file maintained for backward compatibility
+ * New code should import directly from '../../content/services'
+ */
 
-export const services = [
-  {
-    icon: MessageSquare,
-    title: 'Automated Cold Outreach',
-    id: 'automated-cold-outreach',
-    tagline: '"Transform your outreach with AI-powered personalization"',
-    description: `Our AI-powered cold outreach service revolutionizes how businesses connect with potential clients. 
-    Using advanced natural language processing, we create personalized messages that resonate with each recipient. 
-    The system learns from responses, continuously improving its approach. Features include:
-    • Multi-channel outreach (email, LinkedIn, etc.)
-    • A/B testing of message variations
-    • Automated follow-up sequences
-    • Response analysis and optimization
-    • Integration with major CRM platforms`,
-    imageUrl: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80',
-  },
-  {
-    icon: Users,
-    title: 'Social Media AI Operator',
-    id: 'social-media-ai-operator',
-    tagline: '"Transform your social presence with AI-driven engagement"',
-    description: `Transform your social media presence with our AI operator that manages your entire social footprint. 
-    Our system analyzes trends, creates engaging content, and maintains consistent brand voice across all platforms. 
-    Key capabilities include:
-    • Content generation and scheduling
-    • Trend analysis and optimization
-    • Engagement monitoring and response
-    • Performance analytics
-    • Competitor analysis`,
-    imageUrl: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&q=80',
-  },
-  {
-    icon: Headphones,
-    title: 'AI Call Management',
-    id: 'ai-call-management',
-    tagline: '"Transform your customer service with AI-powered communications"',
-    description: `Experience seamless call handling with our AI-powered system that manages both inbound and outbound calls. 
-    Our solution provides 24/7 coverage with natural conversation flow and intelligent routing. Features include:
-    • Natural language processing
-    • Custom voice synthesis
-    • Call routing and prioritization
-    • Real-time transcription
-    • Sentiment analysis`,
-    imageUrl: 'https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&q=80',
-  },
-  {
-    icon: Globe,
-    title: 'AI Website Overhaul',
-    id: 'ai-website-overhaul',
-    tagline: '"Transform your web presence with AI-driven optimization"',
-    description: `Modernize your web presence with our AI-driven website transformation service. 
-    We create intelligent, responsive websites that adapt to user behavior and drive conversions. 
-    Key features include:
-    • Dynamic content personalization
-    • Behavioral analytics
-    • Conversion optimization
-    • SEO automation
-    • Performance monitoring`,
-    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
-  },
-  {
-    icon: Bot,
-    title: 'Sleepless AI Website Agents',
-    id: 'sleepless-ai-website-agents',
-    tagline: '"Transform your customer experience with AI-powered support"',
-    description: `Deploy 24/7 AI agents that manage your website operations and customer interactions. 
-    Our agents provide instant support, gather insights, and optimize user experience continuously. 
-    Features include:
-    • Real-time chat support
-    • User behavior analysis
-    • Lead qualification
-    • Automated follow-ups
-    • Integration with business systems`,
-    imageUrl: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80',
-  },
-];
+import { services as contentServices, type Service } from '../../content/services';
+
+// Transform new service format to legacy format for backward compatibility
+export const services = contentServices
+  .filter((s) => s.id !== 'isi-framework') // ISI Framework handled separately
+  .map((service) => ({
+    icon: service.icon,
+    title: service.title,
+    id: service.id,
+    tagline: `"${service.tagline}"`,
+    description: formatServiceDescription(service),
+    imageUrl: service.imageUrl || getDefaultImage(service.id),
+  }));
+
+// Helper to format the new problem-first content into legacy description format
+function formatServiceDescription(service: Service): string {
+  const parts: string[] = [];
+
+  // Add solution description
+  parts.push(service.solution.description);
+  parts.push('');
+
+  // Add features as bullet points
+  parts.push('Features include:');
+  service.solution.features.forEach((feature) => {
+    parts.push(`• ${feature}`);
+  });
+
+  return parts.join('\n');
+}
+
+// Default images for services
+function getDefaultImage(id: string): string {
+  const images: Record<string, string> = {
+    'cold-outreach':
+      'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80',
+    'social-media':
+      'https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&q=80',
+    'call-management':
+      'https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&q=80',
+    'website-overhaul':
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
+    'website-agents':
+      'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80',
+    'isi-framework':
+      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+  };
+  return images[id] || images['cold-outreach'];
+}
+
+// Re-export types and content services for new components
+export { contentServices, type Service };

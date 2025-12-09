@@ -1,19 +1,9 @@
 import { Brain, Instagram, Twitter } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { MakeBadge } from './MakeBadge';
-import { services } from '../Services/ServicesData';
+import { footerNavigation } from '../../content/navigation';
 
 export function Footer() {
-  const navigate = useNavigate();
-
-  const handleISIClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    navigate('/creative-solutions');
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
-  };
-
   return (
     <footer id="contact-section" className="bg-surface-dark text-neutral-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -40,26 +30,35 @@ export function Footer() {
 
           {/* Services Links */}
           <div className="flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-white">Services</h3>
+            <h3 className="text-lg font-semibold mb-3 text-white">{footerNavigation.services.label}</h3>
             <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.id}>
+              {footerNavigation.services.links.map((link) => (
+                <li key={link.path}>
                   <Link
-                    to={`/services#${service.id}`}
+                    to={link.path}
                     className="text-sm hover:text-secondary-400 transition-colors"
                   >
-                    {service.title}
+                    {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <button
-                  onClick={handleISIClick}
-                  className="text-sm text-neutral-300 hover:text-secondary-400 transition-colors"
-                >
-                  ISI
-                </button>
-              </li>
+            </ul>
+          </div>
+
+          {/* Company Links */}
+          <div className="flex flex-col">
+            <h3 className="text-lg font-semibold mb-3 text-white">{footerNavigation.company.label}</h3>
+            <ul className="space-y-2">
+              {footerNavigation.company.links.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-sm hover:text-secondary-400 transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
