@@ -1,0 +1,266 @@
+{
+  "meta": {
+    "lastUpdated": "2024-12-09",
+    "version": "1.0.0",
+    "notes": "Keyword strategy for HahneAI - B2B AI implementation services"
+  },
+
+  "brand": {
+    "primary": "HahneAI",
+    "tagline": "Custom AI Systems for Any Business Challenge",
+    "positioning": "AI implementation partner, not LLM provider"
+  },
+
+  "pages": {
+    "home": {
+      "primaryKeyword": "custom AI solutions",
+      "secondaryKeywords": [
+        "AI implementation services",
+        "business AI systems",
+        "AI automation agency",
+        "custom AI development"
+      ],
+      "longTail": [
+        "custom AI solutions for small business",
+        "AI systems for business challenges",
+        "build custom AI for my company",
+        "AI implementation partner",
+        "business process AI automation"
+      ],
+      "searchIntent": "commercial",
+      "targetAudience": "Business owners, CTOs, operations managers seeking AI solutions"
+    },
+
+    "systemRequest": {
+      "primaryKeyword": "AI system request",
+      "secondaryKeywords": [
+        "custom AI quote",
+        "AI project consultation",
+        "AI development services",
+        "request AI solution"
+      ],
+      "longTail": [
+        "get a custom AI system built",
+        "request AI automation for my business",
+        "AI consultation for business",
+        "custom AI development quote",
+        "hire AI developers for business"
+      ],
+      "searchIntent": "transactional",
+      "targetAudience": "Decision-makers ready to invest in AI solutions"
+    },
+
+    "creativeSolutions": {
+      "primaryKeyword": "AI business solutions",
+      "secondaryKeywords": [
+        "I.S.I Framework",
+        "AI transformation",
+        "business automation solutions",
+        "AI implementation framework"
+      ],
+      "longTail": [
+        "AI framework for business transformation",
+        "systematic AI implementation approach",
+        "ideation to implementation AI",
+        "creative AI solutions for business",
+        "AI-powered business process improvement"
+      ],
+      "searchIntent": "informational/commercial",
+      "targetAudience": "Executives researching AI transformation strategies"
+    },
+
+    "process": {
+      "primaryKeyword": "AI implementation process",
+      "secondaryKeywords": [
+        "AI project methodology",
+        "how AI implementation works",
+        "AI development process",
+        "AI system deployment"
+      ],
+      "longTail": [
+        "how to implement AI in business",
+        "AI project timeline and process",
+        "step by step AI implementation",
+        "AI system development methodology",
+        "what to expect from AI implementation"
+      ],
+      "searchIntent": "informational",
+      "targetAudience": "Stakeholders evaluating AI implementation partners"
+    },
+
+    "services": {
+      "primaryKeyword": "AI automation services",
+      "secondaryKeywords": [
+        "AI consulting services",
+        "business automation AI",
+        "enterprise AI solutions",
+        "AI integration services"
+      ],
+      "longTail": [
+        "AI automation services for small business",
+        "AI consulting for enterprises",
+        "custom AI integration services",
+        "AI workflow automation services",
+        "AI-powered business solutions"
+      ],
+      "searchIntent": "commercial",
+      "targetAudience": "Business leaders exploring AI service options"
+    }
+  },
+
+  "services": {
+    "aiAutomation": {
+      "primary": "AI workflow automation",
+      "related": [
+        "business process automation",
+        "intelligent automation",
+        "AI-powered workflows",
+        "automated business processes"
+      ],
+      "problems": [
+        "manual repetitive tasks",
+        "slow business processes",
+        "human error in workflows",
+        "scaling operations"
+      ]
+    },
+    "customAI": {
+      "primary": "custom AI development",
+      "related": [
+        "bespoke AI solutions",
+        "tailored AI systems",
+        "AI built for your business",
+        "industry-specific AI"
+      ],
+      "problems": [
+        "off-the-shelf AI limitations",
+        "unique business requirements",
+        "competitive differentiation",
+        "specific industry needs"
+      ]
+    },
+    "aiIntegration": {
+      "primary": "AI integration services",
+      "related": [
+        "AI API integration",
+        "system integration AI",
+        "connecting AI to existing systems",
+        "AI platform integration"
+      ],
+      "problems": [
+        "legacy system modernization",
+        "disconnected data sources",
+        "manual data entry",
+        "system silos"
+      ]
+    },
+    "aiConsulting": {
+      "primary": "AI consulting",
+      "related": [
+        "AI strategy consulting",
+        "AI readiness assessment",
+        "AI implementation planning",
+        "AI transformation consulting"
+      ],
+      "problems": [
+        "where to start with AI",
+        "AI ROI uncertainty",
+        "technology selection",
+        "change management"
+      ]
+    }
+  },
+
+  "competitorGapAnalysis": {
+    "underservedTopics": [
+      "AI for specific industries (trades, local services)",
+      "Small business AI implementation",
+      "AI with human oversight emphasis",
+      "Transparent AI pricing",
+      "AI implementation without technical team"
+    ],
+    "differentiators": [
+      "Problem-first approach (vs technology-first)",
+      "Custom systems (vs SaaS platforms)",
+      "Business outcome focus (vs feature lists)",
+      "Partnership model (vs vendor relationship)"
+    ],
+    "contentOpportunities": [
+      "Industry-specific AI use cases",
+      "AI implementation case studies",
+      "ROI calculators and frameworks",
+      "AI readiness assessments",
+      "Common AI implementation mistakes"
+    ]
+  },
+
+  "searchIntentMapping": {
+    "informational": {
+      "queries": [
+        "what is AI automation",
+        "how does AI help business",
+        "AI implementation best practices",
+        "benefits of custom AI"
+      ],
+      "content": "Blog posts, guides, educational content"
+    },
+    "commercial": {
+      "queries": [
+        "best AI automation services",
+        "custom AI solutions providers",
+        "AI implementation companies",
+        "AI consulting firms"
+      ],
+      "content": "Service pages, comparison content, case studies"
+    },
+    "transactional": {
+      "queries": [
+        "hire AI developer",
+        "get AI quote",
+        "AI consultation booking",
+        "custom AI pricing"
+      ],
+      "content": "System request form, contact pages, pricing"
+    },
+    "navigational": {
+      "queries": [
+        "HahneAI",
+        "HahneAI services",
+        "HahneAI contact"
+      ],
+      "content": "Homepage, about, contact"
+    }
+  },
+
+  "localSEO": {
+    "enabled": false,
+    "notes": "Currently operating as remote/digital-first agency. Enable when physical presence established."
+  },
+
+  "technicalKeywords": {
+    "aiTechnologies": [
+      "machine learning",
+      "natural language processing",
+      "computer vision",
+      "predictive analytics",
+      "large language models"
+    ],
+    "businessTerms": [
+      "ROI",
+      "digital transformation",
+      "operational efficiency",
+      "business intelligence",
+      "process optimization"
+    ]
+  },
+
+  "geoOptimization": {
+    "notes": "Generative Engine Optimization - optimizing for AI search (ChatGPT, Perplexity, Claude)",
+    "strategies": [
+      "Clear, factual statements that AI can cite",
+      "Structured data for entity recognition",
+      "FAQ content for conversational queries",
+      "Problem-solution format for AI understanding"
+    ]
+  }
+}
