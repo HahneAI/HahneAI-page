@@ -28,87 +28,157 @@ export const mainNavigation: NavItem[] = [
   {
     label: 'Services',
     path: '/services',
-    description: 'AI automation solutions for your business',
+    description: 'Solutions that work while you sleep',
   },
   {
-    label: 'Solutions',
+    label: 'How It Works',
     path: '/creative-solutions',
-    description: 'Our I.S.I Framework and approach',
+    description: 'The I.S.I Framework',
   },
   {
     label: 'Process',
     path: '/process',
-    description: 'How we work with you',
+    description: 'From challenge to solution',
   },
 ];
 
 // Primary CTA configuration (consistent across site)
 export const primaryCTA: CTAConfig = {
   primary: {
-    label: 'Start a Project',
+    label: 'Tell Us Your Challenge',
     path: '/system-request',
-    description: 'Tell us your challenge and get a custom solution',
+    description: 'Get a custom solution designed for your business',
   },
   secondary: {
-    label: 'See Our Work',
+    label: 'See What We Build',
     path: '/services',
-    description: 'Explore our AI solutions',
+    description: 'Explore solutions',
+  },
+};
+
+// Hero section variations (problem-hook approach)
+export const heroContent = {
+  // Primary version - problem hook
+  primary: {
+    headline: 'Your business runs 8 hours a day. Your competitors\' AI runs 24.',
+    subheadline:
+      'We build custom automation that handles outreach, calls, and customer engagement while you sleep.',
+    cta: {
+      primary: 'Tell Us Your Challenge',
+      secondary: 'See What We Build',
+    },
+    proof: {
+      metric: '$126k',
+      label: 'Average revenue protected per client annually',
+    },
+  },
+
+  // Alternative version - outcome focus
+  alternative: {
+    headline: 'Stop losing leads after 5pm.',
+    subheadline:
+      'Every missed call costs $1,200. Every ignored email loses a prospect. We fix that.',
+    cta: {
+      primary: 'Get 24/7 Coverage',
+      secondary: 'See How It Works',
+    },
+    proof: {
+      metric: '100%',
+      label: 'Call answer rate, 24/7/365',
+    },
+  },
+
+  // Credibility version - results focus
+  credibility: {
+    headline: 'AI that actually works. Not demos. Production systems.',
+    subheadline:
+      '87% of AI projects fail. Every one of ours reaches production. Here\'s why.',
+    cta: {
+      primary: 'Start a Project',
+      secondary: 'See the I.S.I Framework',
+    },
+    proof: {
+      metric: '0',
+      label: 'Projects that never reached production',
+    },
   },
 };
 
 // Page-specific headlines and value propositions
 export const pageContent = {
   home: {
-    headline: 'AI Systems That Work While You Sleep',
-    subheadline:
-      'Custom AI automation built for your specific business challenges. No off-the-shelf solutions. No cookie-cutter approaches.',
+    headline: heroContent.primary.headline,
+    subheadline: heroContent.primary.subheadline,
     valueProps: [
-      'Custom solutions for your exact needs',
       '24/7 operation without human oversight',
+      'Custom-built for your exact workflows',
       'Measurable ROI within 90 days',
     ],
   },
   services: {
-    headline: 'AI Solutions That Actually Solve Problems',
+    headline: 'Solutions That Work While You Don\'t',
     subheadline:
-      'Every business has unique challenges. We build AI systems tailored to yours.',
+      'Each system is built for a specific problem. Find yours.',
   },
   creativeSolutions: {
-    headline: 'The I.S.I Framework',
+    headline: 'Why 87% of AI Projects Fail (And Ours Don\'t)',
     subheadline:
-      'Intelligence → System → Implementation. Our proven approach to AI that delivers results.',
+      'The I.S.I Framework: Intelligence → System → Implementation',
   },
   process: {
-    headline: 'From Challenge to Solution',
+    headline: 'From Challenge to Working System',
     subheadline:
-      'A transparent process that keeps you informed and in control.',
+      'A transparent process. No black boxes. No surprises.',
   },
   systemRequest: {
-    headline: 'Tell Us Your Challenge',
+    headline: 'What\'s Costing You Time Right Now?',
     subheadline:
-      "Describe what's slowing your business down. We'll design the AI solution.",
+      'Describe the problem. We\'ll show you how to automate it.',
   },
 };
 
-// Footer navigation groups
+// Footer navigation groups (updated to match new service IDs)
 export const footerNavigation = {
   services: {
-    label: 'Services',
+    label: 'Solutions',
     links: [
-      { label: 'AI Cold Outreach', path: '/services#cold-outreach' },
-      { label: 'Social Media AI', path: '/services#social-media' },
-      { label: 'Call Management', path: '/services#call-management' },
-      { label: 'Website Overhaul', path: '/services#website-overhaul' },
-      { label: 'AI Agents', path: '/services#website-agents' },
+      { label: 'Outbound Pipeline', path: '/services#outbound-pipeline' },
+      { label: 'Content Engine', path: '/services#content-engine' },
+      { label: 'Never Miss', path: '/services#never-miss' },
+      { label: 'Website That Sells', path: '/services#website-sells' },
+      { label: 'Custom Automation', path: '/services#custom-automation' },
     ],
   },
   company: {
     label: 'Company',
     links: [
+      { label: 'How It Works', path: '/creative-solutions' },
       { label: 'Our Process', path: '/process' },
-      { label: 'I.S.I Framework', path: '/creative-solutions' },
       { label: 'Start a Project', path: '/system-request' },
     ],
+  },
+};
+
+// Social proof structure (for future testimonials)
+export const socialProof = {
+  metrics: [
+    { value: '$126k', label: 'Revenue protected per client/year', source: 'Client average' },
+    { value: '100%', label: 'Project deployment rate', source: 'Internal data' },
+    { value: '24/7', label: 'System operation', source: 'Uptime monitoring' },
+  ],
+  testimonials: {
+    placeholder: true, // Will be replaced with real testimonials
+    structure: {
+      quote: 'string',
+      author: 'string',
+      role: 'string',
+      company: 'string',
+      result: 'string', // Quantified outcome
+    },
+  },
+  logos: {
+    placeholder: true,
+    note: 'Add client logos when permission granted',
   },
 };
 

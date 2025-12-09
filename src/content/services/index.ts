@@ -1,11 +1,16 @@
 /**
- * Services content - separated from UI for maintainability
- * Following Avantos problem-first structure:
- * 1. The Problem (pain points)
- * 2. Our Solution (what we build)
- * 3. The Results (quantified outcomes)
- * 4. How It Works (process)
- * 5. Integration Points (tech stack)
+ * Services content - Outcome-focused copy
+ *
+ * Structure per service:
+ * 1. THE PROBLEM (specific pain, backed by research)
+ * 2. WHAT WE BUILT (solution overview)
+ * 3. THE RESULTS (quantified outcomes)
+ * 4. HOW IT WORKS (brief process)
+ *
+ * Naming principles:
+ * - No "AI" prefix (it's implied)
+ * - Outcome-focused names
+ * - Direct, no fluff
  */
 
 import {
@@ -21,7 +26,8 @@ import {
 export interface ServiceProblem {
   headline: string;
   painPoints: string[];
-  cost: string; // What this problem costs (time, money, opportunity)
+  cost: string;
+  source?: string; // Citation for credibility
 }
 
 export interface ServiceSolution {
@@ -54,233 +60,240 @@ export interface Service {
   tagline: string;
   shortDescription: string;
 
-  // Problem-first content
   problem: ServiceProblem;
   solution: ServiceSolution;
   results: ServiceResult[];
   process: ServiceProcess[];
   integrations: ServiceIntegration[];
 
-  // Meta
   imageUrl?: string;
   featured: boolean;
   order: number;
 }
 
 export const services: Service[] = [
+  // ============================================
+  // OUTBOUND PIPELINE
+  // ============================================
   {
-    id: 'cold-outreach',
+    id: 'outbound-pipeline',
     icon: MessageSquare,
-    title: 'AI Cold Outreach',
-    tagline: 'Turn strangers into customers while you sleep',
+    title: 'Outbound Pipeline',
+    tagline: 'Fill your calendar without lifting a finger',
     shortDescription:
-      'Automated email sequences that sound human and convert.',
+      'Personalized outreach that books meetings while you sleep.',
     featured: true,
     order: 1,
 
     problem: {
-      headline: 'Manual outreach doesn\'t scale',
+      headline: 'Cold email is broken. Response rates dropped 30% this year.',
       painPoints: [
-        'Sales team spends 60% of time on emails that get ignored',
-        'Inconsistent follow-up means lost opportunities',
-        'Personalization at scale seems impossible',
-        'No visibility into what messaging actually works',
+        'Average cold email response rate fell to 5.1% in 2024',
+        'Google and Yahoo now block domains sending 5,000+ daily emails with spam complaints',
+        'Your team spends hours writing emails that land in spam folders',
+        'Personalization at scale feels impossible without burning out',
       ],
-      cost: 'Average: 20+ hours/week wasted on ineffective outreach',
+      cost: 'Sales teams waste 60% of their time on outreach that gets ignored',
+      source: 'Belkins 2024 Cold Email Study',
     },
 
     solution: {
-      headline: 'AI-powered sequences that feel personal',
+      headline: 'Warm outreach at cold email scale',
       description:
-        'Our AI writes, sends, and follows up on cold emails that sound like your best salesperson - but works 24/7 without breaks.',
+        'We build systems that research prospects, write personalized messages, and follow up automatically—hitting the 6-8 sentence sweet spot that gets 42% open rates.',
       features: [
-        'AI-generated personalized emails based on prospect data',
-        'Smart follow-up sequences that adapt to responses',
-        'A/B testing and continuous optimization',
-        'Human-in-the-loop for quality control',
+        'Prospect research pulled from LinkedIn, company sites, and news',
+        'Messages under 200 words (the format that actually converts)',
+        '95%+ deliverability through proper domain warming',
+        'Human review before anything sensitive goes out',
       ],
     },
 
     results: [
       {
-        metric: '40%',
-        label: 'Higher open rates',
-        description: 'vs. manual email campaigns',
+        metric: '3x',
+        label: 'More qualified meetings',
+        description: 'Same team, better targeting',
       },
       {
-        metric: '3x',
-        label: 'More meetings booked',
-        description: 'with the same team size',
+        metric: '42%',
+        label: 'Open rate',
+        description: 'vs. 27% industry average',
       },
       {
         metric: '20hrs',
-        label: 'Saved per week',
-        description: 'per sales rep',
+        label: 'Saved weekly',
+        description: 'Per sales rep',
       },
     ],
 
     process: [
       {
         step: 1,
-        title: 'Data Integration',
-        description: 'Connect your CRM and prospect sources',
+        title: 'Connect Data',
+        description: 'Link your CRM and ideal customer criteria',
       },
       {
         step: 2,
-        title: 'Voice Training',
-        description: 'AI learns your brand voice and messaging',
+        title: 'Train Voice',
+        description: 'System learns how your best rep writes',
       },
       {
         step: 3,
-        title: 'Campaign Launch',
-        description: 'Automated sequences go live with monitoring',
+        title: 'Launch Sequences',
+        description: 'Campaigns go live with deliverability monitoring',
       },
       {
         step: 4,
-        title: 'Optimization',
-        description: 'Continuous improvement based on results',
+        title: 'Optimize',
+        description: 'Weekly improvements based on response data',
       },
     ],
 
     integrations: [
-      { category: 'CRM', tools: ['Salesforce', 'HubSpot', 'Pipedrive'] },
-      { category: 'Email', tools: ['Gmail', 'Outlook', 'SendGrid'] },
-      { category: 'Data', tools: ['LinkedIn', 'Apollo', 'ZoomInfo'] },
+      { category: 'CRM', tools: ['Salesforce', 'HubSpot', 'Pipedrive', 'Close'] },
+      { category: 'Email', tools: ['Gmail', 'Outlook', 'Custom domains'] },
+      { category: 'Data', tools: ['LinkedIn Sales Nav', 'Apollo', 'Clay'] },
     ],
   },
 
+  // ============================================
+  // CONTENT ENGINE
+  // ============================================
   {
-    id: 'social-media',
+    id: 'content-engine',
     icon: Users,
-    title: 'Social Media AI',
-    tagline: 'Consistent content without the burnout',
+    title: 'Content Engine',
+    tagline: 'Stay visible without living online',
     shortDescription:
-      'AI creates, schedules, and engages on your social platforms.',
+      'Consistent social presence without the 10-hour weekly time sink.',
     featured: true,
     order: 2,
 
     problem: {
-      headline: 'Social media demands constant attention',
+      headline: 'Social media is a full-time job. You already have one.',
       painPoints: [
-        'Creating daily content is exhausting',
-        'Engagement drops when you\'re busy with actual work',
-        'Inconsistent posting kills algorithm performance',
-        'Trends move faster than you can keep up',
+        'Creating daily content drains your creative energy',
+        'Engagement drops the moment you focus on actual work',
+        'Managing multiple platforms means inconsistent posting',
+        'Measuring ROI feels impossible when you\'re just trying to keep up',
       ],
-      cost: 'Most businesses: 10+ hours/week on social, or complete neglect',
+      cost: 'Small businesses spend 10+ hours/week on social—or abandon it entirely',
+      source: 'Sprinklr 2024 Social Media Report',
     },
 
     solution: {
-      headline: 'Your AI social media manager',
+      headline: 'Your brand, amplified on autopilot',
       description:
-        'An AI operator that creates on-brand content, schedules posts for optimal times, and engages with your audience - all while you focus on running your business.',
+        'We create a content system that produces on-brand posts, schedules them for peak engagement times, and handles routine interactions—so you can post consistently without posting constantly.',
       features: [
-        'AI-generated posts matching your brand voice',
-        'Optimal timing based on audience analysis',
-        'Automated responses to comments and DMs',
-        'Trend monitoring and content suggestions',
+        'Content calendar built from your expertise and industry trends',
+        'Posts written in your voice (not generic AI slop)',
+        'Optimal timing based on when your audience is actually online',
+        'Comment responses and DM triage handled automatically',
       ],
     },
 
     results: [
       {
-        metric: '150%',
-        label: 'Engagement increase',
-        description: 'average across platforms',
-      },
-      {
         metric: '10hrs',
-        label: 'Weekly time saved',
-        description: 'on content creation',
+        label: 'Saved weekly',
+        description: 'Reclaimed from content creation',
       },
       {
-        metric: '300%',
-        label: 'More consistent',
-        description: 'posting frequency',
+        metric: '4x',
+        label: 'Posting consistency',
+        description: 'Without increased effort',
+      },
+      {
+        metric: '150%',
+        label: 'Engagement lift',
+        description: 'From better timing and consistency',
       },
     ],
 
     process: [
       {
         step: 1,
-        title: 'Brand Analysis',
-        description: 'AI learns your voice, style, and audience',
+        title: 'Brand Download',
+        description: 'We learn your voice, topics, and audience',
       },
       {
         step: 2,
-        title: 'Content Pipeline',
-        description: 'Automated content calendar setup',
+        title: 'Content System',
+        description: 'Build repeatable formats that work for you',
       },
       {
         step: 3,
-        title: 'Engagement Rules',
-        description: 'Define response guidelines and escalation',
+        title: 'Automation Setup',
+        description: 'Connect platforms with scheduling and engagement rules',
       },
       {
         step: 4,
-        title: 'Launch & Learn',
-        description: 'Go live with continuous optimization',
+        title: 'Monthly Review',
+        description: 'Adjust based on what\'s actually performing',
       },
     ],
 
     integrations: [
-      {
-        category: 'Platforms',
-        tools: ['LinkedIn', 'Twitter/X', 'Instagram', 'Facebook'],
-      },
-      { category: 'Scheduling', tools: ['Buffer', 'Hootsuite', 'Later'] },
-      { category: 'Analytics', tools: ['Sprout Social', 'Native Analytics'] },
+      { category: 'Platforms', tools: ['LinkedIn', 'X/Twitter', 'Instagram', 'Facebook'] },
+      { category: 'Tools', tools: ['Buffer', 'Hootsuite', 'Notion', 'Canva'] },
+      { category: 'Analytics', tools: ['Native insights', 'Sprout Social'] },
     ],
   },
 
+  // ============================================
+  // NEVER MISS A CALL
+  // ============================================
   {
-    id: 'call-management',
+    id: 'never-miss',
     icon: Headphones,
-    title: 'AI Call Management',
-    tagline: 'Never miss a call, never lose a lead',
+    title: 'Never Miss',
+    tagline: 'Every call answered. Every lead captured.',
     shortDescription:
-      'AI handles calls, qualifies leads, and books appointments.',
+      '24/7 call handling that qualifies leads and books appointments.',
     featured: true,
     order: 3,
 
     problem: {
-      headline: 'Missed calls = missed revenue',
+      headline: '62% of calls to small businesses go unanswered. Each one costs $1,200.',
       painPoints: [
-        '80% of callers won\'t leave a voicemail',
-        'After-hours calls go unanswered',
-        'Staff time wasted on unqualified calls',
-        'Inconsistent call handling damages brand',
+        '85% of callers won\'t call back if you don\'t answer',
+        'Less than 3% of callers leave voicemails anymore',
+        'After-hours calls go straight to competitors who pick up',
+        'Staff time wasted on tire-kickers who were never going to buy',
       ],
-      cost: 'Average business loses $75k/year to missed calls',
+      cost: 'Average SMB loses $126,000/year to missed and mishandled calls',
+      source: 'Invoca & Dialora 2024 Reports',
     },
 
     solution: {
-      headline: '24/7 AI receptionist that converts',
+      headline: 'A receptionist that never sleeps, never forgets',
       description:
-        'An AI that answers every call, qualifies leads using your criteria, books appointments directly in your calendar, and sounds natural doing it.',
+        'Voice AI that answers every call, asks your qualification questions, books appointments directly in your calendar, and sends you a summary—24/7/365.',
       features: [
-        'Natural voice AI that handles conversations',
-        'Custom qualification scripts for your business',
-        'Direct calendar integration for booking',
-        'Call summaries and CRM updates',
+        'Natural conversation (not "press 1 for sales" robot voice)',
+        'Your qualification criteria built into every call',
+        'Direct calendar booking with confirmation texts',
+        'Call recordings and AI summaries in your CRM',
       ],
     },
 
     results: [
       {
         metric: '100%',
-        label: 'Call answer rate',
-        description: '24/7/365',
+        label: 'Answer rate',
+        description: '24/7/365 coverage',
       },
       {
-        metric: '60%',
-        label: 'Lead qualification',
-        description: 'handled automatically',
+        metric: '$126k',
+        label: 'Revenue protected',
+        description: 'Per year in captured calls',
       },
       {
         metric: '45%',
         label: 'More appointments',
-        description: 'booked automatically',
+        description: 'Booked automatically',
       },
     ],
 
@@ -288,143 +301,150 @@ export const services: Service[] = [
       {
         step: 1,
         title: 'Call Flow Design',
-        description: 'Map your ideal call handling process',
+        description: 'Map your ideal conversation and qualification criteria',
       },
       {
         step: 2,
-        title: 'Voice Setup',
-        description: 'Configure AI voice and personality',
+        title: 'Voice Configuration',
+        description: 'Set up AI voice, personality, and responses',
       },
       {
         step: 3,
-        title: 'Integration',
-        description: 'Connect calendar and CRM systems',
+        title: 'System Integration',
+        description: 'Connect to your calendar, CRM, and phone system',
       },
       {
         step: 4,
-        title: 'Go Live',
-        description: 'Deploy with human fallback options',
+        title: 'Launch & Monitor',
+        description: 'Go live with human escalation paths ready',
       },
     ],
 
     integrations: [
-      { category: 'Phone', tools: ['Twilio', 'VoIP', 'Existing Lines'] },
+      { category: 'Phone', tools: ['Your existing number', 'Twilio', 'VoIP systems'] },
       { category: 'Calendar', tools: ['Google Calendar', 'Calendly', 'Acuity'] },
-      { category: 'CRM', tools: ['Salesforce', 'HubSpot', 'Custom'] },
+      { category: 'CRM', tools: ['Salesforce', 'HubSpot', 'ServiceTitan', 'Jobber'] },
     ],
   },
 
+  // ============================================
+  // WEBSITE THAT SELLS
+  // ============================================
   {
-    id: 'website-overhaul',
+    id: 'website-sells',
     icon: Globe,
-    title: 'AI Website Overhaul',
-    tagline: 'Transform your site into a conversion machine',
+    title: 'Website That Sells',
+    tagline: 'Turn browsers into buyers',
     shortDescription:
-      'AI-powered website that captures and converts visitors.',
+      'Your site becomes a 24/7 salesperson, not a digital brochure.',
     featured: false,
     order: 4,
 
     problem: {
-      headline: 'Your website is a digital brochure, not a salesperson',
+      headline: 'Only 2.9% of B2B website visitors convert. The other 97% disappear.',
       painPoints: [
-        'Visitors browse and leave without converting',
-        'Static pages can\'t answer specific questions',
-        'Forms get abandoned, leads get lost',
-        'No personalization for different visitor types',
+        '72% of companies are dissatisfied with their conversion rates',
+        'Static pages can\'t answer the specific questions your visitors have',
+        'Forms get abandoned because they ask too much too soon',
+        'You\'re paying for traffic that leaves without a trace',
       ],
-      cost: 'Average: 97% of website visitors leave without action',
+      cost: 'For every 100 visitors you pay to acquire, 97 leave with nothing to show',
+      source: 'Unbounce B2B Conversion Report 2024',
     },
 
     solution: {
-      headline: 'A website that sells while you sleep',
+      headline: 'A website that engages, qualifies, and captures',
       description:
-        'We rebuild your website with AI-powered elements that engage visitors, answer questions, qualify leads, and capture information - automatically.',
+        'We add intelligent elements that engage visitors in conversation, answer their specific questions, and capture their information—turning passive browsing into active pipeline.',
       features: [
-        'AI chatbot trained on your business',
-        'Dynamic content personalization',
-        'Smart lead capture forms',
-        'Exit-intent conversion tools',
+        'Chat trained on your services, pricing, and FAQs',
+        'Smart forms that adapt based on visitor behavior',
+        'Exit-intent captures for visitors about to leave',
+        'Personalized content based on traffic source and behavior',
       ],
     },
 
     results: [
       {
-        metric: '200%',
-        label: 'More conversions',
-        description: 'average improvement',
+        metric: '2-3x',
+        label: 'Conversion rate',
+        description: 'From same traffic',
       },
       {
         metric: '50%',
         label: 'Longer sessions',
-        description: 'time on site',
+        description: 'Engaged visitors stay',
       },
       {
         metric: '35%',
-        label: 'Lead capture',
-        description: 'increase in form submissions',
+        label: 'More leads',
+        description: 'Captured before they bounce',
       },
     ],
 
     process: [
       {
         step: 1,
-        title: 'Site Audit',
-        description: 'Analyze current performance and gaps',
+        title: 'Conversion Audit',
+        description: 'Find where visitors drop off and why',
       },
       {
         step: 2,
-        title: 'AI Integration',
-        description: 'Implement chatbot and smart features',
+        title: 'Intelligence Layer',
+        description: 'Add chat, smart forms, and personalization',
       },
       {
         step: 3,
-        title: 'Optimization',
-        description: 'A/B test and refine conversion paths',
+        title: 'A/B Testing',
+        description: 'Validate changes with real visitor data',
       },
       {
         step: 4,
-        title: 'Scale',
-        description: 'Expand AI capabilities based on data',
+        title: 'Continuous Optimization',
+        description: 'Monthly improvements based on performance',
       },
     ],
 
     integrations: [
-      { category: 'Platforms', tools: ['WordPress', 'Shopify', 'Custom'] },
-      { category: 'Chat', tools: ['Intercom', 'Drift', 'Custom AI'] },
-      { category: 'Analytics', tools: ['GA4', 'Hotjar', 'Mixpanel'] },
+      { category: 'Platforms', tools: ['WordPress', 'Webflow', 'Shopify', 'Custom'] },
+      { category: 'Chat', tools: ['Custom AI', 'Intercom', 'Drift'] },
+      { category: 'Analytics', tools: ['GA4', 'Hotjar', 'Mixpanel', 'Heap'] },
     ],
   },
 
+  // ============================================
+  // CUSTOM AUTOMATION
+  // ============================================
   {
-    id: 'website-agents',
+    id: 'custom-automation',
     icon: Bot,
-    title: 'Sleepless AI Agents',
-    tagline: 'AI employees that work while you don\'t',
+    title: 'Custom Automation',
+    tagline: 'Your processes, running without you',
     shortDescription:
-      'Custom AI agents that handle complex business tasks autonomously.',
+      'AI agents that handle your specific workflows around the clock.',
     featured: false,
     order: 5,
 
     problem: {
-      headline: 'Your team is the bottleneck',
+      headline: 'You\'re the bottleneck. And you can\'t clone yourself.',
       painPoints: [
-        'Key tasks only get done during business hours',
-        'Scaling means hiring, training, managing',
-        'Human inconsistency affects quality',
-        'You can\'t be everywhere at once',
+        'Key processes only happen when specific people are available',
+        'Hiring means months of recruiting, training, and managing',
+        'Human inconsistency creates quality variations you can\'t control',
+        'Growth is capped by how many hours you and your team can work',
       ],
-      cost: 'Growth limited by human capacity and working hours',
+      cost: 'Your capacity ceiling becomes your revenue ceiling',
     },
 
     solution: {
-      headline: 'AI agents built for your specific workflows',
+      headline: 'AI agents built for your exact workflows',
       description:
-        'Custom AI agents designed for your unique business processes. They work 24/7, never make mistakes from fatigue, and scale instantly.',
+        'We design and deploy AI agents that handle your specific business processes—not generic chatbots, but custom systems that do real work the way you would do it.',
       features: [
-        'Custom agents for your specific workflows',
-        'Multi-step task automation',
-        'Learning and improvement over time',
-        'Human oversight and escalation',
+        'Agents designed around your actual processes (not templates)',
+        'Multi-step workflows with decision logic built in',
+        'Human escalation when situations require judgment',
+        'Continuous learning from corrections and edge cases',
       ],
     },
 
@@ -432,98 +452,102 @@ export const services: Service[] = [
       {
         metric: '24/7',
         label: 'Operations',
-        description: 'round-the-clock capability',
+        description: 'Work continues while you sleep',
       },
       {
         metric: '10x',
-        label: 'Output increase',
-        description: 'for automated tasks',
+        label: 'Throughput',
+        description: 'On automated processes',
       },
       {
         metric: '95%',
         label: 'Error reduction',
-        description: 'vs. manual processes',
+        description: 'Consistent execution every time',
       },
     ],
 
     process: [
       {
         step: 1,
-        title: 'Workflow Mapping',
-        description: 'Document processes to automate',
+        title: 'Process Mapping',
+        description: 'Document exactly how work gets done today',
       },
       {
         step: 2,
         title: 'Agent Design',
-        description: 'Build custom AI for each workflow',
+        description: 'Build AI to handle each workflow',
       },
       {
         step: 3,
         title: 'Testing',
-        description: 'Rigorous testing with edge cases',
+        description: 'Validate with edge cases and exceptions',
       },
       {
         step: 4,
-        title: 'Deployment',
-        description: 'Go live with monitoring and iteration',
+        title: 'Deploy & Iterate',
+        description: 'Launch with monitoring and refinement',
       },
     ],
 
     integrations: [
-      { category: 'Automation', tools: ['Zapier', 'Make', 'n8n'] },
-      { category: 'APIs', tools: ['REST', 'GraphQL', 'Custom'] },
-      { category: 'Data', tools: ['Databases', 'Sheets', 'CRMs'] },
+      { category: 'Automation', tools: ['Make', 'Zapier', 'n8n', 'Custom'] },
+      { category: 'Data', tools: ['Your databases', 'Google Sheets', 'Airtable'] },
+      { category: 'Communication', tools: ['Slack', 'Email', 'SMS', 'Your tools'] },
     ],
   },
 
+  // ============================================
+  // I.S.I FRAMEWORK (Methodology)
+  // ============================================
   {
     id: 'isi-framework',
     icon: Lightbulb,
-    title: 'I.S.I Framework',
-    tagline: 'Our methodology for unstoppable AI systems',
+    title: 'The I.S.I Framework',
+    tagline: 'How we make AI projects actually work',
     shortDescription:
-      'The proven approach behind every successful AI implementation.',
+      'The methodology behind every successful implementation.',
     featured: true,
     order: 6,
 
     problem: {
-      headline: 'AI projects fail without a proven process',
+      headline: '87% of AI projects fail. Here\'s why yours won\'t.',
       painPoints: [
-        'Most AI initiatives don\'t deliver expected results',
-        'Off-the-shelf tools don\'t fit your unique needs',
-        'Implementation without strategy leads to waste',
-        'No clear path from idea to working system',
+        'Most AI initiatives die in pilot phase—impressive demos, no production value',
+        'Off-the-shelf tools solve generic problems, not your specific ones',
+        'Implementation without strategy burns budget and credibility',
+        'No clear path from "AI could help" to "AI is helping"',
       ],
-      cost: '87% of AI projects never make it to production',
+      cost: 'Failed AI projects waste 6-18 months and destroy internal buy-in',
+      source: 'Gartner AI Implementation Research',
     },
 
     solution: {
       headline: 'Intelligence → System → Implementation',
       description:
-        'Our battle-tested framework ensures every AI project starts with deep understanding, designs for real-world use, and delivers measurable results.',
+        'A proven framework that starts with understanding your actual problem, designs systems for your real constraints, and delivers working solutions—not PowerPoints.',
       features: [
-        'Deep-dive discovery to understand your business',
-        'System architecture designed for your needs',
-        'Iterative implementation with fast feedback',
-        'Continuous optimization and support',
+        'Deep discovery before any building begins',
+        'Architecture designed for your scale and complexity',
+        'Iterative delivery with working software at each stage',
+        'Knowledge transfer so you\'re not dependent on us forever',
       ],
     },
 
     results: [
       {
         metric: '100%',
-        label: 'Project success',
-        description: 'delivery rate',
+        label: 'Deployment rate',
+        description: 'Every project reaches production',
       },
       {
         metric: '3x',
         label: 'Faster delivery',
-        description: 'than typical AI projects',
+        description: 'Vs. typical AI implementations',
       },
       {
-        metric: '∞',
-        label: 'Scalability',
-        description: 'systems that grow with you',
+        metric: '0',
+        label: 'Shelfware',
+        description: 'Nothing we build goes unused',
       },
     ],
 
@@ -531,28 +555,28 @@ export const services: Service[] = [
       {
         step: 1,
         title: 'Intelligence',
-        description: 'Deep understanding of your challenge',
+        description: 'Understand the real problem, not the assumed one',
       },
       {
         step: 2,
         title: 'System',
-        description: 'Architecture designed for success',
+        description: 'Design architecture that fits your reality',
       },
       {
         step: 3,
         title: 'Implementation',
-        description: 'Build, test, iterate, deploy',
+        description: 'Build iteratively with continuous validation',
       },
       {
         step: 4,
         title: 'Evolution',
-        description: 'Continuous improvement',
+        description: 'Improve based on real usage data',
       },
     ],
 
     integrations: [
-      { category: 'Applicable To', tools: ['Any Service', 'Any Industry'] },
-      { category: 'Outcome', tools: ['Custom AI Systems'] },
+      { category: 'Works With', tools: ['Any existing system', 'Any industry'] },
+      { category: 'Delivers', tools: ['Custom AI solutions', 'Working software'] },
     ],
   },
 ];
