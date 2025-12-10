@@ -520,6 +520,178 @@ CSS fallback in `index.css`:
 
 ---
 
+## Illustrations & Visual Assets
+
+### Design Philosophy
+
+**Zero Stock Photos Policy**: All visuals are custom geometric SVG illustrations built specifically for HahneAI, following 2025 B2B SaaS design trends.
+
+**Design Principles** (based on industry research):
+1. **Abstract & Geometric** - Bold shapes with asymmetry and layered textures (Bauhaus-inspired)
+2. **Depth Through Layers** - Multi-layered compositions with varying opacity and gradients
+3. **Minimal Line Art** - Clean geometry with balanced stroke weights
+4. **Modular Design Language** - Structured patterns for data-oriented systems
+5. **Trust-Building** - Professional, on-brand visuals that build credibility
+
+### Illustration Color Palette
+
+All illustrations use a consistent teal/blue palette that complements but doesn't compete with the warm brand colors:
+
+```tsx
+// Illustration Primary
+teal: #14b8a6      // Main accent, active states
+blue: #3b82f6      // Secondary accent, variation
+
+// Illustration Backgrounds
+dark-bg: #0f172a   // Primary background
+dark-elevated: #1e293b  // Layered backgrounds
+
+// Illustration Text/Labels
+muted: #94a3b8     // Labels and secondary text
+```
+
+### Available Patterns
+
+#### Service Illustrations
+
+| Pattern | Component | Use Case | Key Visual Elements |
+|---------|-----------|----------|---------------------|
+| **Outbound** | `OutboundPattern` | Cold outreach service | Network nodes, connection flows, data pipelines |
+| **Content** | `ContentPattern` | Social media/content | Radial hub, content blocks, distribution |
+| **Call** | `CallPattern` | Call management | 24/7 clock, pulse waves, signal indicators |
+| **Website** | `WebsitePattern` | Website development | Browser frame, conversion funnel, page structure |
+| **Automation** | `AutomationPattern` | Custom automation | Connected gears, system nodes, grid background |
+| **ISI** | `ISIPattern` | I.S.I Framework | Three-phase circles, methodology flow |
+
+#### Case Study Illustrations
+
+| Pattern | Component | Industry | Visual Theme |
+|---------|-----------|----------|--------------|
+| **E-commerce** | `EcommercePattern` | Online retail | Shopping cart, transaction flow, inventory |
+| **Real Estate** | `RealEstatePattern` | Property management | Building silhouettes, lead funnel, communication |
+| **Healthcare** | `HealthcarePattern` | Medical/wellness | Medical cross, scheduling grid, patient flow |
+
+### Usage Examples
+
+```tsx
+// Basic usage
+import { OutboundPattern } from '@/components/Illustrations';
+
+<div className="w-full h-64">
+  <OutboundPattern />
+</div>
+
+// With lazy loading (recommended)
+import { CallPattern, LazyIllustration } from '@/components/Illustrations';
+
+<LazyIllustration className="w-full h-96">
+  <CallPattern />
+</LazyIllustration>
+
+// Dynamic selection
+import * as Illustrations from '@/components/Illustrations';
+
+const illustrationMap = {
+  'outbound-pipeline': Illustrations.OutboundPattern,
+  'content-engine': Illustrations.ContentPattern,
+  'never-miss': Illustrations.CallPattern,
+};
+
+const Component = illustrationMap[serviceId];
+<Component />
+```
+
+### Performance Optimization
+
+#### Lazy Loading Wrapper
+
+All illustrations support lazy loading via `LazyIllustration`:
+
+```tsx
+<LazyIllustration threshold={0.1} className="w-full h-full">
+  <WebsitePattern />
+</LazyIllustration>
+```
+
+**Features:**
+- Intersection Observer API for viewport detection
+- 50px preload margin (starts loading before entering viewport)
+- Automatic cleanup after first load
+- Animated placeholder (pulsing gray) during load
+- Configurable threshold
+
+#### SVG Optimization
+
+All illustrations are performance-optimized:
+- ✅ Inline SVG (no external HTTP requests)
+- ✅ Minimal DOM nodes with efficient grouping
+- ✅ Responsive viewBox (scales to any container)
+- ✅ GPU-accelerated CSS animations where used
+- ✅ Semantic structure with proper ARIA labels
+
+### Design Guidelines
+
+When creating new illustrations:
+
+1. **Color Consistency**: Use only teal (#14b8a6) and blue (#3b82f6) with neutral backgrounds
+2. **Layering**: Create depth with 2-4 opacity levels (0.2, 0.4, 0.6, 0.8)
+3. **Geometry**: Use clean shapes (circles, rectangles, lines) with consistent stroke weights (2-3px)
+4. **Gradients**: Apply sparingly for depth, always radial or linear with same color family
+5. **Abstraction**: Represent concepts symbolically, avoid literal icons
+6. **Responsive**: Use viewBox="0 0 800 600" for consistent aspect ratio
+7. **Accessibility**: Ensure sufficient contrast, provide descriptive component names
+
+### File Organization
+
+```
+src/components/Illustrations/
+├── README.md                 # Detailed documentation
+├── index.ts                  # Barrel exports
+├── LazyIllustration.tsx      # Performance wrapper
+├── [Service]Pattern.tsx      # Service patterns (6 files)
+└── [CaseStudy]Pattern.tsx    # Case study patterns (3 files)
+```
+
+### Migration from Stock Photos
+
+**Old Approach** (deprecated):
+```tsx
+// ❌ Don't use stock photos
+<img
+  src="https://images.unsplash.com/photo-123..."
+  alt="Generic business"
+/>
+```
+
+**New Approach** (current):
+```tsx
+// ✅ Use custom geometric patterns
+import { OutboundPattern } from '@/components/Illustrations';
+
+<div className="w-full h-64 rounded-lg overflow-hidden">
+  <OutboundPattern />
+</div>
+```
+
+### Accessibility Considerations
+
+All illustrations follow accessibility best practices:
+- **Color Contrast**: Teal/blue meet WCAG AA standards against dark backgrounds
+- **No Text in SVG**: Use HTML text overlays for readable content
+- **Semantic Structure**: Proper grouping with `<g>` elements
+- **Scalability**: Vector graphics scale without quality loss
+- **Motion**: Static by default; any animations respect `prefers-reduced-motion`
+
+### Research Sources
+
+Design approach based on 2025 B2B SaaS trends:
+- [Graphic Design Trends 2025 | Piktochart](https://piktochart.com/blog/graphic-design-trends-2025/)
+- [B2B Brand Design Styles | Frontmatter](https://www.frontmatter.io/blog/graphic-design-styles-a-comprehensive-guide-for-b2b-brands-in-2025)
+- [Illustration Trends 2025 | Lummi](https://www.lummi.ai/blog/illustration-styles-2025)
+- [Hero Patterns - SVG Backgrounds](https://heropatterns.com/)
+
+---
+
 ## Quick Reference
 
 ### Most Used Tokens
@@ -563,6 +735,7 @@ ease-smooth          // Natural easing
 
 | Version | Date | Changes |
 |---------|------|---------|
+| 1.1.0 | 2024-12-10 | Added Illustrations system, replaced stock photos |
 | 1.0.0 | 2024-12-09 | Initial design system |
 
 ---

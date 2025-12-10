@@ -3,12 +3,15 @@ import { CaseStudyTemplates } from '../components/Process/CaseStudyTemplates';
 import { ClientCollaboration } from '../components/Process/ClientCollaboration';
 import { SuccessMetrics } from '../components/Process/SuccessMetrics';
 import { ProcessFlow } from '../components/CreativeSolutions/ProcessFlow';
+import { Header } from '../components/Header/Header';
+import { Footer } from '../components/Footer/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export function ProcessPage() {
   return (
     <div className="bg-surface-dark text-white">
+      <Header />
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -69,6 +72,7 @@ export function ProcessPage() {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

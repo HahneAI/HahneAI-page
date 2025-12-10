@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { EcommercePattern, RealEstatePattern, HealthcarePattern } from '../Illustrations';
 
 const caseStudies = [
   {
@@ -22,7 +23,7 @@ const caseStudies = [
       response: '< 5 minutes response time'
     },
     executiveSummary: 'Transformed a struggling e-commerce operation into a streamlined, automated system with 24/7 customer support, resulting in significant efficiency gains and customer satisfaction improvements.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80'
+    IllustrationComponent: EcommercePattern
   },
   {
     id: 2,
@@ -43,7 +44,7 @@ const caseStudies = [
       response: 'Instant lead engagement'
     },
     executiveSummary: 'Revolutionized real estate lead management through intelligent automation, dramatically improving conversion rates and freeing up valuable agent time for high-value activities.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80'
+    IllustrationComponent: RealEstatePattern
   },
   {
     id: 3,
@@ -64,7 +65,7 @@ const caseStudies = [
       response: 'Instant confirmations'
     },
     executiveSummary: 'Streamlined healthcare operations through intelligent automation, significantly reducing administrative burden while improving patient experience and staff satisfaction.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80'
+    IllustrationComponent: HealthcarePattern
   }
 ];
 
@@ -287,18 +288,16 @@ export function CaseStudies() {
             staggerChildren: 0.1
           }}
         >
-          <motion.div 
+          <motion.div
             className="absolute left-0 w-64 h-64 opacity-50 blur-sm transition-all duration-500"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 0.5 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="w-full h-full rounded-lg overflow-hidden">
-              <img
-                src={caseStudies[getPrevIndex()].image}
-                alt="Previous"
-                className="w-full h-full object-cover"
-              />
+              {caseStudies[getPrevIndex()].IllustrationComponent && (
+                <caseStudies[getPrevIndex()].IllustrationComponent />
+              )}
             </div>
           </motion.div>
 
@@ -342,11 +341,11 @@ export function CaseStudies() {
               >
                 <div className="flex flex-col">
                   <div className="relative h-40">
-                    <img
-                      src={caseStudies[activeStudy].image}
-                      alt={caseStudies[activeStudy].title}
-                      className="w-full h-full object-cover"
-                    />
+                    {caseStudies[activeStudy].IllustrationComponent && (
+                      <div className="w-full h-full">
+                        <caseStudies[activeStudy].IllustrationComponent />
+                      </div>
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   </div>
 
@@ -443,18 +442,16 @@ export function CaseStudies() {
             </motion.div>
           </AnimatePresence>
 
-          <motion.div 
+          <motion.div
             className="absolute right-0 w-64 h-64 opacity-50 blur-sm transition-all duration-500"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 0.5 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="w-full h-full rounded-lg overflow-hidden">
-              <img
-                src={caseStudies[getNextIndex()].image}
-                alt="Next"
-                className="w-full h-full object-cover"
-              />
+              {caseStudies[getNextIndex()].IllustrationComponent && (
+                <caseStudies[getNextIndex()].IllustrationComponent />
+              )}
             </div>
           </motion.div>
         </motion.div>

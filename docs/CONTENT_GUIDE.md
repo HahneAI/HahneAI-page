@@ -135,13 +135,41 @@ Edit `src/content/case-studies/index.ts`:
 }
 ```
 
+## Visual Assets (Illustrations)
+
+**Zero Stock Photos**: All visuals are custom geometric SVG patterns created specifically for HahneAI.
+
+### Automatic Illustration Selection
+
+Illustrations are **automatically assigned** based on service IDs. No manual image URLs needed.
+
+| Service ID | Illustration | Visual Theme |
+|------------|--------------|--------------|
+| `cold-outreach` | OutboundPattern | Network connections, data flow |
+| `social-media` | ContentPattern | Content distribution, creativity |
+| `call-management` | CallPattern | 24/7 availability, signals |
+| `website-overhaul` | WebsitePattern | Browser, conversion funnel |
+| `website-agents` | AutomationPattern | Connected systems, gears |
+| `isi-framework` | ISIPattern | Three-phase methodology |
+
+### Case Study Illustrations
+
+| Case Study Industry | Illustration | Visual Theme |
+|---------------------|--------------|--------------|
+| E-commerce | EcommercePattern | Shopping, transactions |
+| Real Estate | RealEstatePattern | Buildings, lead funnel |
+| Healthcare | HealthcarePattern | Medical, scheduling |
+
+**Note**: When you add a new service in `src/content/services/index.ts`, the system automatically selects an appropriate illustration. You don't need to specify image URLs.
+
 ## Files You Don't Need to Edit
 
 These files auto-generate from content:
 
-- `src/components/Services/ServicesData.ts` - reads from content
+- `src/components/Services/ServicesData.ts` - reads from content, auto-assigns illustrations
 - `src/components/Metrics/MetricsData.ts` - reads from content
 - `src/components/Footer/Footer.tsx` - reads from navigation
+- `src/components/Illustrations/` - developer-maintained visual assets
 
 ## After Editing
 

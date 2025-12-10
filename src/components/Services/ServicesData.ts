@@ -35,23 +35,20 @@ function formatServiceDescription(service: Service): string {
   return parts.join('\n');
 }
 
-// Default images for services
+// Map service IDs to their corresponding illustration components
+// Now using custom geometric SVG patterns instead of stock photos
 function getDefaultImage(id: string): string {
-  const images: Record<string, string> = {
-    'cold-outreach':
-      'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80',
-    'social-media':
-      'https://images.unsplash.com/photo-1611926653458-09294b3142bf?auto=format&fit=crop&q=80',
-    'call-management':
-      'https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&q=80',
-    'website-overhaul':
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80',
-    'website-agents':
-      'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&q=80',
-    'isi-framework':
-      'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80',
+  // Return component names as identifiers for the illustration components
+  // These will be matched in the ServiceCard component
+  const illustrationMap: Record<string, string> = {
+    'cold-outreach': 'outbound',
+    'social-media': 'content',
+    'call-management': 'call',
+    'website-overhaul': 'website',
+    'website-agents': 'automation',
+    'isi-framework': 'isi',
   };
-  return images[id] || images['cold-outreach'];
+  return illustrationMap[id] || 'automation';
 }
 
 // Re-export types and content services for new components
