@@ -16,17 +16,17 @@ export function Phase1({ data, updateData }: PhaseProps) {
     });
   };
 
-  const inputClasses = "w-full px-4 py-4 bg-transparent border border-neutral-700 rounded-lg focus:outline-none focus:border-white text-white placeholder:text-neutral-600 transition-colors";
-  const labelClasses = "block text-sm text-neutral-400 mb-2";
+  const inputClasses = "w-full px-4 py-4 min-h-[48px] text-base bg-transparent border border-neutral-700 rounded-lg focus:outline-none focus:border-white text-white placeholder:text-neutral-600 transition-colors";
+  const labelClasses = "block text-sm sm:text-base text-neutral-400 mb-2";
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8">
       <div>
-        <h2 className="text-2xl font-light text-white mb-2">Tell us about yourself</h2>
-        <p className="text-neutral-500">We'll use this to personalize your experience.</p>
+        <h2 className="text-xl sm:text-2xl font-light text-white mb-2">Tell us about yourself</h2>
+        <p className="text-sm sm:text-base text-neutral-500">We'll use this to personalize your experience.</p>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-5 sm:space-y-6">
         <div>
           <label htmlFor="companyName" className={labelClasses}>
             Company name
@@ -40,6 +40,7 @@ export function Phase1({ data, updateData }: PhaseProps) {
             onChange={handleChange}
             className={inputClasses}
             placeholder="Acme Inc."
+            style={{ fontSize: '16px' }}
           />
         </div>
 
@@ -54,6 +55,7 @@ export function Phase1({ data, updateData }: PhaseProps) {
             value={data.phase1?.industry || ''}
             onChange={handleChange}
             className={inputClasses}
+            style={{ fontSize: '16px' }}
           >
             <option value="" disabled>Select your industry</option>
             {INDUSTRIES.map((industry) => (
@@ -63,10 +65,10 @@ export function Phase1({ data, updateData }: PhaseProps) {
         </div>
       </div>
 
-      <div className="pt-4 border-t border-neutral-800">
-        <h3 className="text-lg font-light text-white mb-6">Contact details</h3>
+      <div className="pt-4 sm:pt-6 border-t border-neutral-800">
+        <h3 className="text-base sm:text-lg font-light text-white mb-5 sm:mb-6">Contact details</h3>
 
-        <div className="space-y-6">
+        <div className="space-y-5 sm:space-y-6">
           <div>
             <label htmlFor="contactName" className={labelClasses}>
               Your name
@@ -80,6 +82,7 @@ export function Phase1({ data, updateData }: PhaseProps) {
               onChange={handleChange}
               className={inputClasses}
               placeholder="Jane Smith"
+              style={{ fontSize: '16px' }}
             />
           </div>
 
@@ -96,6 +99,7 @@ export function Phase1({ data, updateData }: PhaseProps) {
               onChange={handleChange}
               className={inputClasses}
               placeholder="jane@acme.com"
+              style={{ fontSize: '16px' }}
             />
           </div>
 
@@ -111,6 +115,7 @@ export function Phase1({ data, updateData }: PhaseProps) {
               onChange={handleChange}
               className={inputClasses}
               placeholder="+1 (555) 123-4567"
+              style={{ fontSize: '16px' }}
             />
           </div>
         </div>

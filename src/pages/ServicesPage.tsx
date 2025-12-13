@@ -1,6 +1,7 @@
 import { Services } from '../components/Services/Services';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { StickyMobileCTA } from '../components/ui/StickyMobileCTA';
 
 export function ServicesPage() {
   return (
@@ -10,6 +11,7 @@ export function ServicesPage() {
         <Services />
       </main>
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 }

@@ -10,17 +10,17 @@ export function Metrics() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-light mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
             Our Impact in Numbers
           </h2>
-          <p className="text-neutral-400 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-neutral-400 max-w-2xl mx-auto px-4">
             Measurable results that demonstrate the power of AI automation
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {metrics.map((metric, index) => (
             <MetricCard
               key={metric.id}

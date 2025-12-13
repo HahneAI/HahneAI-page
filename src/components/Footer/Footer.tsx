@@ -13,10 +13,10 @@ import { footerNavigation } from '../../content/navigation';
 export function Footer() {
   return (
     <footer id="contact-section" className="bg-neutral-950 border-t border-neutral-800">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="sm:col-span-2 md:col-span-1">
             <Link to="/" className="text-lg font-medium text-white">
               HahneAI
             </Link>
@@ -27,15 +27,15 @@ export function Footer() {
 
           {/* Solutions Links */}
           <div>
-            <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs sm:text-sm font-medium text-neutral-400 uppercase tracking-wider mb-3 sm:mb-4">
               {footerNavigation.services.label}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {footerNavigation.services.links.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-neutral-500 hover:text-white transition-colors"
+                    className="text-sm text-neutral-500 hover:text-white transition-colors inline-block py-1 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
                   >
                     {link.label}
                   </Link>
@@ -46,15 +46,15 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+            <h3 className="text-xs sm:text-sm font-medium text-neutral-400 uppercase tracking-wider mb-3 sm:mb-4">
               {footerNavigation.company.label}
             </h3>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {footerNavigation.company.links.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-neutral-500 hover:text-white transition-colors"
+                    className="text-sm text-neutral-500 hover:text-white transition-colors inline-block py-1 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
                   >
                     {link.label}
                   </Link>
@@ -64,23 +64,23 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-4">
+          <div className="sm:col-span-2 md:col-span-1">
+            <h3 className="text-xs sm:text-sm font-medium text-neutral-400 uppercase tracking-wider mb-3 sm:mb-4">
               Contact
             </h3>
-            <div className="space-y-3">
+            <div className="space-y-2.5 sm:space-y-3">
               <a
                 href="mailto:anthonyhahne@therealworld.ag"
-                className="block text-sm text-neutral-500 hover:text-white transition-colors"
+                className="block text-sm text-neutral-500 hover:text-white transition-colors py-1 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center break-all sm:break-normal"
               >
                 anthonyhahne@therealworld.ag
               </a>
-              <div className="flex gap-4 pt-2">
+              <div className="flex gap-6 sm:gap-4 pt-2">
                 <a
                   href="https://x.com/HahneDigital"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-neutral-500 hover:text-white transition-colors"
+                  className="text-sm text-neutral-500 hover:text-white transition-colors py-2 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
                 >
                   Twitter
                 </a>
@@ -88,7 +88,7 @@ export function Footer() {
                   href="https://www.instagram.com/hahnedigital/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-neutral-500 hover:text-white transition-colors"
+                  className="text-sm text-neutral-500 hover:text-white transition-colors py-2 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
                 >
                   Instagram
                 </a>
@@ -98,7 +98,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-8 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-center sm:text-left">
           <p className="text-xs text-neutral-600">
             &copy; {new Date().getFullYear()} HahneAI. All rights reserved.
           </p>

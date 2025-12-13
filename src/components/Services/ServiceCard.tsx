@@ -38,9 +38,9 @@ export function ServiceCard({
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onClick={() => navigate(`/services#${id}`)}
-      className="group cursor-pointer"
+      className="group cursor-pointer active:scale-[0.98] transition-transform"
     >
-      <div className="p-8 sm:p-10 border border-neutral-800 rounded-lg hover:border-neutral-700 hover:bg-neutral-900/50 transition-all duration-300">
+      <div className="p-8 sm:p-10 border border-neutral-800 rounded-lg hover:border-neutral-700 hover:bg-neutral-900/50 active:bg-neutral-900/70 active:border-neutral-600 transition-all duration-300">
         {/* Service number - subtle */}
         <span className="text-xs text-neutral-600 font-mono mb-6 block">
           {String(index + 1).padStart(2, '0')}
@@ -184,7 +184,7 @@ export function ServiceDetail({
           {/* CTA */}
           <button
             onClick={() => navigate('/system-request')}
-            className="w-full py-4 bg-white text-neutral-900 font-medium rounded-lg hover:bg-neutral-100 transition-colors"
+            className="w-full py-4 min-h-[48px] bg-white text-neutral-900 font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors"
           >
             Get {title}
           </button>

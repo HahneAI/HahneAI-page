@@ -79,15 +79,15 @@ export function Header() {
           {/* Desktop CTA */}
           <button
             onClick={() => handleNavigation('/system-request')}
-            className="hidden md:block px-6 py-2.5 bg-white text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-100 transition-colors"
+            className="hidden md:block px-6 py-2.5 min-h-[44px] bg-white text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors"
           >
             Start a Project
           </button>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - 44px minimum touch target */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 text-neutral-300 hover:text-white transition-colors"
+            className="md:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-300 hover:text-white active:bg-neutral-800/50 rounded-lg transition-colors"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -104,12 +104,12 @@ export function Header() {
               transition={{ duration: 0.2 }}
               className="md:hidden overflow-hidden"
             >
-              <nav className="py-6 space-y-1 border-t border-neutral-800">
+              <nav className="py-6 space-y-2 border-t border-neutral-800">
                 {mainNavigation.map((item) => (
                   <button
                     key={item.path}
                     onClick={() => handleNavigation(item.path)}
-                    className={`block w-full text-left py-3 text-base transition-colors ${
+                    className={`block w-full text-left py-4 min-h-[44px] text-base transition-colors active:bg-neutral-800/50 rounded-lg ${
                       isActive(item.path)
                         ? 'text-white'
                         : 'text-neutral-400 hover:text-white'
@@ -121,7 +121,7 @@ export function Header() {
                 <div className="pt-4">
                   <button
                     onClick={() => handleNavigation('/system-request')}
-                    className="w-full py-3 bg-white text-neutral-900 text-base font-medium rounded-lg hover:bg-neutral-100 transition-colors"
+                    className="w-full py-4 min-h-[44px] bg-white text-neutral-900 text-base font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors"
                   >
                     Start a Project
                   </button>

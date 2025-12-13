@@ -6,6 +6,7 @@ import { HomeServices } from '../components/HomeServices/HomeServices';
 import { Metrics } from '../components/Metrics/Metrics';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
+import { StickyMobileCTA } from '../components/ui/StickyMobileCTA';
 
 export function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ export function HomePage() {
         <Metrics />
       </main>
       <Footer />
+      <StickyMobileCTA />
     </>
   );
 }

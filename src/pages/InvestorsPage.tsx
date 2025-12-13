@@ -4,6 +4,7 @@ import { TrendingUp, Clock, CheckCircle, Mail } from 'lucide-react';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { RequestDetailsModal } from '../components/Investors/RequestDetailsModal';
+import { StickyMobileCTA } from '../components/ui/StickyMobileCTA';
 import { trackInvestorInteraction } from '../utils/analytics';
 
 interface Venture {
@@ -105,16 +106,16 @@ export function InvestorsPage() {
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
               className="text-center"
             >
-              <h1 className="font-space text-4xl sm:text-5xl md:text-6xl text-neutral-900 mb-6 leading-tight">
+              <h1 className="font-space text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-neutral-900 mb-6 leading-tight">
                 Investment Opportunities
               </h1>
-              <p className="text-lg sm:text-xl text-neutral-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-neutral-600 mb-8 max-w-2xl mx-auto leading-relaxed px-4">
                 Solo founder building AI-powered business tools from Missouri.
                 Full-stack developer with a focus on solving real problems in underserved markets.
               </p>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-terra-100 border border-terra-200 rounded-lg">
-                <CheckCircle className="w-5 h-5 text-terra-600" />
-                <span className="text-sm font-medium text-terra-700">
+              <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-3 bg-terra-100 border border-terra-200 rounded-lg">
+                <CheckCircle className="w-5 h-5 text-terra-600 flex-shrink-0" />
+                <span className="text-xs sm:text-sm font-medium text-terra-700 text-center sm:text-left">
                   Transparency-first approach • Real traction • Investor-ready
                 </span>
               </div>
@@ -141,7 +142,7 @@ export function InvestorsPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {ventures.map((venture, index) => (
                 <motion.article
                   key={venture.id}
@@ -150,25 +151,25 @@ export function InvestorsPage() {
                   viewport={{ once: true, margin: '-50px' }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className={`
-                    bg-white rounded-xl border-2 p-8 hover:shadow-medium transition-all duration-300
+                    bg-white rounded-xl border-2 p-6 sm:p-8 hover:shadow-medium transition-all duration-300
                     ${venture.featured
-                      ? 'border-primary-300 md:col-span-2 lg:col-span-1 lg:row-span-1 shadow-soft'
+                      ? 'border-primary-300 shadow-soft'
                       : 'border-neutral-200'
                     }
                   `}
                 >
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4 gap-3">
                     <div className="flex-1">
-                      <h3 className="font-space text-2xl text-neutral-900 mb-2">
+                      <h3 className="font-space text-xl sm:text-2xl text-neutral-900 mb-2">
                         {venture.name}
                       </h3>
-                      <p className="text-neutral-600 leading-relaxed">
+                      <p className="text-sm sm:text-base text-neutral-600 leading-relaxed">
                         {venture.tagline}
                       </p>
                     </div>
                     {venture.featured && (
-                      <span className="ml-4 px-3 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded-full whitespace-nowrap">
+                      <span className="self-start px-3 py-1 bg-primary-100 text-primary-700 text-xs font-medium rounded-full whitespace-nowrap">
                         Flagship
                       </span>
                     )}
@@ -207,10 +208,10 @@ export function InvestorsPage() {
                     <button
                       onClick={() => handleRequestDetails(venture.name)}
                       className={`
-                        w-full py-3 rounded-lg font-medium transition-all duration-200
+                        w-full py-4 min-h-[48px] rounded-lg font-medium transition-all duration-200
                         ${venture.featured
-                          ? 'bg-primary-600 hover:bg-primary-700 text-white'
-                          : 'bg-neutral-900 hover:bg-neutral-800 text-white'
+                          ? 'bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white'
+                          : 'bg-neutral-900 hover:bg-neutral-800 active:bg-neutral-700 text-white'
                         }
                       `}
                     >
@@ -236,9 +237,9 @@ export function InvestorsPage() {
                 Why Invest
               </h2>
 
-              <div className="grid sm:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mb-12">
                 <div>
-                  <h3 className="font-space text-lg text-neutral-900 mb-3">
+                  <h3 className="font-space text-base sm:text-lg text-neutral-900 mb-3">
                     Market Opportunities
                   </h3>
                   <p className="text-sm text-neutral-600 leading-relaxed">
@@ -247,7 +248,7 @@ export function InvestorsPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-space text-lg text-neutral-900 mb-3">
+                  <h3 className="font-space text-base sm:text-lg text-neutral-900 mb-3">
                     AI-Native Development
                   </h3>
                   <p className="text-sm text-neutral-600 leading-relaxed">
@@ -256,7 +257,7 @@ export function InvestorsPage() {
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-space text-lg text-neutral-900 mb-3">
+                  <h3 className="font-space text-base sm:text-lg text-neutral-900 mb-3">
                     Founder Commitment
                   </h3>
                   <p className="text-sm text-neutral-600 leading-relaxed">
@@ -267,18 +268,18 @@ export function InvestorsPage() {
               </div>
 
               {/* Contact */}
-              <div className="bg-white rounded-xl border border-neutral-200 p-8 text-center">
+              <div className="bg-white rounded-xl border border-neutral-200 p-6 sm:p-8 text-center">
                 <Mail className="w-12 h-12 text-primary-500 mx-auto mb-4" />
-                <h3 className="font-space text-xl text-neutral-900 mb-2">
+                <h3 className="font-space text-lg sm:text-xl text-neutral-900 mb-2">
                   Ready to Learn More?
                 </h3>
-                <p className="text-neutral-600 mb-6">
+                <p className="text-sm sm:text-base text-neutral-600 mb-6">
                   Detailed pitch decks, financial projections, and technical documentation
                   available upon request.
                 </p>
                 <a
                   href="mailto:anthonyhahne@therealworld.ag"
-                  className="inline-block px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors"
+                  className="inline-block px-6 sm:px-8 py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-colors break-all sm:break-normal"
                 >
                   anthonyhahne@therealworld.ag
                 </a>
@@ -288,6 +289,7 @@ export function InvestorsPage() {
         </section>
       </main>
       <Footer />
+      <StickyMobileCTA />
 
       {/* Request Details Modal */}
       <RequestDetailsModal

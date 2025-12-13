@@ -95,7 +95,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                 </h2>
                 <button
                   onClick={onClose}
-                  className="text-neutral-500 hover:text-neutral-900 transition-colors"
+                  className="p-3 -m-3 min-w-[44px] min-h-[44px] flex items-center justify-center text-neutral-500 hover:text-neutral-900 active:bg-neutral-100 rounded-lg transition-colors"
                   aria-label="Close modal"
                 >
                   <X size={24} />
@@ -120,7 +120,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                 <form onSubmit={handleSubmit} className="p-6 space-y-5">
                   {/* Name */}
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-1.5">
+                    <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
                       Name *
                     </label>
                     <input
@@ -129,14 +129,15 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       required
                       value={formData.name}
                       onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                      className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="w-full px-4 py-3.5 min-h-[48px] text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="Your full name"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-1.5">
+                    <label htmlFor="email" className="block text-sm font-medium text-neutral-700 mb-2">
                       Email *
                     </label>
                     <input
@@ -145,14 +146,15 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       required
                       value={formData.email}
                       onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                      className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="w-full px-4 py-3.5 min-h-[48px] text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="your.email@example.com"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
 
                   {/* Company/Fund */}
                   <div>
-                    <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-1.5">
+                    <label htmlFor="company" className="block text-sm font-medium text-neutral-700 mb-2">
                       Company/Fund
                     </label>
                     <input
@@ -160,8 +162,9 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       id="company"
                       value={formData.company}
                       onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
-                      className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="w-full px-4 py-3.5 min-h-[48px] text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="Your organization (optional)"
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
 
@@ -174,15 +177,15 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       {ventures.map((venture) => (
                         <label
                           key={venture}
-                          className="flex items-center gap-2 p-3 border border-neutral-200 rounded-lg hover:bg-neutral-50 cursor-pointer transition-colors"
+                          className="flex items-start gap-3 p-4 min-h-[44px] border border-neutral-200 rounded-lg hover:bg-neutral-50 active:bg-neutral-100 cursor-pointer transition-colors"
                         >
                           <input
                             type="checkbox"
                             checked={formData.ventures.includes(venture)}
                             onChange={() => handleVentureToggle(venture)}
-                            className="w-4 h-4 text-primary-600 border-neutral-300 rounded focus:ring-primary-500"
+                            className="w-6 h-6 mt-0.5 text-primary-600 border-neutral-300 rounded focus:ring-2 focus:ring-primary-500 cursor-pointer"
                           />
-                          <span className="text-sm text-neutral-700">{venture}</span>
+                          <span className="text-sm text-neutral-700 flex-1 leading-relaxed">{venture}</span>
                         </label>
                       ))}
                     </div>
@@ -190,7 +193,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
 
                   {/* Message */}
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-1.5">
+                    <label htmlFor="message" className="block text-sm font-medium text-neutral-700 mb-2">
                       Brief Message
                     </label>
                     <textarea
@@ -198,8 +201,9 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                      className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
+                      className="w-full px-4 py-3.5 text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
                       placeholder="Tell me about your investment interests or questions..."
+                      style={{ fontSize: '16px' }}
                     />
                   </div>
 
@@ -208,7 +212,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                     <button
                       type="submit"
                       disabled={formState === 'submitting' || formData.ventures.length === 0}
-                      className="w-full py-3 bg-primary-600 hover:bg-primary-700 disabled:bg-neutral-300 text-white font-medium rounded-lg transition-colors duration-200"
+                      className="w-full py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 active:bg-primary-800 disabled:bg-neutral-300 disabled:cursor-not-allowed text-white font-medium rounded-lg transition-colors duration-200"
                     >
                       {formState === 'submitting' ? 'Sending...' : 'Submit Request'}
                     </button>
