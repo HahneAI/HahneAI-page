@@ -40,6 +40,11 @@ export const mainNavigation: NavItem[] = [
     path: '/process',
     description: 'From challenge to solution',
   },
+  {
+    label: 'For Investors',
+    path: '/investors',
+    description: 'Investment opportunities',
+  },
 ];
 
 // Primary CTA configuration (consistent across site)
@@ -135,6 +140,11 @@ export const pageContent = {
     subheadline:
       'Describe the problem. We\'ll show you how to automate it.',
   },
+  investors: {
+    headline: 'Investment Opportunities',
+    subheadline:
+      'Building AI-powered business tools across multiple markets.',
+  },
 };
 
 // Footer navigation groups (updated to match new service IDs)
@@ -154,6 +164,7 @@ export const footerNavigation = {
     links: [
       { label: 'How It Works', path: '/creative-solutions' },
       { label: 'Our Process', path: '/process' },
+      { label: 'For Investors', path: '/investors' },
       { label: 'Start a Project', path: '/system-request' },
     ],
   },
