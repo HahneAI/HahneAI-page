@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import { trackFormSubmit } from '../../utils/analytics';
 
 interface RequestDetailsModalProps {
   isOpen: boolean;
@@ -39,14 +40,19 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
 
       if (response.ok) {
         setFormState('success');
+        trackFormSubmit('Investor Details Request', 'Investors Page', true);
         setTimeout(() => {
           onClose();
           setFormState('idle');
           setFormData({ name: '', email: '', company: '', ventures: [], message: '' });
         }, 3000);
+      } else {
+        trackFormSubmit('Investor Details Request', 'Investors Page', false);
+        setFormState('idle');
       }
     } catch (error) {
       console.error('Form submission error:', error);
+      trackFormSubmit('Investor Details Request', 'Investors Page', false);
       setFormState('idle');
     }
   };

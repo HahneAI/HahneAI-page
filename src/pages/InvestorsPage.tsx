@@ -4,6 +4,7 @@ import { TrendingUp, Clock, CheckCircle, Mail } from 'lucide-react';
 import { Header } from '../components/Header/Header';
 import { Footer } from '../components/Footer/Footer';
 import { RequestDetailsModal } from '../components/Investors/RequestDetailsModal';
+import { trackInvestorInteraction } from '../utils/analytics';
 
 interface Venture {
   id: string;
@@ -88,6 +89,7 @@ export function InvestorsPage() {
   const handleRequestDetails = (ventureId: string) => {
     setSelectedVenture(ventureId);
     setIsModalOpen(true);
+    trackInvestorInteraction('modal_open', ventureId);
   };
 
   return (

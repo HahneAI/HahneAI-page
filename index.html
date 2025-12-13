@@ -23,7 +23,12 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
     <!-- Fonts: Space Mono for headlines, Inter for body text -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Preload critical fonts for performance -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
 
     <!-- Analytics -->
     <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="cKzYnChxjFPbSb19" data-version="062024"></script>
@@ -260,6 +265,11 @@
           title: 'AI Services - Automation, Development & Consulting | HahneAI',
           description: 'Comprehensive AI services including custom development, workflow automation, system integration, and strategic consulting. Solutions tailored to your business needs.',
           keywords: 'AI services, AI automation services, AI consulting, custom AI development, AI integration services'
+        },
+        '/investors': {
+          title: 'Investment Opportunities - Portfolio of AI Ventures | HahneAI',
+          description: 'Explore investment opportunities across HahneAI\'s portfolio of AI-powered business tools. Trade CRM, SmartKDS, postpartum support app, and automation services.',
+          keywords: 'AI investment opportunities, tech startup investment, SaaS investment, AI ventures, trade CRM investment'
         }
       };
 

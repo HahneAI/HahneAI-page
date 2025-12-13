@@ -295,9 +295,10 @@ export function CaseStudies() {
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="w-full h-full rounded-lg overflow-hidden">
-              {caseStudies[getPrevIndex()].IllustrationComponent && (
-                <caseStudies[getPrevIndex()].IllustrationComponent />
-              )}
+              {(() => {
+                const PrevIllustration = caseStudies[getPrevIndex()].IllustrationComponent;
+                return PrevIllustration ? <PrevIllustration /> : null;
+              })()}
             </div>
           </motion.div>
 
@@ -341,11 +342,14 @@ export function CaseStudies() {
               >
                 <div className="flex flex-col">
                   <div className="relative h-40">
-                    {caseStudies[activeStudy].IllustrationComponent && (
-                      <div className="w-full h-full">
-                        <caseStudies[activeStudy].IllustrationComponent />
-                      </div>
-                    )}
+                    {(() => {
+                      const ActiveIllustration = caseStudies[activeStudy].IllustrationComponent;
+                      return ActiveIllustration ? (
+                        <div className="w-full h-full">
+                          <ActiveIllustration />
+                        </div>
+                      ) : null;
+                    })()}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   </div>
 
@@ -449,9 +453,10 @@ export function CaseStudies() {
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="w-full h-full rounded-lg overflow-hidden">
-              {caseStudies[getNextIndex()].IllustrationComponent && (
-                <caseStudies[getNextIndex()].IllustrationComponent />
-              )}
+              {(() => {
+                const NextIllustration = caseStudies[getNextIndex()].IllustrationComponent;
+                return NextIllustration ? <NextIllustration /> : null;
+              })()}
             </div>
           </motion.div>
         </motion.div>
