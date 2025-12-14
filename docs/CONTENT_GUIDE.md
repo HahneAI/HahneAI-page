@@ -162,6 +162,89 @@ Illustrations are **automatically assigned** based on service IDs. No manual ima
 
 **Note**: When you add a new service in `src/content/services/index.ts`, the system automatically selects an appropriate illustration. You don't need to specify image URLs.
 
+## Mobile Content Considerations
+
+### Touch Target Guidelines
+
+All interactive content elements (buttons, links, form fields) must meet **WCAG 2.5.5 minimum touch target size**:
+
+| Element Type | Minimum Size | Comfortable Size | Implementation |
+|--------------|--------------|------------------|----------------|
+| Buttons | 44px height | 48px height | `py-4` (48px) |
+| Form inputs | 44px height | 48px height | `py-3.5` + `min-h-[48px]` |
+| Checkboxes | 24px checkbox + padding | 44px clickable area | `w-6 h-6` + `p-4` on label |
+| Icons/links | 44px x 44px | 48px x 48px | `p-3` around 28px icon |
+
+### CTA Text Optimization
+
+**Mobile-First Writing:**
+- Keep CTA text short (2-4 words ideal)
+- Front-load action words: "Start", "Get", "See"
+- Avoid vague terms like "Click Here" or "Learn More"
+
+**Examples:**
+```typescript
+// Good for mobile
+primaryText: 'Start a Project'
+primaryText: 'Get Your Plan'
+primaryText: 'See Solutions'
+
+// Too long for mobile
+primaryText: 'Click Here to Start Your Project Today' // ❌
+```
+
+### Form Content Best Practices
+
+**Field Labels:**
+- Keep labels short and clear (1-3 words)
+- Use placeholders sparingly (not a replacement for labels)
+- Place labels above inputs (not beside) for mobile
+
+**Error Messages:**
+- Write concise error messages (under 60 characters)
+- Use inline validation (show errors immediately)
+- Provide correction guidance, not just "Invalid"
+
+**Mobile Form Example:**
+```typescript
+// Good
+<label>Email</label>
+<input type="email" placeholder="your@email.com" />
+<span className="text-error-500">Enter a valid email address</span>
+
+// Bad - label too long, unclear error
+<label>Please enter your email address below</label>
+<input type="email" />
+<span className="text-error-500">Error</span>
+```
+
+### Responsive Content Lengths
+
+| Content Type | Mobile Max | Desktop Max | Reasoning |
+|--------------|------------|-------------|-----------|
+| Headlines | 8-10 words | 12-15 words | Viewport width, readability |
+| Subheadlines | 15-20 words | 25-30 words | Attention span on mobile |
+| Body paragraphs | 3-4 lines | 5-6 lines | Scrolling fatigue |
+| Button text | 2-4 words | 2-5 words | Touch target constraints |
+
+### A/B Testing Content Variations
+
+When creating content variations for A/B testing (see [docs/AB_TESTS.md](AB_TESTS.md)):
+
+**Test hypothesis clarity:**
+```typescript
+// Good - clear, testable hypothesis
+testHypothesis: 'Concrete pain point with dollar value creates stronger motivation than abstract competitive pressure'
+
+// Bad - vague
+testHypothesis: 'Different headline might work better'
+```
+
+**Variation naming:**
+- Use descriptive IDs: `variant-a-pain-point`, not `variant-1`
+- Document the approach: `approach: 'pain-point'` or `approach: 'benefit'`
+- Keep variation count reasonable (3-4 max per test)
+
 ## Files You Don't Need to Edit
 
 These files auto-generate from content:

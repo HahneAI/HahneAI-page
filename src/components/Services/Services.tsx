@@ -48,7 +48,21 @@ export function Services() {
         </motion.header>
 
         {/* Services List */}
-        <div>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1,
+              }
+            }
+          }}
+        >
           {services
             .filter((s) => s.id !== 'isi-framework')
             .map((service) => (
@@ -62,7 +76,7 @@ export function Services() {
                 results={service.results}
               />
             ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

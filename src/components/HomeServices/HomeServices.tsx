@@ -41,14 +41,36 @@ export function HomeServices() {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-12 sm:mb-16">
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-12 sm:mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-50px' }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+                delayChildren: 0.1,
+              }
+            }
+          }}
+        >
           {featuredServices.map((service, index) => (
             <motion.article
               key={service.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.6,
+                    ease: [0.16, 1, 0.3, 1],
+                  }
+                }
+              }}
               onClick={() => navigate(`/services#${service.id}`)}
               className="group cursor-pointer"
             >
@@ -86,7 +108,7 @@ export function HomeServices() {
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
 
         {/* View All CTA */}
         <motion.div

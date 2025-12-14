@@ -16,8 +16,8 @@ export function ContentPattern() {
           <stop offset="100%" stopColor="#1e293b" />
         </linearGradient>
         <radialGradient id="content-glow">
-          <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
-          <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
+          <stop offset="0%" stopColor="#da7756" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#da7756" stopOpacity="0" />
         </radialGradient>
       </defs>
 
@@ -25,9 +25,9 @@ export function ContentPattern() {
 
       {/* Central hub - content generation core */}
       <circle cx="400" cy="300" r="100" fill="url(#content-glow)" />
-      <circle cx="400" cy="300" r="60" fill="none" stroke="#3b82f6" strokeWidth="3" opacity="0.6" />
-      <circle cx="400" cy="300" r="40" fill="none" stroke="#14b8a6" strokeWidth="2" opacity="0.8" />
-      <circle cx="400" cy="300" r="20" fill="#3b82f6" opacity="0.8" />
+      <circle cx="400" cy="300" r="60" fill="none" stroke="#da7756" strokeWidth="3" opacity="0.6" />
+      <circle cx="400" cy="300" r="40" fill="none" stroke="#ef5244" strokeWidth="2" opacity="0.8" />
+      <circle cx="400" cy="300" r="20" fill="#da7756" opacity="0.8" />
 
       {/* Content blocks radiating outward */}
       {[0, 60, 120, 180, 240, 300].map((angle, i) => {
@@ -44,7 +44,7 @@ export function ContentPattern() {
               height="40"
               rx="4"
               fill="none"
-              stroke={i % 2 === 0 ? "#14b8a6" : "#3b82f6"}
+              stroke={i % 2 === 0 ? "#ef5244" : "#da7756"}
               strokeWidth="2"
               opacity="0.5"
             />
@@ -53,7 +53,7 @@ export function ContentPattern() {
               y1="300"
               x2={x}
               y2={y}
-              stroke={i % 2 === 0 ? "#14b8a6" : "#3b82f6"}
+              stroke={i % 2 === 0 ? "#ef5244" : "#da7756"}
               strokeWidth="1"
               strokeDasharray="3,3"
               opacity="0.3"
@@ -66,19 +66,19 @@ export function ContentPattern() {
       <polygon
         points="150,100 180,150 120,150"
         fill="none"
-        stroke="#14b8a6"
+        stroke="#ef5244"
         strokeWidth="2"
         opacity="0.4"
       />
       <polygon
         points="650,450 680,500 620,500"
         fill="none"
-        stroke="#3b82f6"
+        stroke="#da7756"
         strokeWidth="2"
         opacity="0.4"
       />
-      <circle cx="700" cy="150" r="25" fill="none" stroke="#14b8a6" strokeWidth="2" opacity="0.4" />
-      <circle cx="100" cy="450" r="20" fill="none" stroke="#3b82f6" strokeWidth="2" opacity="0.4" />
+      <circle cx="700" cy="150" r="25" fill="none" stroke="#ef5244" strokeWidth="2" opacity="0.4" />
+      <circle cx="100" cy="450" r="20" fill="none" stroke="#da7756" strokeWidth="2" opacity="0.4" />
     </svg>
   );
 }

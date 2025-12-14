@@ -19,7 +19,7 @@ export function AutomationPattern() {
           <path
             d="M 40 0 L 0 0 0 40"
             fill="none"
-            stroke="#3b82f6"
+            stroke="#da7756"
             strokeWidth="0.5"
             opacity="0.2"
           />
@@ -32,9 +32,9 @@ export function AutomationPattern() {
       {/* Central automation engine */}
       <g transform="translate(400, 300)">
         {/* Rotating gears representation */}
-        <circle r="80" fill="none" stroke="#14b8a6" strokeWidth="2" opacity="0.4" />
-        <circle r="60" fill="none" stroke="#3b82f6" strokeWidth="2" opacity="0.5" />
-        <circle r="40" fill="none" stroke="#14b8a6" strokeWidth="3" opacity="0.6" />
+        <circle r="80" fill="none" stroke="#ef5244" strokeWidth="2" opacity="0.4" />
+        <circle r="60" fill="none" stroke="#da7756" strokeWidth="2" opacity="0.5" />
+        <circle r="40" fill="none" stroke="#ef5244" strokeWidth="3" opacity="0.6" />
 
         {/* Gear teeth */}
         {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => {
@@ -51,22 +51,22 @@ export function AutomationPattern() {
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="#14b8a6"
+              stroke="#ef5244"
               strokeWidth="4"
               opacity="0.5"
             />
           );
         })}
 
-        <circle r="20" fill="#3b82f6" opacity="0.7" />
+        <circle r="20" fill="#da7756" opacity="0.7" />
       </g>
 
       {/* Connected system nodes */}
       {[
-        { x: 200, y: 150, color: "#14b8a6" },
-        { x: 600, y: 150, color: "#3b82f6" },
-        { x: 200, y: 450, color: "#3b82f6" },
-        { x: 600, y: 450, color: "#14b8a6" },
+        { x: 200, y: 150, color: "#ef5244" },
+        { x: 600, y: 150, color: "#da7756" },
+        { x: 200, y: 450, color: "#da7756" },
+        { x: 600, y: 450, color: "#ef5244" },
       ].map((node, i) => (
         <g key={i}>
           <circle cx={node.x} cy={node.y} r="40" fill={node.color} opacity="0.2" />
@@ -96,28 +96,28 @@ export function AutomationPattern() {
 
       {/* Data flow particles */}
       <g opacity="0.6">
-        <circle cx="250" cy="200" r="4" fill="#14b8a6" />
-        <circle cx="350" cy="250" r="3" fill="#3b82f6" />
-        <circle cx="550" cy="200" r="4" fill="#14b8a6" />
-        <circle cx="450" cy="350" r="3" fill="#3b82f6" />
-        <circle cx="250" cy="400" r="4" fill="#3b82f6" />
+        <circle cx="250" cy="200" r="4" fill="#ef5244" />
+        <circle cx="350" cy="250" r="3" fill="#da7756" />
+        <circle cx="550" cy="200" r="4" fill="#ef5244" />
+        <circle cx="450" cy="350" r="3" fill="#da7756" />
+        <circle cx="250" cy="400" r="4" fill="#da7756" />
       </g>
 
       {/* Process flow indicators */}
       <g transform="translate(100, 50)">
-        <rect x="0" y="0" width="80" height="30" rx="4" fill="none" stroke="#14b8a6" strokeWidth="1.5" opacity="0.5" />
+        <rect x="0" y="0" width="80" height="30" rx="4" fill="none" stroke="#ef5244" strokeWidth="1.5" opacity="0.5" />
         <text x="40" y="20" fill="#94a3b8" fontSize="12" textAnchor="middle">Input</text>
       </g>
       <g transform="translate(620, 50)">
-        <rect x="0" y="0" width="80" height="30" rx="4" fill="none" stroke="#3b82f6" strokeWidth="1.5" opacity="0.5" />
+        <rect x="0" y="0" width="80" height="30" rx="4" fill="none" stroke="#da7756" strokeWidth="1.5" opacity="0.5" />
         <text x="40" y="20" fill="#94a3b8" fontSize="12" textAnchor="middle">Process</text>
       </g>
       <g transform="translate(100, 520)">
-        <rect x="0" y="0" width="80" height="30" rx="4" fill="none" stroke="#14b8a6" strokeWidth="1.5" opacity="0.5" />
+        <rect x="0" y="0" width="80" height="30" rx="4" fill="none" stroke="#ef5244" strokeWidth="1.5" opacity="0.5" />
         <text x="40" y="20" fill="#94a3b8" fontSize="12" textAnchor="middle">Transform</text>
       </g>
       <g transform="translate(620, 520)">
-        <rect x="0" y="0" width="80" height="30" rx="4" fill="#14b8a6" strokeWidth="1.5" opacity="0.8" />
+        <rect x="0" y="0" width="80" height="30" rx="4" fill="#ef5244" strokeWidth="1.5" opacity="0.8" />
         <text x="40" y="20" fill="#0f172a" fontSize="12" textAnchor="middle">Output</text>
       </g>
     </svg>

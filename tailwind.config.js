@@ -20,8 +20,8 @@ export default {
         'mono': ['Space Mono', 'monospace'],
 
         // Body text - Readable, warm, professional
-        'body': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
-        'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        'body': ['DM Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
+        'sans': ['DM Sans', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
 
         // Accent/Editorial - For pull quotes, testimonials
         'serif': ['Georgia', 'Cambria', 'Times New Roman', 'Times', 'serif'],

@@ -114,10 +114,17 @@ export function ServiceDetail({
   return (
     <motion.section
       id={id}
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
+      variants={{
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+          opacity: 1,
+          y: 0,
+          transition: {
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1],
+          }
+        }
+      }}
       className="py-24 border-b border-neutral-800 last:border-b-0"
     >
       <div className="grid lg:grid-cols-2 gap-16">
