@@ -77,12 +77,18 @@ export function Header() {
           </nav>
 
           {/* Desktop CTA */}
-          <button
+          <motion.button
             onClick={() => handleNavigation('/system-request')}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: '0 0 24px -4px rgba(239, 82, 68, 0.4)',
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className="hidden md:block px-6 py-2.5 min-h-[44px] bg-white text-neutral-900 text-sm font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors"
           >
             Start a Project
-          </button>
+          </motion.button>
 
           {/* Mobile Menu Button - 44px minimum touch target */}
           <button
@@ -119,12 +125,18 @@ export function Header() {
                   </button>
                 ))}
                 <div className="pt-4">
-                  <button
+                  <motion.button
                     onClick={() => handleNavigation('/system-request')}
+                    whileHover={{
+                      scale: 1.02,
+                      boxShadow: '0 0 24px -4px rgba(239, 82, 68, 0.4)',
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.2, ease: 'easeOut' }}
                     className="w-full py-4 min-h-[44px] bg-white text-neutral-900 text-base font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors"
                   >
                     Start a Project
-                  </button>
+                  </motion.button>
                 </div>
               </nav>
             </motion.div>

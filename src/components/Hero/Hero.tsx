@@ -54,11 +54,17 @@ export function Hero() {
 
           {/* CTA Group - Improved mobile touch targets */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4" data-element="hero-cta-group">
-            <button
+            <motion.button
               onClick={() => {
                 trackCTAClick(content.cta.primary, 'hero-primary', '/system-request');
                 navigate('/system-request');
               }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: '0 0 24px -4px rgba(239, 82, 68, 0.4)',
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
               className="w-full sm:w-auto min-w-[160px] px-8 py-4 min-h-[48px] bg-white text-neutral-900 text-base font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors duration-200"
               data-cta="primary"
               data-cta-text="Tell Us Your Challenge"
@@ -66,12 +72,18 @@ export function Hero() {
               data-variation="control"
             >
               {content.cta.primary}
-            </button>
-            <button
+            </motion.button>
+            <motion.button
               onClick={() => {
                 trackCTAClick(content.cta.secondary, 'hero-secondary', '/services');
                 navigate('/services');
               }}
+              whileHover={{
+                scale: 1.02,
+                boxShadow: '0 0 20px -6px rgba(239, 82, 68, 0.2)',
+              }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.2, ease: 'easeOut' }}
               className="w-full sm:w-auto min-w-[160px] px-8 py-4 min-h-[48px] border border-neutral-700 text-neutral-300 text-base font-medium rounded-lg hover:text-white hover:border-neutral-600 active:bg-neutral-800/50 transition-colors duration-200"
               data-cta="secondary"
               data-cta-text="See What We Build"
@@ -79,7 +91,7 @@ export function Hero() {
               data-variation="control"
             >
               {content.cta.secondary}
-            </button>
+            </motion.button>
           </div>
 
           {/* Social Proof - Mobile optimized */}

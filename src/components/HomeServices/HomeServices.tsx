@@ -118,13 +118,18 @@ export function HomeServices() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center"
         >
-          <button
+          <motion.button
             onClick={() => navigate('/services')}
+            whileHover={{
+              scale: 1.02,
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className="inline-flex items-center gap-2 px-8 py-4 text-neutral-300 hover:text-white transition-colors"
           >
             <span>View all solutions</span>
             <ArrowRight className="w-4 h-4" />
-          </button>
+          </motion.button>
         </motion.div>
       </div>
     </section>

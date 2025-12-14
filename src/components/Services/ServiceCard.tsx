@@ -189,12 +189,18 @@ export function ServiceDetail({
           </div>
 
           {/* CTA */}
-          <button
+          <motion.button
             onClick={() => navigate('/system-request')}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: '0 0 24px -4px rgba(239, 82, 68, 0.4)',
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className="w-full py-4 min-h-[48px] bg-white text-neutral-900 font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors"
           >
             Get {title}
-          </button>
+          </motion.button>
         </div>
       </div>
     </motion.section>

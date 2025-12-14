@@ -42,13 +42,19 @@ export function StickyMobileCTA() {
           transition={{ duration: 0.3, ease: 'easeOut' }}
           className="md:hidden fixed bottom-6 left-6 right-6 z-40"
         >
-          <button
+          <motion.button
             onClick={() => navigate('/system-request')}
+            whileHover={{
+              scale: 1.02,
+              boxShadow: '0 0 24px -4px rgba(239, 82, 68, 0.4)',
+            }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
             className="w-full flex items-center justify-center gap-2 px-6 py-4 min-h-[52px] bg-white text-neutral-900 font-medium rounded-lg shadow-large hover:shadow-xl transition-all duration-200"
           >
             <span>Start a Project</span>
             <ArrowRight className="w-5 h-5" />
-          </button>
+          </motion.button>
         </motion.div>
       )}
     </AnimatePresence>
