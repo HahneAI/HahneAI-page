@@ -27,7 +27,7 @@ export function ProcessPage() {
           >
             <h1 className="text-5xl md:text-7xl font-space mb-6 tracking-wider leading-tight">
               <span className="block">The Universal I.S.I Framework</span>
-              <span className="block bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mt-2">
+              <span className="block bg-gradient-to-r from-primary-500 to-terra-500 bg-clip-text text-transparent mt-2">
                 From Insight to Impact
               </span>
             </h1>
@@ -57,17 +57,24 @@ export function ProcessPage() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-space bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-space bg-gradient-to-r from-primary-500 to-terra-500 bg-clip-text text-transparent">
               Ready to Build Your Future?
             </h2>
             <p className="text-xl text-neutral-400 font-space">
               Let's apply the I.S.I Framework to your unique challenges.
             </p>
-            <Link
-              to="/creative-solutions#hire"
-              className="bg-gradient-to-r from-teal-500 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-space tracking-wider hover:from-teal-600 hover:to-blue-700 transition-all"
-            >
-              Start a Project
+            <Link to="/creative-solutions#hire">
+              <motion.button
+                whileHover={{
+                  scale: 1.02,
+                  boxShadow: '0 0 24px -4px rgba(239, 82, 68, 0.4)',
+                }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ duration: 0.2, ease: 'easeOut' }}
+                className="bg-white text-neutral-900 px-8 py-4 rounded-lg text-lg font-medium tracking-wide hover:bg-neutral-100 transition-colors inline-block"
+              >
+                Start a Project
+              </motion.button>
             </Link>
           </motion.div>
         </div>
