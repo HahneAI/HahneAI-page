@@ -103,7 +103,7 @@ export function CircuitBoard() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 bg-gray-900"
+      className="absolute inset-0 bg-neutral-900"
       style={{ filter: 'blur(1px)' }}
     />
   );

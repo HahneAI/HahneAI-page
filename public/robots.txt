@@ -1,0 +1,15 @@
+# HahneAI - Robots.txt
+# Allow all search engines to crawl all content
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://tryhahneai.com/sitemap.xml
+
+# Crawl-delay (optional, helps with server load)
+Crawl-delay: 0
+
+# Block access to specific paths if needed
+# Disallow: /admin/
+# Disallow: /api/

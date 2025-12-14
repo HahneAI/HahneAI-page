@@ -4,6 +4,9 @@ import { Hero } from '../components/Hero/Hero';
 import { Benefits } from '../components/Benefits/Benefits';
 import { HomeServices } from '../components/HomeServices/HomeServices';
 import { Metrics } from '../components/Metrics/Metrics';
+import { Header } from '../components/Header/Header';
+import { Footer } from '../components/Footer/Footer';
+import { StickyMobileCTA } from '../components/ui/StickyMobileCTA';
 
 export function HomePage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -16,13 +19,18 @@ export function HomePage() {
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
 
   return (
-    <main ref={containerRef}>
-      <motion.div style={{ opacity, scale }}>
-        <Hero />
-      </motion.div>
-      <Benefits />
-      <HomeServices />
-      <Metrics />
-    </main>
+    <>
+      <Header />
+      <main ref={containerRef}>
+        <motion.div style={{ opacity, scale }}>
+          <Hero />
+        </motion.div>
+        <Benefits />
+        <HomeServices />
+        <Metrics />
+      </main>
+      <Footer />
+      <StickyMobileCTA />
+    </>
   );
 }

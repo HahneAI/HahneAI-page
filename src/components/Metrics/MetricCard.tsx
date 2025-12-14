@@ -16,7 +16,7 @@ export function MetricCard({ id, title, value, suffix, color, delay }: MetricCar
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
-      className="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-red-900/20 hover:border-amber-500/30 transition-colors group"
+      className="bg-black/40 backdrop-blur-sm p-6 rounded-lg border border-primary-900/20 hover:border-secondary-500/30 transition-colors group"
     >
       <div className={`bg-gradient-to-br ${color}/10 p-4 rounded-lg w-16 h-16 flex items-center justify-center mb-4 group-hover:${color}/20 transition-colors`}>
         <MetricIcon type={id} color={color} />
@@ -31,7 +31,7 @@ export function MetricCard({ id, title, value, suffix, color, delay }: MetricCar
           {value}
         </motion.div>
         <h3 className="text-lg font-semibold text-white">{title}</h3>
-        <p className="text-sm text-gray-400">{suffix}</p>
+        <p className="text-sm text-neutral-400">{suffix}</p>
       </div>
     </motion.div>
   );

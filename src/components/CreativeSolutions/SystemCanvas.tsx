@@ -191,7 +191,7 @@ export function SystemCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 bg-gray-900"
+      className="absolute inset-0 bg-surface-dark"
       style={{ filter: 'blur(0.5px)' }} // Reduced blur
     />
   );

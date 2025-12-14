@@ -1,99 +1,110 @@
-import { Brain, Instagram, Twitter } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
-import { MakeBadge } from './MakeBadge';
-import { services } from '../Services/ServicesData';
+import { Link } from 'react-router-dom';
+import { footerNavigation } from '../../content/navigation';
 
+/**
+ * Minimalist Footer
+ *
+ * Design principles:
+ * - Clean grid layout
+ * - Essential links only
+ * - Subtle typography hierarchy
+ * - Generous whitespace
+ */
 export function Footer() {
-  const navigate = useNavigate();
-
-  const handleISIClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    navigate('/creative-solutions');
-    setTimeout(() => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }, 100);
-  };
-
   return (
-    <footer id="contact-section" className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="space-y-3">
-            <Link to="/" className="flex items-center space-x-2">
-              <Brain className="h-6 w-6 text-amber-400" />
-              <span className="text-xl font-bold text-white">HahneAI</span>
+    <footer id="contact-section" className="bg-neutral-950 border-t border-neutral-800">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12">
+          {/* Brand */}
+          <div className="sm:col-span-2 md:col-span-1">
+            <Link to="/" className="text-lg font-medium text-white">
+              HahneAI
             </Link>
-            <p className="text-sm text-gray-400 leading-relaxed">
-              Transforming businesses through intelligent automation and AI solutions.
+            <p className="mt-4 text-sm text-neutral-500 leading-relaxed max-w-xs">
+              Custom automation systems that work while you sleep.
             </p>
-            <div className="pt-2">
-              <p className="text-sm text-gray-400">Anthony Hahne</p>
-              <a 
-                href="mailto:anthonyhahne@therealworld.ag" 
-                className="text-sm text-amber-400 hover:text-amber-300 transition-colors break-all"
-              >
-                anthonyhahne@therealworld.ag
-              </a>
-            </div>
           </div>
 
-          {/* Services Links */}
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-white">Services</h3>
-            <ul className="space-y-2">
-              {services.map((service) => (
-                <li key={service.id}>
-                  <Link 
-                    to={`/services#${service.id}`}
-                    className="text-sm hover:text-amber-400 transition-colors"
+          {/* Solutions Links */}
+          <div>
+            <h3 className="text-xs sm:text-sm font-medium text-neutral-400 uppercase tracking-wider mb-3 sm:mb-4">
+              {footerNavigation.services.label}
+            </h3>
+            <ul className="space-y-2.5 sm:space-y-3">
+              {footerNavigation.services.links.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-neutral-500 hover:text-white transition-colors inline-block py-1 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
                   >
-                    {service.title}
+                    {link.label}
                   </Link>
                 </li>
               ))}
-              <li>
-                <button
-                  onClick={handleISIClick}
-                  className="text-sm text-gray-300 hover:text-amber-400 transition-colors"
-                >
-                  ISI
-                </button>
-              </li>
             </ul>
           </div>
 
-          {/* Connect */}
-          <div className="flex flex-col">
-            <h3 className="text-lg font-semibold mb-3 text-white">Connect</h3>
-            <div className="flex space-x-4">
-              <a 
-                href="https://x.com/HahneDigital" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-amber-400 transition-colors"
-              >
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a 
-                href="https://www.instagram.com/hahnedigital/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-amber-400 transition-colors"
-              >
-                <Instagram className="h-6 w-6" />
-              </a>
-            </div>
+          {/* Company Links */}
+          <div>
+            <h3 className="text-xs sm:text-sm font-medium text-neutral-400 uppercase tracking-wider mb-3 sm:mb-4">
+              {footerNavigation.company.label}
+            </h3>
+            <ul className="space-y-2.5 sm:space-y-3">
+              {footerNavigation.company.links.map((link) => (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-neutral-500 hover:text-white transition-colors inline-block py-1 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Make Badge */}
-          <div className="flex justify-center md:justify-end">
-            <MakeBadge />
+          {/* Contact */}
+          <div className="sm:col-span-2 md:col-span-1">
+            <h3 className="text-xs sm:text-sm font-medium text-neutral-400 uppercase tracking-wider mb-3 sm:mb-4">
+              Contact
+            </h3>
+            <div className="space-y-2.5 sm:space-y-3">
+              <a
+                href="mailto:anthonyhahne@therealworld.ag"
+                className="block text-sm text-neutral-500 hover:text-white transition-colors py-1 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center break-all sm:break-normal"
+              >
+                anthonyhahne@therealworld.ag
+              </a>
+              <div className="flex gap-6 sm:gap-4 pt-2">
+                <a
+                  href="https://x.com/HahneDigital"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-neutral-500 hover:text-white transition-colors py-2 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
+                >
+                  Twitter
+                </a>
+                <a
+                  href="https://www.instagram.com/hahnedigital/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-neutral-500 hover:text-white transition-colors py-2 min-h-[44px] sm:min-h-0 sm:py-0 flex items-center"
+                >
+                  Instagram
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-800 text-center">
-          <p className="text-sm text-gray-400">&copy; {new Date().getFullYear()} HahneAI. All rights reserved.</p>
+        {/* Bottom bar */}
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4 text-center sm:text-left">
+          <p className="text-xs text-neutral-600">
+            &copy; {new Date().getFullYear()} HahneAI. All rights reserved.
+          </p>
+          <p className="text-xs text-neutral-600">
+            Built with purpose.
+          </p>
         </div>
       </div>
     </footer>

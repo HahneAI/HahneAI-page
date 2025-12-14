@@ -74,10 +74,10 @@ export function HolographicInterface() {
   }, [background, scanLines, updateFrame]);
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className="relative font-mono text-amber-400 p-4 bg-gray-900 rounded-lg shadow-lg transform transition-transform duration-300"
-      style={{ 
+      className="relative font-mono text-secondary-400 p-4 bg-surface-dark rounded-lg shadow-lg transform transition-transform duration-300"
+      style={{
         maxWidth: 'fit-content',
         transform: isHovered ? 'scale(1.02)' : 'scale(1)',
       }}
@@ -88,11 +88,11 @@ export function HolographicInterface() {
         {frame.map((row, y) => (
           <div key={y} className="flex">
             {row.map((char, x) => (
-              <span 
+              <span
                 key={`${x}-${y}`}
                 className={`
                   transition-colors duration-300
-                  ${isHovered ? 'text-amber-300' : 'text-amber-400'}
+                  ${isHovered ? 'text-secondary-300' : 'text-secondary-400'}
                 `}
               >
                 {getFrameChar(x, y, frame)}
@@ -103,11 +103,11 @@ export function HolographicInterface() {
       </pre>
       <div className="absolute top-2 right-2 space-y-2">
         {alerts.map((alert) => (
-          <div 
+          <div
             key={alert.timestamp}
             className={`
               text-xs px-2 py-1 rounded
-              ${alert.type === 'security' ? 'text-red-400' : 'text-amber-400'}
+              ${alert.type === 'security' ? 'text-primary-400' : 'text-secondary-400'}
               bg-black/50 backdrop-blur-sm
               animate-fade-in
             `}

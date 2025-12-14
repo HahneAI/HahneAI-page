@@ -57,15 +57,15 @@ export function ProcessFlow() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl font-['Space_Mono'] mb-4 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-space mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
           Our Universal I.S.I Framework
         </h2>
-        <p className="text-gray-400">
+        <p className="text-neutral-400">
           A proven methodology for any business challenge
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
         {processSteps.map((step, index) => (
           <motion.div
             key={step.id}
@@ -76,24 +76,24 @@ export function ProcessFlow() {
           >
             <div
               className={`
-                bg-black/40 backdrop-blur-sm p-8 rounded-lg border transition-all duration-300
-                ${activeStep === step.id ? 'border-amber-500' : 'border-red-900/20'}
-                hover:border-amber-500/30 cursor-pointer
+                bg-black/40 backdrop-blur-sm p-6 sm:p-8 rounded-lg border transition-all duration-300
+                ${activeStep === step.id ? 'border-secondary-500' : 'border-primary-900/20'}
+                hover:border-secondary-500/30 cursor-pointer min-h-[44px]
               `}
               onClick={() => setActiveStep(activeStep === step.id ? null : step.id)}
             >
-              <div className="bg-gradient-to-br from-red-500/10 to-amber-400/10 p-4 rounded-lg w-16 h-16 flex items-center justify-center mb-6">
-                <step.icon className="w-8 h-8 text-amber-400" />
+              <div className="bg-gradient-to-br from-primary-500/10 to-secondary-400/10 p-3 sm:p-4 rounded-lg w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center mb-4 sm:mb-6">
+                <step.icon className="w-7 h-7 sm:w-8 sm:h-8 text-secondary-400" />
               </div>
-              <h3 className="text-xl font-semibold mb-3 text-white">{step.title}</h3>
-              <p className="text-gray-400 mb-4">{step.description}</p>
+              <h3 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-white">{step.title}</h3>
+              <p className="text-sm sm:text-base text-neutral-400 mb-4">{step.description}</p>
               
               <motion.div
                 initial={false}
                 animate={{ height: activeStep === step.id ? 'auto' : 0 }}
                 className="overflow-hidden"
               >
-                <ul className="space-y-2 text-gray-400">
+                <ul className="space-y-2 text-neutral-400">
                   {step.details.map((detail, i) => (
                     <motion.li
                       key={i}
@@ -102,7 +102,7 @@ export function ProcessFlow() {
                       transition={{ delay: i * 0.1 }}
                       className="flex items-center space-x-2"
                     >
-                      <span className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
+                      <span className="w-1.5 h-1.5 bg-secondary-400 rounded-full" />
                       <span>{detail}</span>
                     </motion.li>
                   ))}
@@ -111,7 +111,7 @@ export function ProcessFlow() {
             </div>
 
             {index < processSteps.length - 1 && (
-              <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-red-500 to-amber-400" />
+              <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary-500 to-secondary-400" />
             )}
           </motion.div>
         ))}
@@ -121,11 +121,11 @@ export function ProcessFlow() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-center mt-16"
+        className="text-center mt-12 sm:mt-16"
       >
         <button
           onClick={() => setIsHirePopupOpen(true)}
-          className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-8 py-4 rounded-lg text-lg font-['Space_Mono'] tracking-wider hover:from-red-700 hover:to-amber-600 transition-all"
+          className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-6 sm:px-8 py-4 min-h-[48px] rounded-lg text-base sm:text-lg font-space tracking-wider hover:from-primary-700 hover:to-secondary-600 transition-all w-full sm:w-auto"
         >
           Start Ideation Now
         </button>

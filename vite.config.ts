@@ -26,6 +26,19 @@ export default defineConfig(({ mode }) => ({
         },
       },
     },
-    sourcemap: true,
+    // Production optimizations
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: mode === 'production',
+        drop_debugger: mode === 'production',
+      },
+    },
+    // Generate sourcemaps only for development
+    sourcemap: mode !== 'production',
+    // Increase chunk size warning limit
+    chunkSizeWarningLimit: 1000,
+    // Enable CSS code splitting
+    cssCodeSplit: true,
   },
 }));

@@ -32,20 +32,20 @@ export function CreativeSolutions() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-gray-900/25 backdrop-blur-sm p-8 rounded-lg inline-block"
+            className="bg-surface-dark/25 backdrop-blur-sm p-8 rounded-lg inline-block"
           >
-            <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-wider font-['Space_Mono'] leading-relaxed">
+            <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-wider font-space leading-relaxed">
               <span className="block">We Don't Just Build Systems—</span>
-              <span className="block bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
                 We Weave Success
               </span>
             </h1>
-            <p className="text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-400 mb-12 max-w-3xl mx-auto">
               Discover how our universal framework powers success across all industries.
             </p>
             <Link
               to="/process"
-              className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-8 py-4 rounded-lg text-lg font-['Space_Mono'] tracking-wider hover:from-red-700 hover:to-amber-600 transition-all"
+              className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-8 py-4 rounded-lg text-lg font-space tracking-wider hover:from-primary-700 hover:to-secondary-600 transition-all"
             >
               Explore Our Process
             </Link>
@@ -78,19 +78,19 @@ export function CreativeSolutions() {
               transition={{ duration: 0.6 }}
               className="space-y-6"
             >
-              <h2 className="text-3xl font-['Space_Mono'] bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-space bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
                 Why Creativity Matters
               </h2>
               <blockquote className="text-2xl text-white">
                 "Businesses that embrace creativity are 3x more likely to outperform competitors."
               </blockquote>
-              <div className="h-1 w-24 bg-gradient-to-r from-red-500 to-amber-400" />
+              <div className="h-1 w-24 bg-gradient-to-r from-primary-500 to-secondary-400" />
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-gray-400 space-y-4"
+              className="text-neutral-400 space-y-4"
             >
               <p>
                 At HahneAI, we understand that true innovation lies at the intersection of creative thinking and technical excellence. Our approach isn't just about implementing automation—it's about reimagining what's possible.
@@ -112,15 +112,15 @@ export function CreativeSolutions() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-['Space_Mono'] bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-space bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
               Ready to Transform Ideas Into Action?
             </h2>
-            <p className="text-xl text-gray-400 font-['Space_Mono']">
+            <p className="text-xl text-neutral-400 font-space">
               Start Your I.S.I Framework Today before Monthly Quotas are Met
             </p>
             <button
               onClick={() => setIsHirePopupOpen(true)}
-              className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-8 py-4 rounded-lg text-lg font-['Space_Mono'] tracking-wider hover:from-red-700 hover:to-amber-600 transition-all"
+              className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-8 py-4 rounded-lg text-lg font-space tracking-wider hover:from-primary-700 hover:to-secondary-600 transition-all"
             >
               Schedule your IDEATION Brainstorm Now
             </button>
@@ -134,7 +134,7 @@ export function CreativeSolutions() {
         <div className="mt-16 text-center">
           <button
             onClick={() => setIsHirePopupOpen(true)}
-            className="bg-gradient-to-r from-red-600 to-amber-500 text-white px-8 py-4 rounded-lg text-lg font-['Space_Mono'] tracking-wider hover:from-red-700 hover:to-amber-600 transition-all"
+            className="bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-8 py-4 rounded-lg text-lg font-space tracking-wider hover:from-primary-700 hover:to-secondary-600 transition-all"
           >
             Ready?
           </button>

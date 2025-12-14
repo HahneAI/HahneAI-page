@@ -3,12 +3,15 @@ import { CaseStudyTemplates } from '../components/Process/CaseStudyTemplates';
 import { ClientCollaboration } from '../components/Process/ClientCollaboration';
 import { SuccessMetrics } from '../components/Process/SuccessMetrics';
 import { ProcessFlow } from '../components/CreativeSolutions/ProcessFlow';
+import { Header } from '../components/Header/Header';
+import { Footer } from '../components/Footer/Footer';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export function ProcessPage() {
   return (
-    <div className="bg-gray-900 text-white">
+    <div className="bg-surface-dark text-white">
+      <Header />
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
@@ -22,13 +25,13 @@ export function ProcessPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-7xl font-['Space_Mono'] mb-6 tracking-wider leading-tight">
+            <h1 className="text-5xl md:text-7xl font-space mb-6 tracking-wider leading-tight">
               <span className="block">The Universal I.S.I Framework</span>
               <span className="block bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mt-2">
                 From Insight to Impact
               </span>
             </h1>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-400 max-w-3xl mx-auto">
               A robust, industry-agnostic methodology for solving complex business challenges and driving sustainable growth.
             </p>
           </motion.div>
@@ -54,21 +57,22 @@ export function ProcessPage() {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-['Space_Mono'] bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl font-space bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
               Ready to Build Your Future?
             </h2>
-            <p className="text-xl text-gray-400 font-['Space_Mono']">
+            <p className="text-xl text-neutral-400 font-space">
               Let's apply the I.S.I Framework to your unique challenges.
             </p>
             <Link
               to="/creative-solutions#hire"
-              className="bg-gradient-to-r from-teal-500 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-['Space_Mono'] tracking-wider hover:from-teal-600 hover:to-blue-700 transition-all"
+              className="bg-gradient-to-r from-teal-500 to-blue-600 text-white px-8 py-4 rounded-lg text-lg font-space tracking-wider hover:from-teal-600 hover:to-blue-700 transition-all"
             >
               Start a Project
             </Link>
           </motion.div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

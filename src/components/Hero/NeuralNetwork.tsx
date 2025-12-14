@@ -102,7 +102,7 @@ export function NeuralNetwork() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black"
+      className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black"
     />
   );
 }

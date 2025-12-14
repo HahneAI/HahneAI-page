@@ -15,6 +15,12 @@ const CreativeSolutionsPage = lazy(() => import('./pages/CreativeSolutionsPage')
 const SystemRequestPage = lazy(() => import('./pages/SystemRequestPage').then(module => ({
   default: module.SystemRequestPage
 })));
+const ProcessPage = lazy(() => import('./pages/ProcessPage').then(module => ({
+  default: module.ProcessPage
+})));
+const InvestorsPage = lazy(() => import('./pages/InvestorsPage').then(module => ({
+  default: module.InvestorsPage
+})));
 
 
 // Initialize GA
@@ -40,6 +46,9 @@ function PrefetchLinks() {
       } else if (location.pathname === '/services') {
         // Prefetch creative solutions when on services
         await import('./pages/CreativeSolutionsPage');
+      } else if (location.pathname === '/investors') {
+        // Prefetch system request when on investors
+        await import('./pages/SystemRequestPage');
       }
     };
 
@@ -52,7 +61,7 @@ function PrefetchLinks() {
 // Loading fallback
 function LoadingFallback() {
   return (
-    <div className="min-h-screen bg-gray-900 flex items-center justify-center">
+    <div className="min-h-screen bg-surface-dark flex items-center justify-center">
       <div className="text-white text-xl">Loading...</div>
     </div>
   );
@@ -61,7 +70,7 @@ function LoadingFallback() {
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gray-900 text-white">
+      <div className="min-h-screen bg-surface-dark text-white">
         <PrefetchLinks />
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
@@ -69,6 +78,7 @@ function App() {
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/creative-solutions" element={<CreativeSolutionsPage />} />
             <Route path="/process" element={<ProcessPage />} />
+            <Route path="/investors" element={<InvestorsPage />} />
             <Route path="/system-request" element={<SystemRequestPage />} />
           </Routes>
         </Suspense>

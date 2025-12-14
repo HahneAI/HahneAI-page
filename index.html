@@ -2,84 +2,316 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Viewport & Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#dc3626" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <!-- Fonts: Space Mono for headlines, DM Sans for body text -->
+    <!-- Preload critical fonts for performance -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    </noscript>
+
+    <!-- Analytics -->
     <script id="vtag-ai-js" async src="https://r2.leadsy.ai/tag.js" data-pid="cKzYnChxjFPbSb19" data-version="062024"></script>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E431V9YPRD"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-E431V9YPRD');
     </script>
 
-    <!-- Default Meta Tags -->
-    <title>HahneAI - Custom AI Systems for Any Business Challenge</title>
-    <meta name="description" content="Describe your business challenge and we'll build the AI system that solves it. Custom AI solutions for any industry and any challenge." />
-    <meta name="keywords" content="custom AI solutions, AI system request, business challenge, AI for business, any industry, any challenge" />
-    
+    <!-- Primary Meta Tags -->
+    <title>HahneAI - Custom AI Solutions & Automation for Business</title>
+    <meta name="title" content="HahneAI - Custom AI Solutions & Automation for Business" />
+    <meta name="description" content="Transform your business with custom AI systems. We build tailored AI automation solutions that solve your specific challenges. From workflow automation to intelligent systems - describe your problem, we'll build the solution." />
+    <meta name="keywords" content="custom AI solutions, AI automation services, business AI systems, AI implementation, custom AI development, AI consulting, workflow automation, AI integration" />
+    <meta name="author" content="HahneAI" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://tryhahneai.com" />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="HahneAI - Custom AI Systems for Any Business Challenge" />
-    <meta property="og:description" content="Describe your business challenge and we'll build the AI system that solves it. Custom AI solutions for any industry and any challenge." />
-    <meta property="og:image" content="https://r2.leadsy.ai/assets/og-image.png" />
+    <meta property="og:site_name" content="HahneAI" />
     <meta property="og:url" content="https://tryhahneai.com" />
-    
+    <meta property="og:title" content="HahneAI - Custom AI Solutions & Automation for Business" />
+    <meta property="og:description" content="Transform your business with custom AI systems. We build tailored AI automation solutions that solve your specific challenges." />
+    <meta property="og:image" content="https://tryhahneai.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="HahneAI - Custom AI Solutions for Business" />
+    <meta property="og:locale" content="en_US" />
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="HahneAI - Custom AI Systems for Any Business Challenge" />
-    <meta name="twitter:description" content="Describe your business challenge and we'll build the AI system that solves it. Custom AI solutions for any industry and any challenge." />
-    <meta name="twitter:image" content="https://r2.leadsy.ai/assets/og-image.png" />
-    
-    <!-- Additional SEO -->
-    <link rel="canonical" href="https://tryhahneai.com" />
-    <meta name="theme-color" content="#dc2626" />
+    <meta name="twitter:site" content="@HahneAI" />
+    <meta name="twitter:creator" content="@HahneAI" />
+    <meta name="twitter:url" content="https://tryhahneai.com" />
+    <meta name="twitter:title" content="HahneAI - Custom AI Solutions & Automation for Business" />
+    <meta name="twitter:description" content="Transform your business with custom AI systems. We build tailored AI automation solutions that solve your specific challenges." />
+    <meta name="twitter:image" content="https://tryhahneai.com/og-image.png" />
 
-    <!-- Route-specific meta tags will be updated dynamically -->
-    <script>
-      // Update meta tags based on current route
-      function updateMetaTags(path) {
-        const routes = {
-          '/': {
-            title: 'HahneAI - Custom AI Systems for Any Business Challenge',
-            description: 'Describe your business challenge and we\'ll build the AI system that solves it. Custom AI solutions for any industry and any challenge.',
-            keywords: 'custom AI solutions, AI system request, business challenge, AI for business, any industry, any challenge'
+    <!-- Schema.org Organization Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://tryhahneai.com/#organization",
+      "name": "HahneAI",
+      "url": "https://tryhahneai.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tryhahneai.com/logo.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "HahneAI builds custom AI systems and automation solutions for businesses. We transform complex business challenges into intelligent, automated solutions.",
+      "foundingDate": "2024",
+      "slogan": "Custom AI Systems for Any Business Challenge",
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Business Automation",
+        "Custom Software Development",
+        "AI Implementation",
+        "Workflow Automation"
+      ],
+      "serviceType": [
+        "Custom AI Development",
+        "AI Consulting",
+        "Business Process Automation",
+        "AI Integration Services"
+      ],
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://tryhahneai.com/system-request",
+        "availableLanguage": "English"
+      },
+      "sameAs": []
+    }
+    </script>
+
+    <!-- Schema.org WebSite Markup (for Sitelinks Search Box) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://tryhahneai.com/#website",
+      "name": "HahneAI",
+      "url": "https://tryhahneai.com",
+      "publisher": {
+        "@id": "https://tryhahneai.com/#organization"
+      },
+      "description": "Custom AI solutions and automation services for businesses",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://tryhahneai.com/search?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Schema.org Service Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "@id": "https://tryhahneai.com/#service",
+      "name": "HahneAI - AI Implementation Services",
+      "url": "https://tryhahneai.com",
+      "description": "Professional AI implementation and automation services for businesses of all sizes. We design, build, and deploy custom AI systems tailored to your specific business challenges.",
+      "provider": {
+        "@id": "https://tryhahneai.com/#organization"
+      },
+      "serviceType": "AI Consulting and Development",
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom AI Development",
+              "description": "Bespoke AI systems built specifically for your business needs and challenges"
+            }
           },
-          '/system-request': {
-            title: 'Make a System Request | HahneAI',
-            description: 'Describe your business challenge and we will build the AI system that solves it.',
-            keywords: 'AI system request, custom AI, business solutions, AI development'
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Workflow Automation",
+              "description": "Intelligent automation of business processes using AI technology"
+            }
           },
-          '/creative-solutions': {
-            title: 'Creative AI Solutions & I.S.I Framework | HahneAI',
-            description: 'Discover our I.S.I Framework - a revolutionary approach to business transformation combining Ideation, System Mapping, and Implementation for unstoppable AI systems.',
-            keywords: 'I.S.I Framework, AI solutions, business transformation, system mapping, AI implementation, creative automation'
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Integration Services",
+              "description": "Seamless integration of AI capabilities into existing business systems"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "AI Strategy Consulting",
+              "description": "Expert guidance on AI adoption, implementation planning, and ROI optimization"
+            }
           }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Schema.org FAQPage Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is custom AI development?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom AI development involves building artificial intelligence systems tailored specifically to your business needs, rather than using off-the-shelf solutions. HahneAI designs and develops AI systems that address your unique challenges, integrate with your existing workflows, and deliver measurable business outcomes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does AI implementation take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI implementation timelines vary based on project complexity. Simple automation projects may take 2-4 weeks, while comprehensive AI systems typically require 2-3 months. HahneAI uses an iterative approach, delivering working solutions incrementally so you see value quickly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need technical expertise to work with HahneAI?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No technical expertise is required. HahneAI specializes in translating business challenges into AI solutions. You describe your problems and goals; we handle the technical implementation. Our process is designed for business leaders, not engineers."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What industries does HahneAI serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "HahneAI serves businesses across all industries. Our custom approach means we build AI solutions tailored to your specific industry challenges, whether you're in professional services, trades, retail, healthcare, manufacturing, or any other sector."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Route-specific meta tags handler -->
+    <script>
+      const routesMeta = {
+        '/': {
+          title: 'HahneAI - Custom AI Solutions & Automation for Business',
+          description: 'Transform your business with custom AI systems. We build tailored AI automation solutions that solve your specific challenges. From workflow automation to intelligent systems.',
+          keywords: 'custom AI solutions, AI automation services, business AI systems, AI implementation, custom AI development'
+        },
+        '/system-request': {
+          title: 'Request a Custom AI System | HahneAI',
+          description: 'Tell us your business challenge and we\'ll design a custom AI solution. Free consultation for AI automation, workflow optimization, and intelligent system development.',
+          keywords: 'AI system request, custom AI quote, AI consultation, AI project proposal, business AI solutions'
+        },
+        '/creative-solutions': {
+          title: 'AI Solutions & I.S.I Framework | HahneAI',
+          description: 'Discover our I.S.I Framework - Ideation, System Mapping, and Implementation. A proven methodology for transforming business challenges into AI-powered solutions.',
+          keywords: 'I.S.I Framework, AI solutions methodology, business transformation, AI implementation framework, creative AI solutions'
+        },
+        '/process': {
+          title: 'Our AI Implementation Process | HahneAI',
+          description: 'Learn how HahneAI builds custom AI systems. Our proven process takes you from business challenge to working AI solution with transparency and collaboration at every step.',
+          keywords: 'AI implementation process, AI development methodology, how AI implementation works, AI project timeline'
+        },
+        '/services': {
+          title: 'AI Services - Automation, Development & Consulting | HahneAI',
+          description: 'Comprehensive AI services including custom development, workflow automation, system integration, and strategic consulting. Solutions tailored to your business needs.',
+          keywords: 'AI services, AI automation services, AI consulting, custom AI development, AI integration services'
+        },
+        '/investors': {
+          title: 'Investment Opportunities - Portfolio of AI Ventures | HahneAI',
+          description: 'Explore investment opportunities across HahneAI\'s portfolio of AI-powered business tools. Trade CRM, SmartKDS, postpartum support app, and automation services.',
+          keywords: 'AI investment opportunities, tech startup investment, SaaS investment, AI ventures, trade CRM investment'
+        }
+      };
+
+      function updateMetaTags(path) {
+        const route = routesMeta[path] || routesMeta['/'];
+
+        // Update title
+        document.title = route.title;
+
+        // Update meta tags
+        const metaUpdates = {
+          'meta[name="title"]': route.title,
+          'meta[name="description"]': route.description,
+          'meta[name="keywords"]': route.keywords,
+          'meta[property="og:title"]': route.title,
+          'meta[property="og:description"]': route.description,
+          'meta[name="twitter:title"]': route.title,
+          'meta[name="twitter:description"]': route.description
         };
 
-        const route = routes[path] || routes['/'];
-        document.title = route.title;
-        document.querySelector('meta[name="description"]').setAttribute('content', route.description);
-        document.querySelector('meta[name="keywords"]').setAttribute('content', route.keywords);
-        document.querySelector('meta[property="og:title"]').setAttribute('content', route.title);
-        document.querySelector('meta[property="og:description"]').setAttribute('content', route.description);
-        document.querySelector('meta[name="twitter:title"]').setAttribute('content', route.title);
-        document.querySelector('meta[name="twitter:description"]').setAttribute('content', route.description);
+        Object.entries(metaUpdates).forEach(([selector, content]) => {
+          const el = document.querySelector(selector);
+          if (el) el.setAttribute('content', content);
+        });
+
+        // Update canonical URL
+        const canonical = document.querySelector('link[rel="canonical"]');
+        if (canonical) {
+          canonical.setAttribute('href', 'https://tryhahneai.com' + (path === '/' ? '' : path));
+        }
+
+        // Update OG URL
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        if (ogUrl) {
+          ogUrl.setAttribute('content', 'https://tryhahneai.com' + (path === '/' ? '' : path));
+        }
       }
 
-      // Update meta tags on route change
-      window.addEventListener('popstate', () => {
-        updateMetaTags(window.location.pathname);
-      });
+      // Listen for route changes
+      window.addEventListener('popstate', () => updateMetaTags(window.location.pathname));
 
-      // Initial meta tags update
+      // Initial update
       updateMetaTags(window.location.pathname);
     </script>
   </head>

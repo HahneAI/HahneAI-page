@@ -29,13 +29,13 @@ export function ServiceForm({ isOpen, onClose, selectedService }: ServiceFormPro
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="bg-gray-900 rounded-lg p-8 max-w-md w-full border border-red-900/20"
+            className="bg-surface-dark rounded-lg p-8 max-w-md w-full border border-primary-900/20"
           >
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-2xl font-light text-white">Get Started with AI</h3>
               <button
                 onClick={onClose}
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-neutral-400 hover:text-white transition-colors"
               >
                 <X size={24} />
               </button>
@@ -43,33 +43,33 @@ export function ServiceForm({ isOpen, onClose, selectedService }: ServiceFormPro
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-neutral-300 mb-2">
                   Full Name
                 </label>
                 <input
                   type="text"
                   id="name"
                   required
-                  className="w-full px-4 py-2 bg-black/40 border border-gray-700 rounded-lg focus:outline-none focus:border-amber-500 text-white"
+                  className="w-full px-4 py-2 bg-black/40 border border-neutral-700 rounded-lg focus:outline-none focus:border-secondary-500 text-white"
                   placeholder="Enter your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-neutral-300 mb-2">
                   Email Address
                 </label>
                 <input
                   type="email"
                   id="email"
                   required
-                  className="w-full px-4 py-2 bg-black/40 border border-gray-700 rounded-lg focus:outline-none focus:border-amber-500 text-white"
+                  className="w-full px-4 py-2 bg-black/40 border border-neutral-700 rounded-lg focus:outline-none focus:border-secondary-500 text-white"
                   placeholder="Enter your email"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2">
+                <label className="block text-sm font-medium text-neutral-300 mb-2">
                   Services Interested In
                 </label>
                 <div className="space-y-2">
@@ -78,9 +78,9 @@ export function ServiceForm({ isOpen, onClose, selectedService }: ServiceFormPro
                       <input
                         type="checkbox"
                         defaultChecked={service.id === selectedService}
-                        className="w-4 h-4 rounded border-gray-700 text-amber-500 focus:ring-amber-500 focus:ring-offset-gray-900"
+                        className="w-4 h-4 rounded border-neutral-700 text-secondary-500 focus:ring-secondary-500 focus:ring-offset-neutral-900"
                       />
-                      <span className="text-gray-300">{service.title}</span>
+                      <span className="text-neutral-300">{service.title}</span>
                     </label>
                   ))}
                 </div>
@@ -88,7 +88,7 @@ export function ServiceForm({ isOpen, onClose, selectedService }: ServiceFormPro
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-red-600 to-amber-500 text-white px-6 py-3 rounded-lg hover:from-red-700 hover:to-amber-600 transition-all font-light tracking-wider"
+                className="w-full bg-gradient-to-r from-primary-600 to-secondary-500 text-white px-6 py-3 rounded-lg hover:from-primary-700 hover:to-secondary-600 transition-all font-light tracking-wider"
               >
                 Submit Request
               </button>

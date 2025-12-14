@@ -1,103 +1,60 @@
-import { 
-  Clock, Mail, FileText, Globe, Workflow, AlertTriangle, 
-  DollarSign, MessageCircle, Heart, TrendingUp, Zap, Users 
+/**
+ * Metrics data - re-exports from centralized content
+ * This file maintained for backward compatibility
+ * New code should import directly from '../../content/metrics'
+ */
+
+import {
+  impactMetrics,
+  formatMetricValue,
+  type Metric,
+} from '../../content/metrics';
+import {
+  Clock,
+  Globe,
+  Workflow,
+  AlertTriangle,
+  DollarSign,
+  MessageCircle,
+  Heart,
+  TrendingUp,
+  Zap,
+  Users,
 } from 'lucide-react';
 
-export const metrics = [
-  {
-    id: 'emails',
-    icon: Mail,
-    title: 'Emails Written',
-    value: '3,000+',
-    suffix: 'emails',
-    color: 'from-blue-500 to-cyan-400',
-  },
-  {
-    id: 'posts',
-    icon: FileText,
-    title: 'Posts Created',
-    value: '1,350+',
-    suffix: 'posts',
-    color: 'from-purple-500 to-pink-400',
-  },
-  {
-    id: 'time',
-    icon: Clock,
-    title: 'Time Saved',
-    value: '18,000+',
-    suffix: 'hours',
-    color: 'from-green-500 to-emerald-400',
-  },
-  {
-    id: 'industries',
-    icon: Globe,
-    title: 'Industries Automated',
-    value: '5+',
-    suffix: 'industries',
-    color: 'from-red-500 to-amber-400',
-  },
-  {
-    id: 'tasks',
-    icon: Workflow,
-    title: 'Tasks Automated',
-    value: '37,500+',
-    suffix: 'tasks',
-    color: 'from-amber-500 to-yellow-400',
-  },
-  {
-    id: 'errors',
-    icon: AlertTriangle,
-    title: 'Errors Reduced',
-    value: '92%',
-    suffix: 'reduction',
-    color: 'from-rose-500 to-pink-400',
-  },
-  {
-    id: 'savings',
-    icon: DollarSign,
-    title: 'Cost Savings',
-    value: '$1.25M+',
-    suffix: 'saved',
-    color: 'from-emerald-500 to-teal-400',
-  },
-  {
-    id: 'interactions',
-    icon: MessageCircle,
-    title: 'Customer Interactions',
-    value: '13,500+',
-    suffix: 'handled',
-    color: 'from-cyan-500 to-blue-400',
-  },
-  {
-    id: 'satisfaction',
-    icon: Heart,
-    title: 'Satisfaction Rate',
-    value: '98%',
-    suffix: 'satisfied',
-    color: 'from-pink-500 to-rose-400',
-  },
-  {
-    id: 'sales',
-    icon: TrendingUp,
-    title: 'Sales Converted',
-    value: '53%',
-    suffix: 'increase',
-    color: 'from-teal-500 to-green-400',
-  },
-  {
-    id: 'productivity',
-    icon: Zap,
-    title: 'Productivity Boost',
-    value: '120%',
-    suffix: 'increase',
-    color: 'from-violet-500 to-purple-400',
-  },
-  {
-    id: 'hours',
-    icon: Users,
-    title: 'Hours Redeployed',
-    value: '12,500+',
-    suffix: 'hours',
-    color: 'from-blue-500 to-violet-400',
-  },
-];
+// Map metric IDs to icons
+const iconMap: Record<string, typeof Clock> = {
+  'hours-saved': Clock,
+  'tasks-automated': Workflow,
+  'response-time': Zap,
+  'leads-generated': TrendingUp,
+  'conversion-rate': TrendingUp,
+  'customer-interactions': MessageCircle,
+  'cost-savings': DollarSign,
+  'roi-multiple': DollarSign,
+  'error-rate': AlertTriangle,
+  satisfaction: Heart,
+  uptime: Globe,
+  consistency: Users,
+};
+
+// Color map for metrics by category
+const categoryColors: Record<string, string> = {
+  efficiency: 'from-blue-500 to-cyan-400',
+  growth: 'from-green-500 to-emerald-400',
+  cost: 'from-amber-500 to-yellow-400',
+  quality: 'from-purple-500 to-pink-400',
+};
+
+// Transform centralized metrics to legacy format
+export const metrics = impactMetrics.slice(0, 12).map((metric) => ({
+  id: metric.id,
+  icon: iconMap[metric.id] || Clock,
+  title: metric.label,
+  value: formatMetricValue(metric),
+  suffix: metric.description,
+  color: categoryColors[metric.category] || 'from-primary-500 to-secondary-400',
+}));
+
+// Re-export for new components
+export { impactMetrics, formatMetricValue, type Metric };

@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { EcommercePattern, RealEstatePattern, HealthcarePattern } from '../Illustrations';
 
 const caseStudies = [
   {
@@ -22,7 +23,7 @@ const caseStudies = [
       response: '< 5 minutes response time'
     },
     executiveSummary: 'Transformed a struggling e-commerce operation into a streamlined, automated system with 24/7 customer support, resulting in significant efficiency gains and customer satisfaction improvements.',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80'
+    IllustrationComponent: EcommercePattern
   },
   {
     id: 2,
@@ -43,7 +44,7 @@ const caseStudies = [
       response: 'Instant lead engagement'
     },
     executiveSummary: 'Revolutionized real estate lead management through intelligent automation, dramatically improving conversion rates and freeing up valuable agent time for high-value activities.',
-    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80'
+    IllustrationComponent: RealEstatePattern
   },
   {
     id: 3,
@@ -64,7 +65,7 @@ const caseStudies = [
       response: 'Instant confirmations'
     },
     executiveSummary: 'Streamlined healthcare operations through intelligent automation, significantly reducing administrative burden while improving patient experience and staff satisfaction.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80'
+    IllustrationComponent: HealthcarePattern
   }
 ];
 
@@ -160,18 +161,18 @@ export function CaseStudies() {
             transition={{ duration: 0.3 }}
             className="mb-6"
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">Before Implementation</h4>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">Before Implementation</h4>
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Operations:</span>
+                <span className="text-neutral-400 text-sm">Operations:</span>
                 <span className="text-white text-sm">{study.before.operations}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Efficiency:</span>
+                <span className="text-neutral-400 text-sm">Efficiency:</span>
                 <span className="text-white text-sm">{study.before.efficiency}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Response Time:</span>
+                <span className="text-neutral-400 text-sm">Response Time:</span>
                 <span className="text-white text-sm">{study.before.response}</span>
               </div>
             </div>
@@ -185,19 +186,19 @@ export function CaseStudies() {
             transition={{ duration: 0.3 }}
             className="mb-6"
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">ISI Map</h4>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">ISI Map</h4>
             <div className="space-y-3">
               <div className="bg-black/20 p-3 rounded-lg">
-                <span className="text-amber-400 text-xs">Identify:</span>
-                <p className="text-gray-400 text-sm">{study.isiMap.identify}</p>
+                <span className="text-secondary-400 text-xs">Identify:</span>
+                <p className="text-neutral-400 text-sm">{study.isiMap.identify}</p>
               </div>
               <div className="bg-black/20 p-3 rounded-lg">
-                <span className="text-amber-400 text-xs">Solve:</span>
-                <p className="text-gray-400 text-sm">{study.isiMap.solve}</p>
+                <span className="text-secondary-400 text-xs">Solve:</span>
+                <p className="text-neutral-400 text-sm">{study.isiMap.solve}</p>
               </div>
               <div className="bg-black/20 p-3 rounded-lg">
-                <span className="text-amber-400 text-xs">Integrate:</span>
-                <p className="text-gray-400 text-sm">{study.isiMap.integrate}</p>
+                <span className="text-secondary-400 text-xs">Integrate:</span>
+                <p className="text-neutral-400 text-sm">{study.isiMap.integrate}</p>
               </div>
             </div>
           </motion.div>
@@ -210,18 +211,18 @@ export function CaseStudies() {
             transition={{ duration: 0.3 }}
             className="mb-6"
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">After Implementation</h4>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">After Implementation</h4>
             <div className="space-y-2">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Operations:</span>
+                <span className="text-neutral-400 text-sm">Operations:</span>
                 <span className="text-white text-sm">{study.after.operations}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Efficiency:</span>
+                <span className="text-neutral-400 text-sm">Efficiency:</span>
                 <span className="text-white text-sm">{study.after.efficiency}</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400 text-sm">Response Time:</span>
+                <span className="text-neutral-400 text-sm">Response Time:</span>
                 <span className="text-white text-sm">{study.after.response}</span>
               </div>
             </div>
@@ -234,8 +235,8 @@ export function CaseStudies() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
           >
-            <h4 className="text-amber-400 text-sm font-semibold mb-3">Executive Summary</h4>
-            <p className="text-gray-400 text-sm leading-relaxed">{study.executiveSummary}</p>
+            <h4 className="text-secondary-400 text-sm font-semibold mb-3">Executive Summary</h4>
+            <p className="text-neutral-400 text-sm leading-relaxed">{study.executiveSummary}</p>
           </motion.div>
         );
     }
@@ -249,56 +250,57 @@ export function CaseStudies() {
         transition={{ duration: 0.6 }}
         className="text-center mb-16"
       >
-        <h2 className="text-3xl font-['Space_Mono'] mb-4 bg-gradient-to-r from-red-500 to-amber-400 bg-clip-text text-transparent">
+        <h2 className="text-3xl font-space mb-4 bg-gradient-to-r from-primary-500 to-secondary-400 bg-clip-text text-transparent">
           Success Stories
         </h2>
-        <p className="text-gray-400">
+        <p className="text-neutral-400">
           Real transformations, real results
         </p>
       </motion.div>
 
-      <motion.div 
-        className="relative px-16"
+      <motion.div
+        className="relative px-12 sm:px-16"
         layout
-        transition={{ 
+        transition={{
           duration: 0.6,
           ease: [0.4, 0, 0.2, 1]
         }}
       >
         <button
           onClick={() => paginate(-1)}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all hover:scale-110 focus:outline-none"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-all hover:scale-110 focus:outline-none"
+          aria-label="Previous case study"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={20} className="sm:w-6 sm:h-6" />
         </button>
         <button
           onClick={() => paginate(1)}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all hover:scale-110 focus:outline-none"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/60 hover:bg-black/80 text-white p-3 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-full transition-all hover:scale-110 focus:outline-none"
+          aria-label="Next case study"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={20} className="sm:w-6 sm:h-6" />
         </button>
 
-        <motion.div 
-          className="relative flex justify-center items-start gap-4 min-h-[500px] overflow-visible perspective"
+        <motion.div
+          className="relative flex justify-center items-start gap-2 sm:gap-4 min-h-[500px] overflow-visible perspective"
           layout
-          transition={{ 
+          transition={{
             duration: 0.6,
             ease: [0.4, 0, 0.2, 1],
             staggerChildren: 0.1
           }}
         >
-          <motion.div 
-            className="absolute left-0 w-64 h-64 opacity-50 blur-sm transition-all duration-500"
+          <motion.div
+            className="hidden sm:block absolute left-0 w-48 h-48 md:w-64 md:h-64 opacity-50 blur-sm transition-all duration-500"
             initial={{ x: -50, opacity: 0 }}
             animate={{ x: 0, opacity: 0.5 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="w-full h-full rounded-lg overflow-hidden">
-              <img
-                src={caseStudies[getPrevIndex()].image}
-                alt="Previous"
-                className="w-full h-full object-cover"
-              />
+              {(() => {
+                const PrevIllustration = caseStudies[getPrevIndex()].IllustrationComponent;
+                return PrevIllustration ? <PrevIllustration /> : null;
+              })()}
             </div>
           </motion.div>
 
@@ -321,7 +323,7 @@ export function CaseStudies() {
                   paginate(-1);
                 }
               }}
-              className="relative w-[400px] z-10"
+              className="relative w-full max-w-[400px] sm:w-[400px] z-10"
               layout
               transition={{
                 layout: {
@@ -331,7 +333,7 @@ export function CaseStudies() {
               }}
             >
               <motion.div 
-                className="w-full bg-black/40 backdrop-blur-sm rounded-lg border border-red-900/20 hover:border-amber-500/30 transition-all duration-300"
+                className="w-full bg-black/40 backdrop-blur-sm rounded-lg border border-primary-900/20 hover:border-secondary-500/30 transition-all duration-300"
                 layout
                 transition={{
                   layout: {
@@ -342,11 +344,14 @@ export function CaseStudies() {
               >
                 <div className="flex flex-col">
                   <div className="relative h-40">
-                    <img
-                      src={caseStudies[activeStudy].image}
-                      alt={caseStudies[activeStudy].title}
-                      className="w-full h-full object-cover"
-                    />
+                    {(() => {
+                      const ActiveIllustration = caseStudies[activeStudy].IllustrationComponent;
+                      return ActiveIllustration ? (
+                        <div className="w-full h-full">
+                          <ActiveIllustration />
+                        </div>
+                      ) : null;
+                    })()}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   </div>
 
@@ -360,7 +365,7 @@ export function CaseStudies() {
                       }
                     }}
                   >
-                    <h3 className="text-xl font-semibold text-white mb-4">{caseStudies[activeStudy].title}</h3>
+                    <h3 className="text-lg sm:text-xl font-semibold text-white mb-4">{caseStudies[activeStudy].title}</h3>
                     
                     <div className="relative mb-6">
                       {/* Section buttons with progress bar */}
@@ -374,10 +379,10 @@ export function CaseStudies() {
                               <button
                                 onClick={() => prevActive && handleSectionClick(section.id)}
                                 className={`
-                                  w-full px-3 py-2 text-xs
+                                  w-full px-2 sm:px-3 py-3 sm:py-2 text-xs min-h-[44px] sm:min-h-0
                                   ${prevActive
-                                    ? 'text-gray-400 hover:text-white cursor-pointer'
-                                    : 'text-gray-600 cursor-not-allowed'
+                                    ? 'text-neutral-400 hover:text-white cursor-pointer'
+                                    : 'text-neutral-600 cursor-not-allowed'
                                   }
                                   ${isActive ? 'text-white' : ''}
                                   transition-colors duration-300
@@ -387,14 +392,14 @@ export function CaseStudies() {
                                 {section.label}
                               </button>
                               {index < sections.length - 1 && (
-                                <div className="absolute right-0 top-0 bottom-0 w-px bg-amber-500/10" />
+                                <div className="absolute right-0 top-0 bottom-0 w-px bg-secondary-500/10" />
                               )}
                               {isActive && (
                                 <motion.div
                                   initial={{ scaleX: 0 }}
                                   animate={{ scaleX: 1 }}
                                   transition={{ duration: 0.3, ease: "easeOut" }}
-                                  className="absolute inset-0 bg-gradient-to-r from-red-600 to-amber-500 origin-left"
+                                  className="absolute inset-0 bg-gradient-to-r from-primary-600 to-secondary-500 origin-left"
                                   style={{ transformOrigin: 'left' }}
                                 />
                               )}
@@ -443,18 +448,17 @@ export function CaseStudies() {
             </motion.div>
           </AnimatePresence>
 
-          <motion.div 
-            className="absolute right-0 w-64 h-64 opacity-50 blur-sm transition-all duration-500"
+          <motion.div
+            className="hidden sm:block absolute right-0 w-48 h-48 md:w-64 md:h-64 opacity-50 blur-sm transition-all duration-500"
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 0.5 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <div className="w-full h-full rounded-lg overflow-hidden">
-              <img
-                src={caseStudies[getNextIndex()].image}
-                alt="Next"
-                className="w-full h-full object-cover"
-              />
+              {(() => {
+                const NextIllustration = caseStudies[getNextIndex()].IllustrationComponent;
+                return NextIllustration ? <NextIllustration /> : null;
+              })()}
             </div>
           </motion.div>
         </motion.div>
@@ -468,11 +472,12 @@ export function CaseStudies() {
                 setActiveStudy(index);
                 setActiveSections(new Set(['before']));
               }}
-              className={`w-2 h-2 rounded-full transition-all ${
-                index === activeStudy 
-                  ? 'bg-amber-400 w-6' 
-                  : 'bg-gray-600 hover:bg-gray-500'
+              className={`h-3 min-h-[44px] sm:min-h-0 sm:h-2 rounded-full transition-all ${
+                index === activeStudy
+                  ? 'bg-secondary-400 w-8 sm:w-6'
+                  : 'bg-neutral-600 hover:bg-neutral-500 w-3 sm:w-2'
               }`}
+              aria-label={`Go to case study ${index + 1}`}
             />
           ))}
         </div>
