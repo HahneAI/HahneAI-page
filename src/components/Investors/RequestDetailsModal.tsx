@@ -32,7 +32,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
 
     // Simulate form submission (replace with actual endpoint)
     try {
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('https://formspree.io/f/mgvgbzpy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -129,7 +129,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       required
                       value={formData.name}
                       onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
-                      className="w-full px-4 py-3.5 min-h-[48px] text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="w-full px-4 py-3.5 min-h-[48px] text-base text-neutral-900 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="Your full name"
                       style={{ fontSize: '16px' }}
                     />
@@ -146,7 +146,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       required
                       value={formData.email}
                       onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                      className="w-full px-4 py-3.5 min-h-[48px] text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="w-full px-4 py-3.5 min-h-[48px] text-base text-neutral-900 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="your.email@example.com"
                       style={{ fontSize: '16px' }}
                     />
@@ -162,7 +162,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       id="company"
                       value={formData.company}
                       onChange={(e) => setFormData(prev => ({ ...prev, company: e.target.value }))}
-                      className="w-full px-4 py-3.5 min-h-[48px] text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      className="w-full px-4 py-3.5 min-h-[48px] text-base text-neutral-900 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="Your organization (optional)"
                       style={{ fontSize: '16px' }}
                     />
@@ -201,7 +201,7 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
-                      className="w-full px-4 py-3.5 text-base border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
+                      className="w-full px-4 py-3.5 text-base text-neutral-900 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors resize-none"
                       placeholder="Tell me about your investment interests or questions..."
                       style={{ fontSize: '16px' }}
                     />
