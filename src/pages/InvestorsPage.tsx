@@ -277,10 +277,10 @@ export function InvestorsPage() {
                   available upon request.
                 </p>
                 <a
-                  href="mailto:anthonyhahne@therealworld.ag"
+                  href="mailto:anthonyhahne20@gmail.com"
                   className="inline-block px-6 sm:px-8 py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-colors break-all sm:break-normal"
                 >
-                  anthonyhahne@therealworld.ag
+                  anthonyhahne20@gmail.com
                 </a>
               </div>
             </motion.div>
