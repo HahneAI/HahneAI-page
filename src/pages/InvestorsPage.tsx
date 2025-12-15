@@ -128,15 +128,14 @@ export function InvestorsPage() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-12"
+              className="mb-12 text-center"
             >
               <h2 className="font-space text-3xl sm:text-4xl text-neutral-900 mb-4">
                 Portfolio Ventures
               </h2>
-              <p className="text-neutral-600 max-w-2xl">
+              <p className="text-neutral-600 max-w-2xl mx-auto">
                 Four distinct opportunities across different markets, all leveraging AI-native development
                 and problem-first design thinking.
               </p>
