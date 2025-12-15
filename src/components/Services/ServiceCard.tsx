@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { ServiceForm } from './ServiceForm';
 
 interface ServiceCardProps {
   id: string;
@@ -110,6 +112,7 @@ export function ServiceDetail({
   results,
 }: ServiceDetailProps) {
   const navigate = useNavigate();
+  const [isFormOpen, setIsFormOpen] = useState(false);
 
   return (
     <motion.section
@@ -190,7 +193,7 @@ export function ServiceDetail({
 
           {/* CTA */}
           <motion.button
-            onClick={() => navigate('/system-request')}
+            onClick={() => setIsFormOpen(true)}
             whileHover={{
               scale: 1.02,
               boxShadow: '0 0 24px -4px rgba(239, 82, 68, 0.4)',
@@ -203,6 +206,13 @@ export function ServiceDetail({
           </motion.button>
         </div>
       </div>
+
+      {/* Service Request Modal */}
+      <ServiceForm
+        isOpen={isFormOpen}
+        onClose={() => setIsFormOpen(false)}
+        selectedService={id}
+      />
     </motion.section>
   );
 }
