@@ -12,9 +12,6 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage').then(module => ({
 const CreativeSolutionsPage = lazy(() => import('./pages/CreativeSolutionsPage').then(module => ({
   default: module.CreativeSolutionsPage
 })));
-const SystemRequestPage = lazy(() => import('./pages/SystemRequestPage').then(module => ({
-  default: module.SystemRequestPage
-})));
 const ProcessPage = lazy(() => import('./pages/ProcessPage').then(module => ({
   default: module.ProcessPage
 })));
@@ -40,15 +37,11 @@ function PrefetchLinks() {
         // Prefetch services and creative solutions pages when on home
         await Promise.all([
           import('./pages/ServicesPage'),
-          import('./pages/CreativeSolutionsPage'),
-          import('./pages/SystemRequestPage')
+          import('./pages/CreativeSolutionsPage')
         ]);
       } else if (location.pathname === '/services') {
         // Prefetch creative solutions when on services
         await import('./pages/CreativeSolutionsPage');
-      } else if (location.pathname === '/investors') {
-        // Prefetch system request when on investors
-        await import('./pages/SystemRequestPage');
       }
     };
 
@@ -79,7 +72,6 @@ function App() {
             <Route path="/creative-solutions" element={<CreativeSolutionsPage />} />
             <Route path="/process" element={<ProcessPage />} />
             <Route path="/investors" element={<InvestorsPage />} />
-            <Route path="/system-request" element={<SystemRequestPage />} />
           </Routes>
         </Suspense>
       </div>
