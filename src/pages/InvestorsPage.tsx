@@ -276,12 +276,16 @@ export function InvestorsPage() {
                   Detailed pitch decks, financial projections, and technical documentation
                   available upon request.
                 </p>
-                <a
-                  href="mailto:anthonyhahne20@gmail.com"
-                  className="inline-block px-6 sm:px-8 py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-colors break-all sm:break-normal"
+                <button
+                  onClick={() => {
+                    setSelectedVenture(undefined);
+                    setIsModalOpen(true);
+                    trackInvestorInteraction('modal_open', 'email_cta');
+                  }}
+                  className="inline-block px-6 sm:px-8 py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white text-sm sm:text-base font-medium rounded-lg transition-colors break-all sm:break-normal"
                 >
                   anthonyhahne20@gmail.com
-                </a>
+                </button>
               </div>
             </motion.div>
           </div>

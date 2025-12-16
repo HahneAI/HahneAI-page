@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { trackFormSubmit } from '../../utils/analytics';
@@ -15,9 +15,23 @@ export function RequestDetailsModal({ isOpen, onClose, selectedVenture }: Reques
     name: '',
     email: '',
     company: '',
-    ventures: selectedVenture ? [selectedVenture] : [],
+    ventures: [] as string[],
     message: ''
   });
+
+  // Reset form and set selected venture when modal opens or selectedVenture changes
+  useEffect(() => {
+    if (isOpen) {
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        ventures: selectedVenture ? [selectedVenture] : [],
+        message: ''
+      });
+      setFormState('idle');
+    }
+  }, [isOpen, selectedVenture]);
 
   const ventures = [
     'Trade Industry CRM',
