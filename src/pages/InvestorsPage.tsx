@@ -128,15 +128,14 @@ export function InvestorsPage() {
           <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="mb-12"
+              className="mb-12 text-center"
             >
               <h2 className="font-space text-3xl sm:text-4xl text-neutral-900 mb-4">
                 Portfolio Ventures
               </h2>
-              <p className="text-neutral-600 max-w-2xl">
+              <p className="text-neutral-600 max-w-2xl mx-auto">
                 Four distinct opportunities across different markets, all leveraging AI-native development
                 and problem-first design thinking.
               </p>
@@ -278,10 +277,10 @@ export function InvestorsPage() {
                   available upon request.
                 </p>
                 <a
-                  href="mailto:anthonyhahne@therealworld.ag"
+                  href="mailto:anthonyhahne20@gmail.com"
                   className="inline-block px-6 sm:px-8 py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-colors break-all sm:break-normal"
                 >
-                  anthonyhahne@therealworld.ag
+                  anthonyhahne20@gmail.com
                 </a>
               </div>
             </motion.div>
