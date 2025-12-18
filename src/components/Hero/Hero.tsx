@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { heroContent } from '../../content/navigation';
 import { trackCTAClick } from '../../utils/analytics';
+import { HirePopup } from '../HirePopup/HirePopup';
 
 /**
  * Minimalist Hero Section
@@ -16,6 +18,7 @@ import { trackCTAClick } from '../../utils/analytics';
 export function Hero() {
   const navigate = useNavigate();
   const content = heroContent.primary;
+  const [isHirePopupOpen, setIsHirePopupOpen] = useState(false);
 
   return (
     <section
@@ -56,8 +59,8 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2 sm:pt-4" data-element="hero-cta-group">
             <motion.button
               onClick={() => {
-                trackCTAClick(content.cta.primary, 'hero-primary', '/system-request');
-                navigate('/system-request');
+                trackCTAClick(content.cta.primary, 'hero-primary', 'modal');
+                setIsHirePopupOpen(true);
               }}
               whileHover={{
                 scale: 1.02,
@@ -68,7 +71,7 @@ export function Hero() {
               className="w-full sm:w-auto min-w-[160px] px-8 py-4 min-h-[48px] bg-white text-neutral-900 text-base font-medium rounded-lg hover:bg-neutral-100 active:bg-neutral-200 transition-colors duration-200"
               data-cta="primary"
               data-cta-text="Tell Us Your Challenge"
-              data-cta-destination="/system-request"
+              data-cta-destination="modal"
               data-variation="control"
             >
               {content.cta.primary}
@@ -112,6 +115,12 @@ export function Hero() {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Hire Popup Modal */}
+      <HirePopup
+        isOpen={isHirePopupOpen}
+        onClose={() => setIsHirePopupOpen(false)}
+      />
     </section>
   );
 }

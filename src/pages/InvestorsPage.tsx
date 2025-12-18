@@ -146,9 +146,8 @@ export function InvestorsPage() {
                 <motion.article
                   key={venture.id}
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className={`
                     bg-white rounded-xl border-2 p-6 sm:p-8 hover:shadow-medium transition-all duration-300
                     ${venture.featured
@@ -276,12 +275,16 @@ export function InvestorsPage() {
                   Detailed pitch decks, financial projections, and technical documentation
                   available upon request.
                 </p>
-                <a
-                  href="mailto:anthonyhahne20@gmail.com"
-                  className="inline-block px-6 sm:px-8 py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 text-white text-sm sm:text-base font-medium rounded-lg transition-colors break-all sm:break-normal"
+                <button
+                  onClick={() => {
+                    setSelectedVenture(undefined);
+                    setIsModalOpen(true);
+                    trackInvestorInteraction('modal_open', 'email_cta');
+                  }}
+                  className="inline-block px-6 sm:px-8 py-4 min-h-[48px] bg-primary-600 hover:bg-primary-700 active:bg-primary-800 text-white text-sm sm:text-base font-medium rounded-lg transition-colors break-all sm:break-normal"
                 >
                   anthonyhahne20@gmail.com
-                </a>
+                </button>
               </div>
             </motion.div>
           </div>

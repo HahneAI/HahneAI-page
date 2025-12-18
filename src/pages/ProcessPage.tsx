@@ -17,9 +17,9 @@ export function ProcessPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden bg-black"
+        className="relative min-h-[60vh] flex items-center justify-center text-center overflow-hidden bg-black pt-24 sm:pt-32"
       >
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,12 +55,11 @@ export function ProcessPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="space-y-8"
           >
-            <h2 className="text-4xl font-space bg-gradient-to-r from-primary-500 to-terra-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl font-space bg-gradient-to-r from-primary-500 to-terra-500 bg-clip-text text-transparent mb-6">
               Ready to Build Your Future?
             </h2>
-            <p className="text-xl text-neutral-400 font-space">
+            <p className="text-lg sm:text-xl text-neutral-400 font-space mb-12 max-w-2xl mx-auto">
               Let's apply the I.S.I Framework to your unique challenges.
             </p>
             <Link to="/creative-solutions#hire">
@@ -71,7 +70,7 @@ export function ProcessPage() {
                 }}
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2, ease: 'easeOut' }}
-                className="bg-white text-neutral-900 px-8 py-4 rounded-lg text-lg font-medium tracking-wide hover:bg-neutral-100 transition-colors inline-block"
+                className="bg-white text-neutral-900 px-8 py-4 min-h-[48px] rounded-lg text-base sm:text-lg font-medium tracking-wide hover:bg-neutral-100 transition-colors inline-block"
               >
                 Start a Project
               </motion.button>

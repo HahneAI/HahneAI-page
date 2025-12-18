@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Suspense, lazy, useEffect } from 'react';
 import { initGA, logPageView } from './utils/analytics';
+import { ScrollToTop } from './components/ScrollToTop';
 
 // Lazy load pages
 const HomePage = lazy(() => import('./pages/HomePage').then(module => ({
@@ -64,6 +65,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-surface-dark text-white">
+        <ScrollToTop />
         <PrefetchLinks />
         <Suspense fallback={<LoadingFallback />}>
           <Routes>
